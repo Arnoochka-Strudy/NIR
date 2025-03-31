@@ -2,13 +2,14 @@ import os
 import deepspeed
 import torch
 from transformers import pipeline
+from arguments import get_args
 
 local_rank = int(os.getenv('LOCAL_RANK', '0'))
-world_size = int(os.getenv('WORLD_SIZE', '2'))
-generator = pipeline('text-generation', model='gpt2-large',
+world_size = int(os.getenv('WORLD_SIZE', '1'))
+args = get_args()
+print(local_rank, world_size)
+generator = pipeline('text-generation', model='gpt2',
                      device=local_rank)
-
-
 
 generator.model = deepspeed.init_inference(generator.model,
                                            tensor_parallel={"tp_size": world_size},

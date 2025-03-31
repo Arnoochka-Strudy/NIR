@@ -1,10 +1,3 @@
-"""
-Run OPT with huggingface or deepspeed.
-
-Reference:
-https://github.com/FMInference/FlexGen/blob/main/benchmark/hf_ds/hf_opt.py
-"""
-
 import argparse
 import gc
 import multiprocessing as mp
@@ -29,8 +22,6 @@ assert version.parse(deepspeed.__version__) >= version.parse("0.10.3"), "ZeRO-In
 
 def get_tokenizer(model_name, config):
     if config.model_type == "opt":
-        # opt175b is not available on HF (at this time),
-        # so as a hack we use opt66b which has similar tokenizer. 
         tokenizer = AutoTokenizer.from_pretrained(
             model_name.replace("175b", "66b"), 
             padding_side="left" 
@@ -131,7 +122,7 @@ def get_ds_model(
             "single_submit": False,
             "overlap_events": True,
         }
-
+    print(ds_config)
     dschf = HfDeepSpeedConfig(
         ds_config
     )  # this tells from_pretrained to instantiate directly on gpus

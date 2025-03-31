@@ -1,6 +1,6 @@
 #!/bin/sh
 
-MODEL_NAME=facebook/opt-30b # ONLY OPT AND BLOOM MODELS ARE SUPPORTED FOR NOW
+MODEL_NAME=facebook/opt-125m # ONLY OPT AND BLOOM MODELS ARE SUPPORTED FOR NOW
 BATCHSIZE=3 # batch size
 PROMPT_LEN=512 # the length of the prompt
 GEN_LEN=32 # number of tokens to generate
