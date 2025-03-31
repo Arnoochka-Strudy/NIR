@@ -1,1 +1,2 @@
-./DeepSpeedExamples
+./multigpu/offload
+./Examples-inference/zero_inference/offload
