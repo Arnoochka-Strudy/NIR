@@ -1,6 +1,6 @@
 #!/bin/sh
 
-MODEL_NAME=facebook/opt-6.7b
+MODEL_NAME=facebook/opt-125m
 BATCHSIZE=3
 PROMPT_LEN=512
 GEN_LEN=32 
