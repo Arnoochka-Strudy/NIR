@@ -19,6 +19,8 @@ from timer import timers
 from transformers import (AutoConfig, AutoTokenizer, AutoModelForCausalLM, 
                           BloomForCausalLM, OPTForCausalLM, LlamaForCausalLM,
                         )
+
+from config_helper import ModelHelper
 from transformers.deepspeed import HfDeepSpeedConfig
 from utils import (GB, add_model_hooks, cache_bytes,
                    get_filename, get_quant_config, hidden_bytes, meta_to_cpu,
@@ -127,7 +129,7 @@ def get_ds_model(
             "block_size": 1048576*16,
             "queue_depth": 64,
             "thread_count": 8,
-            "use_gds": args.use_gds,
+            "use_gds": False,
             "single_submit": False,
             "overlap_events": True,
         }
@@ -165,6 +167,7 @@ def get_ds_model(
     ds_engine = deepspeed.initialize(model=model, config_params=ds_config)[0]
     ds_engine.module.eval()
     model = ds_engine.module
+    ModelHelper.write_config("config.json", ds_config)
     print(f"model.config = {model.config}")
 
     return model

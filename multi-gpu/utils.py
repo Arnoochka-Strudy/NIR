@@ -175,3 +175,26 @@ def add_model_hooks(model: torch.nn.Module):
     if not hasattr(model, '__end_time_hook_handle__'):
         model.__end_time_hook_handle__ = model.register_forward_hook(
             end_time_hook, )
+        
+def remove_model_hooks(module):
+    if hasattr(module, "__start_time_hook_handle__"):
+        module.__start_time_hook_handle__.remove()
+        del module.__start_time_hook_handle__
+    if hasattr(module, "__end_time_hook_handle__"):
+        module.__end_time_hook_handle__.remove()
+        del module.__end_time_hook_handle__
+    if hasattr(module, "stage"):
+        del module.stage
+    if hasattr(module, "__duration__"):
+        del module.__duration__
+        
+        
+
+def get_promts(filename: str | None = None) -> list[str]:
+    
+    if filename is None:
+        return ["Paris is the capital city of"] * 4
+    
+    with open(filename, 'r') as file:
+        promts = [line for line in file]
+        return promts

@@ -1,9 +1,9 @@
 #!/bin/sh
 
-MODEL_NAME=facebook/opt-6.7b
+MODEL_NAME=facebook/opt-125m
 BATCHSIZE=3
 PROMPT_LEN=512
-GEN_LEN=32 
+GEN_LEN=4
 
 NUM_GPUS=1
 
@@ -11,12 +11,12 @@ USE_CPU_OFFLOAD=1
 USE_KV_OFFLOAD=1
 USE_HF_MODEL=0
 USE_QUANT=0
-USE_DISK_OFFLOAD=1
+USE_DISK_OFFLOAD=0
 USE_GDS=1 # not supported on laptop
 
 OFFLOAD_DIR="offload"
 LOG_FILE="logger.log"
-FILE="run_opt_experiment_inference.py"
+FILE="run_opt_experiment_initialize.py"
 
 if [ $USE_CPU_OFFLOAD -eq 1 ]; then
     CPU_OFFLOAD="--cpu-offload"
@@ -54,7 +54,7 @@ else
     USE_GDS_FLAG=""
 fi
 
-deepspeed --num_gpus ${NUM_GPUS} ${FILE} \
+deepspeed --num_gpus ${NUM_GPUS} ${FILE} --loops 10 \
  --model ${MODEL_NAME} --batch-size ${BATCHSIZE} --prompt-len ${PROMPT_LEN} --gen-len ${GEN_LEN} ${USE_GDS_FLAG} \
- ${CPU_OFFLOAD} ${KV_OFFLOAD} ${DISK_OFFLOAD} ${QUANT_BITS} \
+ --use_zero ${CPU_OFFLOAD} ${KV_OFFLOAD} ${DISK_OFFLOAD} ${QUANT_BITS} --pin-memory --half-precision fp16 \
  &> $LOG_FILE

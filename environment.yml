@@ -77,8 +77,8 @@ dependencies:
       - tokenizers==0.13.3
       - torch==2.6.0
       - tqdm==4.67.1
-      - transformers @ git+https://github.com/tjruwase/transformers@kvcache-offload-cpu
+      - transformers==4.33.0.dev0
       - triton==3.2.0
       - typing-extensions==4.12.2
       - urllib3==2.3.0
-prefix: /home/victor/anaconda3/envs/deepspeed_zero
+prefix: /home/victor/anaconda3/envs/deepspeed

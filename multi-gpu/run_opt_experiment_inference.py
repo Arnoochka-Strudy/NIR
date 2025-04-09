@@ -5,7 +5,7 @@ Reference:
 https://github.com/FMInference/FlexGen/blob/main/benchmark/hf_ds/hf_opt.py
 """
 
-from arguments import get_args
+from model_helper import get_args
 import gc
 import multiprocessing as mp
 import os
