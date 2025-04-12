@@ -2,6 +2,7 @@ frameworks:
     DeepSpeed: https://www.deepspeed.ai/
     nntile (optionally): https://github.com/nntile/nntile
     Megatron-LM: https://github.com/NVIDIA/Megatron-LM
+    inference-single-gpu: https://github.com/FMInference
 
 articles overwiev: https://arxiv.org/pdf/2405.03360
 
