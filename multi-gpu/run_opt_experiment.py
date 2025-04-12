@@ -1,11 +1,10 @@
 import torch
 import deepspeed
 from deepspeed.accelerator import get_accelerator
-import deepspeed.comm as dist
 from timer import timers
 from utils import (GB, add_model_hooks, remove_model_hooks, cache_bytes,
                    get_filename, get_quant_config, hidden_bytes,
-                   model_bytes, write_benchmark_log, get_promts)
+                   model_bytes, write_benchmark_log, get_prompts)
 from packaging import version
 from model_helper import Configurator, ModelGetter
 
@@ -22,9 +21,12 @@ def run_generation(
         model = ModelGetter.get_model(configurator)
         
     tokenizer = ModelGetter.get_tokenizer(args.model)
+    
+    for name, param in model.named_parameters():
+        print(f"{name}: {param.shape} (device: {param.device})")
 
     execute_gen_len = args.gen_len
-    prompts = get_promts(type_test="")
+    prompts = get_prompts("/home/victor/NIR/benchmark_mini.txt")
 
     def _batch_encode(prompts):
         input_tokens = tokenizer.batch_encode_plus(prompts, return_tensors="pt", padding="max_length", max_length=args.prompt_len)
@@ -126,9 +128,9 @@ def run_generation(
 
 
 if __name__ == "__main__":
+    deepspeed.init_distributed("nccl") 
     configurator = Configurator()
 
-    deepspeed.init_distributed("nccl") 
     run_generation(
         configurator
     )

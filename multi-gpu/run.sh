@@ -1,18 +1,18 @@
 #!/bin/sh
 
-MODEL_NAME=facebook/opt-125m
-BATCHSIZE=3
+MODEL_NAME=facebook/opt-1.3b
+BATCHSIZE=4
 PROMPT_LEN=512
-GEN_LEN=4
+GEN_LEN=32
 
 NUM_GPUS=1
 
-USE_CPU_OFFLOAD=1
-USE_KV_OFFLOAD=1
+USE_CPU_OFFLOAD=0
+USE_KV_OFFLOAD=0
 USE_HF_MODEL=0
 USE_QUANT=0
 USE_DISK_OFFLOAD=0
-USE_GDS=1 # not supported on laptop
+USE_GDS=0 # not supported on laptop
 
 OFFLOAD_DIR="offload"
 LOG_FILE="logger.log"
@@ -54,7 +54,7 @@ else
     USE_GDS_FLAG=""
 fi
 
-deepspeed --num_gpus ${NUM_GPUS} ${FILE} --loops 10 \
+deepspeed --num_gpus ${NUM_GPUS} ${FILE} --loops 3 \
  --model ${MODEL_NAME} --batch-size ${BATCHSIZE} --prompt-len ${PROMPT_LEN} --gen-len ${GEN_LEN} ${USE_GDS_FLAG} \
- --use_zero ${CPU_OFFLOAD} ${KV_OFFLOAD} ${DISK_OFFLOAD} ${QUANT_BITS} --pin-memory --half-precision fp16 \
+ --use_zero ${CPU_OFFLOAD} ${KV_OFFLOAD} ${DISK_OFFLOAD} ${QUANT_BITS} --pin-memory --use_tp_parallel \
  &> $LOG_FILE

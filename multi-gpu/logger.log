@@ -1,45 +1,47 @@
-[2025-04-09 15:27:26,452] [INFO] [real_accelerator.py:239:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2025-04-12 02:01:21,240] [INFO] [real_accelerator.py:239:get_accelerator] Setting ds_accelerator to cuda (auto detect)
 /home/victor/anaconda3/envs/deepspeed_zero/lib/python3.11/site-packages/transformers/utils/generic.py:260: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
   torch.utils._pytree._register_pytree_node(
 /home/victor/anaconda3/envs/deepspeed_zero/lib/python3.11/site-packages/transformers/utils/generic.py:260: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
   torch.utils._pytree._register_pytree_node(
-[2025-04-09 15:27:28,029] [WARNING] [runner.py:215:fetch_hostfile] Unable to find hostfile, will proceed with training with local resources only.
-[2025-04-09 15:27:28,030] [INFO] [runner.py:605:main] cmd = /home/victor/anaconda3/envs/deepspeed_zero/bin/python -u -m deepspeed.launcher.launch --world_info=eyJsb2NhbGhvc3QiOiBbMF19 --master_addr=127.0.0.1 --master_port=29500 --enable_each_rank_log=None run_opt_experiment_initialize.py --loops 10 --model facebook/opt-125m --batch-size 3 --prompt-len 512 --gen-len 4 --use_gds --use_zero --cpu-offload --kv-offload --pin-memory --half-precision fp16
-[2025-04-09 15:27:29,227] [INFO] [real_accelerator.py:239:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2025-04-12 02:01:23,857] [WARNING] [runner.py:215:fetch_hostfile] Unable to find hostfile, will proceed with training with local resources only.
+[2025-04-12 02:01:23,857] [INFO] [runner.py:605:main] cmd = /home/victor/anaconda3/envs/deepspeed_zero/bin/python -u -m deepspeed.launcher.launch --world_info=eyJsb2NhbGhvc3QiOiBbMCwgMV19 --master_addr=127.0.0.1 --master_port=29500 --enable_each_rank_log=None run_opt_experiment.py --loops 3 --model facebook/opt-1.3b --batch-size 4 --prompt-len 512 --gen-len 32 --use-tp-parallel --output-file results.log --verbose 2
+[2025-04-12 02:01:25,774] [INFO] [real_accelerator.py:239:get_accelerator] Setting ds_accelerator to cuda (auto detect)
 /home/victor/anaconda3/envs/deepspeed_zero/lib/python3.11/site-packages/transformers/utils/generic.py:260: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
   torch.utils._pytree._register_pytree_node(
 /home/victor/anaconda3/envs/deepspeed_zero/lib/python3.11/site-packages/transformers/utils/generic.py:260: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
   torch.utils._pytree._register_pytree_node(
-[2025-04-09 15:27:30,759] [INFO] [launch.py:146:main] WORLD INFO DICT: {'localhost': [0]}
-[2025-04-09 15:27:30,759] [INFO] [launch.py:152:main] nnodes=1, num_local_procs=1, node_rank=0
-[2025-04-09 15:27:30,759] [INFO] [launch.py:163:main] global_rank_mapping=defaultdict(<class 'list'>, {'localhost': [0]})
-[2025-04-09 15:27:30,759] [INFO] [launch.py:164:main] dist_world_size=1
-[2025-04-09 15:27:30,759] [INFO] [launch.py:168:main] Setting CUDA_VISIBLE_DEVICES=0
-[2025-04-09 15:27:30,760] [INFO] [launch.py:256:main] process 43647 spawned with command: ['/home/victor/anaconda3/envs/deepspeed_zero/bin/python', '-u', 'run_opt_experiment_initialize.py', '--local_rank=0', '--loops', '10', '--model', 'facebook/opt-125m', '--batch-size', '3', '--prompt-len', '512', '--gen-len', '4', '--use_gds', '--use_zero', '--cpu-offload', '--kv-offload', '--pin-memory', '--half-precision', 'fp16']
-[2025-04-09 15:27:32,017] [INFO] [real_accelerator.py:239:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2025-04-12 02:01:28,142] [INFO] [launch.py:146:main] WORLD INFO DICT: {'localhost': [0, 1]}
+[2025-04-12 02:01:28,142] [INFO] [launch.py:152:main] nnodes=1, num_local_procs=2, node_rank=0
+[2025-04-12 02:01:28,142] [INFO] [launch.py:163:main] global_rank_mapping=defaultdict(<class 'list'>, {'localhost': [0, 1]})
+[2025-04-12 02:01:28,142] [INFO] [launch.py:164:main] dist_world_size=2
+[2025-04-12 02:01:28,142] [INFO] [launch.py:168:main] Setting CUDA_VISIBLE_DEVICES=0,1
+[2025-04-12 02:01:28,143] [INFO] [launch.py:256:main] process 50036 spawned with command: ['/home/victor/anaconda3/envs/deepspeed_zero/bin/python', '-u', 'run_opt_experiment.py', '--local_rank=0', '--loops', '3', '--model', 'facebook/opt-1.3b', '--batch-size', '4', '--prompt-len', '512', '--gen-len', '32', '--use-tp-parallel', '--output-file', 'results.log', '--verbose', '2']
+[2025-04-12 02:01:28,145] [INFO] [launch.py:256:main] process 50037 spawned with command: ['/home/victor/anaconda3/envs/deepspeed_zero/bin/python', '-u', 'run_opt_experiment.py', '--local_rank=1', '--loops', '3', '--model', 'facebook/opt-1.3b', '--batch-size', '4', '--prompt-len', '512', '--gen-len', '32', '--use-tp-parallel', '--output-file', 'results.log', '--verbose', '2']
+[2025-04-12 02:01:30,206] [INFO] [real_accelerator.py:239:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2025-04-12 02:01:30,254] [INFO] [real_accelerator.py:239:get_accelerator] Setting ds_accelerator to cuda (auto detect)
 /home/victor/anaconda3/envs/deepspeed_zero/lib/python3.11/site-packages/transformers/utils/generic.py:260: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
   torch.utils._pytree._register_pytree_node(
 /home/victor/anaconda3/envs/deepspeed_zero/lib/python3.11/site-packages/transformers/utils/generic.py:260: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
   torch.utils._pytree._register_pytree_node(
+/home/victor/anaconda3/envs/deepspeed_zero/lib/python3.11/site-packages/transformers/utils/generic.py:260: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  torch.utils._pytree._register_pytree_node(
+[2025-04-12 02:01:32,898] [INFO] [comm.py:658:init_distributed] cdb=None
+/home/victor/anaconda3/envs/deepspeed_zero/lib/python3.11/site-packages/transformers/utils/generic.py:260: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  torch.utils._pytree._register_pytree_node(
+[2025-04-12 02:01:33,001] [INFO] [comm.py:658:init_distributed] cdb=None
+[2025-04-12 02:01:33,001] [INFO] [comm.py:689:init_distributed] Initializing TorchBackend in DeepSpeed with backend nccl
 /home/victor/anaconda3/envs/deepspeed_zero/lib/python3.11/site-packages/huggingface_hub/file_download.py:797: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
   warnings.warn(
-[2025-04-09 15:27:34,870] [INFO] [comm.py:658:init_distributed] cdb=None
-[2025-04-09 15:27:34,870] [INFO] [comm.py:689:init_distributed] Initializing TorchBackend in DeepSpeed with backend nccl
-[2025-04-09 15:27:35,560] [INFO] [config.py:734:__init__] Config mesh_device None world_size = 1
-[2025-04-09 15:27:36,396] [INFO] [partition_parameters.py:348:__exit__] finished initializing model - num_params = 197, num_elems = 0.16B
-[2025-04-09 15:27:36,774] [INFO] [logging.py:107:log_dist] [Rank 0] DeepSpeed info: version=0.16.5, git-hash=unknown, git-branch=unknown
-[2025-04-09 15:27:36,774] [INFO] [config.py:734:__init__] Config mesh_device None world_size = 1
-[2025-04-09 15:27:36,777] [INFO] [logging.py:107:log_dist] [Rank 0] DeepSpeed Flops Profiler Enabled: False
-[2025-04-09 15:27:36,778] [INFO] [logging.py:107:log_dist] [Rank 0] Creating ZeRO Offload
-[2025-04-09 15:27:36,881] [INFO] [utils.py:781:see_memory_usage] DeepSpeedZeRoOffload initialize [begin]
-[2025-04-09 15:27:36,881] [INFO] [utils.py:782:see_memory_usage] MA 0.0 GB         Max_MA 0.14 GB         CA 0.15 GB         Max_CA 0 GB 
-[2025-04-09 15:27:36,881] [INFO] [utils.py:789:see_memory_usage] CPU Virtual Memory:  used = 10.06 GB, percent = 66.9%
-Parameter Offload: Total persistent parameters: 84480 in 110 params
-[2025-04-09 15:27:37,011] [INFO] [utils.py:781:see_memory_usage] DeepSpeedZeRoOffload initialize [end]
-[2025-04-09 15:27:37,012] [INFO] [utils.py:782:see_memory_usage] MA 0.0 GB         Max_MA 0.0 GB         CA 0.15 GB         Max_CA 0 GB 
-[2025-04-09 15:27:37,012] [INFO] [utils.py:789:see_memory_usage] CPU Virtual Memory:  used = 10.06 GB, percent = 66.9%
-[2025-04-09 15:27:37,012] [INFO] [config.py:1000:print] DeepSpeedEngine configuration:
-[2025-04-09 15:27:37,012] [INFO] [config.py:1004:print]   activation_checkpointing_config  {
+/home/victor/anaconda3/envs/deepspeed_zero/lib/python3.11/site-packages/huggingface_hub/file_download.py:797: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+[2025-04-12 02:02:22,618] [INFO] [config.py:734:__init__] Config mesh_device None world_size = 2
+[2025-04-12 02:02:22,620] [INFO] [comm.py:615:initialize_mesh_device] Initializing mesh device with backend torch                 with shape (1, 2) and dim names ('data_parallel', 'tensor_parallel')
+[2025-04-12 02:02:22,864] [INFO] [logging.py:107:log_dist] [Rank 0] DeepSpeed info: version=0.16.5, git-hash=unknown, git-branch=unknown
+[2025-04-12 02:02:22,864] [INFO] [config.py:734:__init__] Config mesh_device None world_size = 2
+[2025-04-12 02:02:22,866] [INFO] [comm.py:615:initialize_mesh_device] Initializing mesh device with backend torch                 with shape (1, 2) and dim names ('data_parallel', 'tensor_parallel')
+[2025-04-12 02:02:26,836] [INFO] [logging.py:107:log_dist] [Rank 0] DeepSpeed Flops Profiler Enabled: False
+[2025-04-12 02:02:26,837] [INFO] [config.py:1000:print] DeepSpeedEngine configuration:
+[2025-04-12 02:02:26,838] [INFO] [config.py:1004:print]   activation_checkpointing_config  {
     "partition_activations": false, 
     "contiguous_memory_optimization": false, 
     "cpu_checkpointing": false, 
@@ -47,10 +49,10 @@ Parameter Offload: Total persistent parameters: 84480 in 110 params
     "synchronize_checkpoint_boundary": false, 
     "profile": false
 }
-[2025-04-09 15:27:37,012] [INFO] [config.py:1004:print]   aio_config ................... {'block_size': 1048576, 'queue_depth': 8, 'intra_op_parallelism': 1, 'single_submit': False, 'overlap_events': True, 'use_gds': False}
-[2025-04-09 15:27:37,012] [INFO] [config.py:1004:print]   amp_enabled .................. False
-[2025-04-09 15:27:37,012] [INFO] [config.py:1004:print]   amp_params ................... False
-[2025-04-09 15:27:37,012] [INFO] [config.py:1004:print]   autotuning_config ............ {
+[2025-04-12 02:02:26,838] [INFO] [config.py:1004:print]   aio_config ................... {'block_size': 1048576, 'queue_depth': 8, 'intra_op_parallelism': 1, 'single_submit': False, 'overlap_events': True, 'use_gds': False}
+[2025-04-12 02:02:26,838] [INFO] [config.py:1004:print]   amp_enabled .................. False
+[2025-04-12 02:02:26,838] [INFO] [config.py:1004:print]   amp_params ................... False
+[2025-04-12 02:02:26,838] [INFO] [config.py:1004:print]   autotuning_config ............ {
     "enabled": false, 
     "start_step": null, 
     "end_step": null, 
@@ -75,32 +77,32 @@ Parameter Offload: Total persistent parameters: 84480 in 110 params
     "min_train_micro_batch_size_per_gpu": 1, 
     "num_tuning_micro_batch_sizes": 3
 }
-[2025-04-09 15:27:37,012] [INFO] [config.py:1004:print]   bfloat16_enabled ............. False
-[2025-04-09 15:27:37,012] [INFO] [config.py:1004:print]   bfloat16_immediate_grad_update  False
-[2025-04-09 15:27:37,013] [INFO] [config.py:1004:print]   checkpoint_parallel_write_pipeline  False
-[2025-04-09 15:27:37,013] [INFO] [config.py:1004:print]   checkpoint_tag_validation_enabled  True
-[2025-04-09 15:27:37,013] [INFO] [config.py:1004:print]   checkpoint_tag_validation_fail  False
-[2025-04-09 15:27:37,013] [INFO] [config.py:1004:print]   comms_config ................. <deepspeed.comm.config.DeepSpeedCommsConfig object at 0x7fa38d93a050>
-[2025-04-09 15:27:37,013] [INFO] [config.py:1004:print]   communication_data_type ...... None
-[2025-04-09 15:27:37,013] [INFO] [config.py:1004:print]   compression_config ........... {'weight_quantization': {'shared_parameters': {'enabled': False, 'quantizer_kernel': False, 'schedule_offset': 0, 'quantize_groups': 1, 'quantize_verbose': False, 'quantization_type': 'symmetric', 'quantize_weight_in_forward': False, 'rounding': 'nearest', 'fp16_mixed_quantize': False, 'quantize_change_ratio': 0.001}, 'different_groups': {}}, 'activation_quantization': {'shared_parameters': {'enabled': False, 'quantization_type': 'symmetric', 'range_calibration': 'dynamic', 'schedule_offset': 1000}, 'different_groups': {}}, 'sparse_pruning': {'shared_parameters': {'enabled': False, 'method': 'l1', 'schedule_offset': 1000}, 'different_groups': {}}, 'row_pruning': {'shared_parameters': {'enabled': False, 'method': 'l1', 'schedule_offset': 1000}, 'different_groups': {}}, 'head_pruning': {'shared_parameters': {'enabled': False, 'method': 'topk', 'schedule_offset': 1000}, 'different_groups': {}}, 'channel_pruning': {'shared_parameters': {'enabled': False, 'method': 'l1', 'schedule_offset': 1000}, 'different_groups': {}}, 'layer_reduction': {'enabled': False}}
-[2025-04-09 15:27:37,013] [INFO] [config.py:1004:print]   curriculum_enabled_legacy .... False
-[2025-04-09 15:27:37,013] [INFO] [config.py:1004:print]   curriculum_params_legacy ..... False
-[2025-04-09 15:27:37,013] [INFO] [config.py:1004:print]   data_efficiency_config ....... {'enabled': False, 'seed': 1234, 'data_sampling': {'enabled': False, 'num_epochs': 1000, 'num_workers': 0, 'pin_memory': False, 'curriculum_learning': {'enabled': False}, 'dynamic_batching': {'enabled': False, 'lr_scaling_method': 'linear', 'min_batch_size': 1, 'max_batch_size': None, 'sequence_picking_order': 'dataloader', 'verbose': False}}, 'data_routing': {'enabled': False, 'random_ltd': {'enabled': False, 'layer_token_lr_schedule': {'enabled': False}}}}
-[2025-04-09 15:27:37,013] [INFO] [config.py:1004:print]   data_efficiency_enabled ...... False
-[2025-04-09 15:27:37,013] [INFO] [config.py:1004:print]   dataloader_drop_last ......... False
-[2025-04-09 15:27:37,013] [INFO] [config.py:1004:print]   disable_allgather ............ False
-[2025-04-09 15:27:37,013] [INFO] [config.py:1004:print]   dump_state ................... False
-[2025-04-09 15:27:37,013] [INFO] [config.py:1004:print]   dynamic_loss_scale_args ...... None
-[2025-04-09 15:27:37,013] [INFO] [config.py:1004:print]   eigenvalue_enabled ........... False
-[2025-04-09 15:27:37,013] [INFO] [config.py:1004:print]   eigenvalue_gas_boundary_resolution  1
-[2025-04-09 15:27:37,013] [INFO] [config.py:1004:print]   eigenvalue_layer_name ........ bert.encoder.layer
-[2025-04-09 15:27:37,013] [INFO] [config.py:1004:print]   eigenvalue_layer_num ......... 0
-[2025-04-09 15:27:37,013] [INFO] [config.py:1004:print]   eigenvalue_max_iter .......... 100
-[2025-04-09 15:27:37,013] [INFO] [config.py:1004:print]   eigenvalue_stability ......... 1e-06
-[2025-04-09 15:27:37,013] [INFO] [config.py:1004:print]   eigenvalue_tol ............... 0.01
-[2025-04-09 15:27:37,013] [INFO] [config.py:1004:print]   eigenvalue_verbose ........... False
-[2025-04-09 15:27:37,013] [INFO] [config.py:1004:print]   elasticity_enabled ........... False
-[2025-04-09 15:27:37,013] [INFO] [config.py:1004:print]   flops_profiler_config ........ {
+[2025-04-12 02:02:26,838] [INFO] [config.py:1004:print]   bfloat16_enabled ............. False
+[2025-04-12 02:02:26,838] [INFO] [config.py:1004:print]   bfloat16_immediate_grad_update  False
+[2025-04-12 02:02:26,838] [INFO] [config.py:1004:print]   checkpoint_parallel_write_pipeline  False
+[2025-04-12 02:02:26,838] [INFO] [config.py:1004:print]   checkpoint_tag_validation_enabled  True
+[2025-04-12 02:02:26,838] [INFO] [config.py:1004:print]   checkpoint_tag_validation_fail  False
+[2025-04-12 02:02:26,838] [INFO] [config.py:1004:print]   comms_config ................. <deepspeed.comm.config.DeepSpeedCommsConfig object at 0x7736eb2f0110>
+[2025-04-12 02:02:26,838] [INFO] [config.py:1004:print]   communication_data_type ...... None
+[2025-04-12 02:02:26,838] [INFO] [config.py:1004:print]   compression_config ........... {'weight_quantization': {'shared_parameters': {'enabled': False, 'quantizer_kernel': False, 'schedule_offset': 0, 'quantize_groups': 1, 'quantize_verbose': False, 'quantization_type': 'symmetric', 'quantize_weight_in_forward': False, 'rounding': 'nearest', 'fp16_mixed_quantize': False, 'quantize_change_ratio': 0.001}, 'different_groups': {}}, 'activation_quantization': {'shared_parameters': {'enabled': False, 'quantization_type': 'symmetric', 'range_calibration': 'dynamic', 'schedule_offset': 1000}, 'different_groups': {}}, 'sparse_pruning': {'shared_parameters': {'enabled': False, 'method': 'l1', 'schedule_offset': 1000}, 'different_groups': {}}, 'row_pruning': {'shared_parameters': {'enabled': False, 'method': 'l1', 'schedule_offset': 1000}, 'different_groups': {}}, 'head_pruning': {'shared_parameters': {'enabled': False, 'method': 'topk', 'schedule_offset': 1000}, 'different_groups': {}}, 'channel_pruning': {'shared_parameters': {'enabled': False, 'method': 'l1', 'schedule_offset': 1000}, 'different_groups': {}}, 'layer_reduction': {'enabled': False}}
+[2025-04-12 02:02:26,838] [INFO] [config.py:1004:print]   curriculum_enabled_legacy .... False
+[2025-04-12 02:02:26,838] [INFO] [config.py:1004:print]   curriculum_params_legacy ..... False
+[2025-04-12 02:02:26,838] [INFO] [config.py:1004:print]   data_efficiency_config ....... {'enabled': False, 'seed': 1234, 'data_sampling': {'enabled': False, 'num_epochs': 1000, 'num_workers': 0, 'pin_memory': False, 'curriculum_learning': {'enabled': False}, 'dynamic_batching': {'enabled': False, 'lr_scaling_method': 'linear', 'min_batch_size': 1, 'max_batch_size': None, 'sequence_picking_order': 'dataloader', 'verbose': False}}, 'data_routing': {'enabled': False, 'random_ltd': {'enabled': False, 'layer_token_lr_schedule': {'enabled': False}}}}
+[2025-04-12 02:02:26,838] [INFO] [config.py:1004:print]   data_efficiency_enabled ...... False
+[2025-04-12 02:02:26,839] [INFO] [config.py:1004:print]   dataloader_drop_last ......... False
+[2025-04-12 02:02:26,839] [INFO] [config.py:1004:print]   disable_allgather ............ False
+[2025-04-12 02:02:26,839] [INFO] [config.py:1004:print]   dump_state ................... False
+[2025-04-12 02:02:26,839] [INFO] [config.py:1004:print]   dynamic_loss_scale_args ...... None
+[2025-04-12 02:02:26,839] [INFO] [config.py:1004:print]   eigenvalue_enabled ........... False
+[2025-04-12 02:02:26,839] [INFO] [config.py:1004:print]   eigenvalue_gas_boundary_resolution  1
+[2025-04-12 02:02:26,839] [INFO] [config.py:1004:print]   eigenvalue_layer_name ........ bert.encoder.layer
+[2025-04-12 02:02:26,839] [INFO] [config.py:1004:print]   eigenvalue_layer_num ......... 0
+[2025-04-12 02:02:26,839] [INFO] [config.py:1004:print]   eigenvalue_max_iter .......... 100
+[2025-04-12 02:02:26,839] [INFO] [config.py:1004:print]   eigenvalue_stability ......... 1e-06
+[2025-04-12 02:02:26,839] [INFO] [config.py:1004:print]   eigenvalue_tol ............... 0.01
+[2025-04-12 02:02:26,839] [INFO] [config.py:1004:print]   eigenvalue_verbose ........... False
+[2025-04-12 02:02:26,839] [INFO] [config.py:1004:print]   elasticity_enabled ........... False
+[2025-04-12 02:02:26,839] [INFO] [config.py:1004:print]   flops_profiler_config ........ {
     "enabled": false, 
     "recompute_fwd_factor": 0.0, 
     "profile_step": 1, 
@@ -109,24 +111,24 @@ Parameter Offload: Total persistent parameters: 84480 in 110 params
     "detailed": true, 
     "output_file": null
 }
-[2025-04-09 15:27:37,013] [INFO] [config.py:1004:print]   fp16_auto_cast ............... False
-[2025-04-09 15:27:37,013] [INFO] [config.py:1004:print]   fp16_enabled ................. True
-[2025-04-09 15:27:37,013] [INFO] [config.py:1004:print]   fp16_master_weights_and_gradients  False
-[2025-04-09 15:27:37,013] [INFO] [config.py:1004:print]   global_rank .................. 0
-[2025-04-09 15:27:37,013] [INFO] [config.py:1004:print]   grad_accum_dtype ............. None
-[2025-04-09 15:27:37,013] [INFO] [config.py:1004:print]   gradient_accumulation_steps .. 1
-[2025-04-09 15:27:37,013] [INFO] [config.py:1004:print]   gradient_clipping ............ 0.0
-[2025-04-09 15:27:37,013] [INFO] [config.py:1004:print]   gradient_predivide_factor .... 1.0
-[2025-04-09 15:27:37,013] [INFO] [config.py:1004:print]   graph_harvesting ............. False
-[2025-04-09 15:27:37,013] [INFO] [config.py:1004:print]   hybrid_engine ................ enabled=False max_out_tokens=512 inference_tp_size=1 release_inference_cache=False pin_parameters=True tp_gather_partition_size=8
-[2025-04-09 15:27:37,013] [INFO] [config.py:1004:print]   initial_dynamic_scale ........ 65536
-[2025-04-09 15:27:37,013] [INFO] [config.py:1004:print]   load_universal_checkpoint .... False
-[2025-04-09 15:27:37,013] [INFO] [config.py:1004:print]   loss_scale ................... 0
-[2025-04-09 15:27:37,013] [INFO] [config.py:1004:print]   memory_breakdown ............. False
-[2025-04-09 15:27:37,013] [INFO] [config.py:1004:print]   mics_hierarchial_params_gather  False
-[2025-04-09 15:27:37,013] [INFO] [config.py:1004:print]   mics_shard_size .............. -1
-[2025-04-09 15:27:37,013] [INFO] [config.py:1004:print]   monitor_config ............... tensorboard=TensorBoardConfig(enabled=False, output_path='', job_name='DeepSpeedJobName') comet=CometConfig(enabled=False, samples_log_interval=100, project=None, workspace=None, api_key=None, experiment_name=None, experiment_key=None, online=None, mode=None) wandb=WandbConfig(enabled=False, group=None, team=None, project='deepspeed') csv_monitor=CSVConfig(enabled=False, output_path='', job_name='DeepSpeedJobName')
-[2025-04-09 15:27:37,013] [INFO] [config.py:1004:print]   nebula_config ................ {
+[2025-04-12 02:02:26,839] [INFO] [config.py:1004:print]   fp16_auto_cast ............... None
+[2025-04-12 02:02:26,839] [INFO] [config.py:1004:print]   fp16_enabled ................. False
+[2025-04-12 02:02:26,839] [INFO] [config.py:1004:print]   fp16_master_weights_and_gradients  False
+[2025-04-12 02:02:26,839] [INFO] [config.py:1004:print]   global_rank .................. 0
+[2025-04-12 02:02:26,839] [INFO] [config.py:1004:print]   grad_accum_dtype ............. None
+[2025-04-12 02:02:26,839] [INFO] [config.py:1004:print]   gradient_accumulation_steps .. 1
+[2025-04-12 02:02:26,839] [INFO] [config.py:1004:print]   gradient_clipping ............ 0.0
+[2025-04-12 02:02:26,839] [INFO] [config.py:1004:print]   gradient_predivide_factor .... 1.0
+[2025-04-12 02:02:26,839] [INFO] [config.py:1004:print]   graph_harvesting ............. False
+[2025-04-12 02:02:26,839] [INFO] [config.py:1004:print]   hybrid_engine ................ enabled=False max_out_tokens=512 inference_tp_size=1 release_inference_cache=False pin_parameters=True tp_gather_partition_size=8
+[2025-04-12 02:02:26,839] [INFO] [config.py:1004:print]   initial_dynamic_scale ........ 65536
+[2025-04-12 02:02:26,839] [INFO] [config.py:1004:print]   load_universal_checkpoint .... False
+[2025-04-12 02:02:26,839] [INFO] [config.py:1004:print]   loss_scale ................... 0
+[2025-04-12 02:02:26,839] [INFO] [config.py:1004:print]   memory_breakdown ............. False
+[2025-04-12 02:02:26,839] [INFO] [config.py:1004:print]   mics_hierarchial_params_gather  False
+[2025-04-12 02:02:26,839] [INFO] [config.py:1004:print]   mics_shard_size .............. -1
+[2025-04-12 02:02:26,839] [INFO] [config.py:1004:print]   monitor_config ............... tensorboard=TensorBoardConfig(enabled=False, output_path='', job_name='DeepSpeedJobName') comet=CometConfig(enabled=False, samples_log_interval=100, project=None, workspace=None, api_key=None, experiment_name=None, experiment_key=None, online=None, mode=None) wandb=WandbConfig(enabled=False, group=None, team=None, project='deepspeed') csv_monitor=CSVConfig(enabled=False, output_path='', job_name='DeepSpeedJobName')
+[2025-04-12 02:02:26,839] [INFO] [config.py:1004:print]   nebula_config ................ {
     "enabled": false, 
     "persistent_storage_path": null, 
     "persistent_time_interval": 100, 
@@ -134,82 +136,852 @@ Parameter Offload: Total persistent parameters: 84480 in 110 params
     "enable_nebula_load": true, 
     "load_path": null
 }
-[2025-04-09 15:27:37,013] [INFO] [config.py:1004:print]   optimizer_legacy_fusion ...... False
-[2025-04-09 15:27:37,013] [INFO] [config.py:1004:print]   optimizer_name ............... None
-[2025-04-09 15:27:37,013] [INFO] [config.py:1004:print]   optimizer_params ............. None
-[2025-04-09 15:27:37,013] [INFO] [config.py:1004:print]   pipeline ..................... {'stages': 'auto', 'partition': 'best', 'seed_layers': False, 'activation_checkpoint_interval': 0, 'pipe_partitioned': True, 'grad_partitioned': True}
-[2025-04-09 15:27:37,014] [INFO] [config.py:1004:print]   pld_enabled .................. False
-[2025-04-09 15:27:37,014] [INFO] [config.py:1004:print]   pld_params ................... False
-[2025-04-09 15:27:37,014] [INFO] [config.py:1004:print]   prescale_gradients ........... False
-[2025-04-09 15:27:37,014] [INFO] [config.py:1004:print]   scheduler_name ............... None
-[2025-04-09 15:27:37,014] [INFO] [config.py:1004:print]   scheduler_params ............. None
-[2025-04-09 15:27:37,014] [INFO] [config.py:1004:print]   seq_parallel_communication_data_type  torch.float32
-[2025-04-09 15:27:37,014] [INFO] [config.py:1004:print]   sparse_attention ............. None
-[2025-04-09 15:27:37,014] [INFO] [config.py:1004:print]   sparse_gradients_enabled ..... False
-[2025-04-09 15:27:37,014] [INFO] [config.py:1004:print]   steps_per_print .............. 2000
-[2025-04-09 15:27:37,014] [INFO] [config.py:1004:print]   tensor_parallel_config ....... dtype=torch.float16 autotp_size=0 tensor_parallel=TPConfig(tp_size=1, tp_grain_size=1, mpu=None, tp_group=None) injection_policy_tuple=None keep_module_on_host=False replace_with_kernel_inject=False
-[2025-04-09 15:27:37,014] [INFO] [config.py:1004:print]   timers_config ................ enabled=True synchronized=True
-[2025-04-09 15:27:37,014] [INFO] [config.py:1004:print]   train_batch_size ............. 3
-[2025-04-09 15:27:37,014] [INFO] [config.py:1004:print]   train_micro_batch_size_per_gpu  3
-[2025-04-09 15:27:37,014] [INFO] [config.py:1004:print]   use_data_before_expert_parallel_  False
-[2025-04-09 15:27:37,014] [INFO] [config.py:1004:print]   use_node_local_storage ....... False
-[2025-04-09 15:27:37,014] [INFO] [config.py:1004:print]   wall_clock_breakdown ......... False
-[2025-04-09 15:27:37,014] [INFO] [config.py:1004:print]   weight_quantization_config ... None
-[2025-04-09 15:27:37,014] [INFO] [config.py:1004:print]   world_size ................... 1
-[2025-04-09 15:27:37,014] [INFO] [config.py:1004:print]   zero_allow_untested_optimizer  False
-[2025-04-09 15:27:37,014] [INFO] [config.py:1004:print]   zero_config .................. stage=3 contiguous_gradients=True reduce_scatter=True reduce_bucket_size=500000000 use_multi_rank_bucket_allreduce=True allgather_partitions=True allgather_bucket_size=500000000 overlap_comm=True load_from_fp32_weights=True elastic_checkpoint=False offload_param=DeepSpeedZeroOffloadParamConfig(device='cpu', nvme_path=None, buffer_count=5, buffer_size=100000000, max_in_cpu=1000000000, pin_memory=True) offload_optimizer=None sub_group_size=1000000000 cpu_offload_param=None cpu_offload_use_pin_memory=None cpu_offload=None prefetch_bucket_size=1179648 param_persistence_threshold=768 model_persistence_threshold=9223372036854775807 max_live_parameters=1179648 max_reuse_distance=1000000000 gather_16bit_weights_on_model_save=False module_granularity_threshold=0 use_all_reduce_for_fetch_params=False stage3_gather_fp16_weights_on_model_save=False ignore_unused_parameters=True legacy_stage1=False round_robin_gradients=False zero_hpz_partition_size=1 zero_quantized_weights=False zero_quantized_nontrainable_weights=False zero_quantized_gradients=False zeropp_loco_param=None mics_shard_size=-1 mics_hierarchical_params_gather=False memory_efficient_linear=True pipeline_loading_checkpoint=False override_module_apply=True log_trace_cache_warnings=False
-[2025-04-09 15:27:37,014] [INFO] [config.py:1004:print]   zero_enabled ................. True
-[2025-04-09 15:27:37,014] [INFO] [config.py:1004:print]   zero_force_ds_cpu_optimizer .. True
-[2025-04-09 15:27:37,014] [INFO] [config.py:1004:print]   zero_optimization_stage ...... 3
-[2025-04-09 15:27:37,014] [INFO] [config.py:990:print_user_config]   json = {
+[2025-04-12 02:02:26,839] [INFO] [config.py:1004:print]   optimizer_legacy_fusion ...... False
+[2025-04-12 02:02:26,839] [INFO] [config.py:1004:print]   optimizer_name ............... None
+[2025-04-12 02:02:26,840] [INFO] [config.py:1004:print]   optimizer_params ............. None
+[2025-04-12 02:02:26,840] [INFO] [config.py:1004:print]   pipeline ..................... {'stages': 'auto', 'partition': 'best', 'seed_layers': False, 'activation_checkpoint_interval': 0, 'pipe_partitioned': True, 'grad_partitioned': True}
+[2025-04-12 02:02:26,840] [INFO] [config.py:1004:print]   pld_enabled .................. False
+[2025-04-12 02:02:26,840] [INFO] [config.py:1004:print]   pld_params ................... False
+[2025-04-12 02:02:26,840] [INFO] [config.py:1004:print]   prescale_gradients ........... False
+[2025-04-12 02:02:26,840] [INFO] [config.py:1004:print]   scheduler_name ............... None
+[2025-04-12 02:02:26,840] [INFO] [config.py:1004:print]   scheduler_params ............. None
+[2025-04-12 02:02:26,840] [INFO] [config.py:1004:print]   seq_parallel_communication_data_type  torch.float32
+[2025-04-12 02:02:26,840] [INFO] [config.py:1004:print]   sparse_attention ............. None
+[2025-04-12 02:02:26,840] [INFO] [config.py:1004:print]   sparse_gradients_enabled ..... False
+[2025-04-12 02:02:26,840] [INFO] [config.py:1004:print]   steps_per_print .............. 2000
+[2025-04-12 02:02:26,840] [INFO] [config.py:1004:print]   tensor_parallel_config ....... dtype=torch.float16 autotp_size=2 tensor_parallel=TPConfig(tp_size=1, tp_grain_size=1, mpu=None, tp_group=None) injection_policy_tuple=None keep_module_on_host=False replace_with_kernel_inject=False
+[2025-04-12 02:02:26,840] [INFO] [config.py:1004:print]   timers_config ................ enabled=True synchronized=True
+[2025-04-12 02:02:26,840] [INFO] [config.py:1004:print]   train_batch_size ............. 4
+[2025-04-12 02:02:26,840] [INFO] [config.py:1004:print]   train_micro_batch_size_per_gpu  2
+[2025-04-12 02:02:26,840] [INFO] [config.py:1004:print]   use_data_before_expert_parallel_  False
+[2025-04-12 02:02:26,840] [INFO] [config.py:1004:print]   use_node_local_storage ....... False
+[2025-04-12 02:02:26,840] [INFO] [config.py:1004:print]   wall_clock_breakdown ......... False
+[2025-04-12 02:02:26,840] [INFO] [config.py:1004:print]   weight_quantization_config ... None
+[2025-04-12 02:02:26,840] [INFO] [config.py:1004:print]   world_size ................... 2
+[2025-04-12 02:02:26,840] [INFO] [config.py:1004:print]   zero_allow_untested_optimizer  False
+[2025-04-12 02:02:26,840] [INFO] [config.py:1004:print]   zero_config .................. stage=0 contiguous_gradients=True reduce_scatter=True reduce_bucket_size=500000000 use_multi_rank_bucket_allreduce=True allgather_partitions=True allgather_bucket_size=500000000 overlap_comm=False load_from_fp32_weights=True elastic_checkpoint=False offload_param=None offload_optimizer=None sub_group_size=1000000000 cpu_offload_param=None cpu_offload_use_pin_memory=None cpu_offload=None prefetch_bucket_size=50000000 param_persistence_threshold=100000 model_persistence_threshold=9223372036854775807 max_live_parameters=1000000000 max_reuse_distance=1000000000 gather_16bit_weights_on_model_save=False module_granularity_threshold=0 use_all_reduce_for_fetch_params=False stage3_gather_fp16_weights_on_model_save=False ignore_unused_parameters=True legacy_stage1=False round_robin_gradients=False zero_hpz_partition_size=1 zero_quantized_weights=False zero_quantized_nontrainable_weights=False zero_quantized_gradients=False zeropp_loco_param=None mics_shard_size=-1 mics_hierarchical_params_gather=False memory_efficient_linear=True pipeline_loading_checkpoint=False override_module_apply=True log_trace_cache_warnings=False
+[2025-04-12 02:02:26,840] [INFO] [config.py:1004:print]   zero_enabled ................. False
+[2025-04-12 02:02:26,840] [INFO] [config.py:1004:print]   zero_force_ds_cpu_optimizer .. True
+[2025-04-12 02:02:26,840] [INFO] [config.py:1004:print]   zero_optimization_stage ...... 0
+[2025-04-12 02:02:26,840] [INFO] [config.py:990:print_user_config]   json = {
     "fp16": {
-        "enabled": true
+        "enabled": false
     }, 
     "bp16": {
         "enabled": false
     }, 
     "steps_per_print": 2.000000e+03, 
-    "train_batch_size": 3, 
+    "train_batch_size": 4, 
     "wall_clock_breakdown": false, 
-    "zero_optimization": {
-        "stage": 3, 
-        "stage3_prefetch_bucket_size": 1.179648e+06, 
-        "stage3_param_persistence_threshold": 768, 
-        "stage3_max_live_parameters": 1.179648e+06, 
-        "offload_param": {
-            "device": "cpu", 
-            "pin_memory": true
-        }
+    "tensor_parallel": {
+        "autotp_size": 2
     }
 }
-benchmark, prompt_len = 512, execute_gen_len = 4, input_ids.shape = torch.Size([11, 512])
-token_latency=[0.5747087001800537, 0.20186233520507812, 0.11600327491760254, 0.11605310440063477]
-token_latency=[0.35955309867858887, 0.1132357120513916, 0.11580371856689453, 0.11651182174682617]
-token_latency=[0.3494880199432373, 0.11496257781982422, 0.11532068252563477, 0.11627507209777832]
-token_latency=[0.35787367820739746, 0.10483598709106445, 0.10895681381225586, 0.10492253303527832]
-token_latency=[0.3443922996520996, 0.10497283935546875, 0.1042947769165039, 0.10550165176391602]
-token_latency=[0.35068511962890625, 0.10545921325683594, 0.10395646095275879, 0.11124062538146973]
-token_latency=[0.3452327251434326, 0.10591959953308105, 0.10708904266357422, 0.10527944564819336]
-token_latency=[0.36864352226257324, 0.10641193389892578, 0.10706090927124023, 0.11231350898742676]
-token_latency=[0.3504772186279297, 0.11359763145446777, 0.11459708213806152, 0.10546302795410156]
-token_latency=[0.3461568355560303, 0.11883997917175293, 0.12337803840637207, 0.118743896484375]
+model.decoder.embed_tokens.weight: torch.Size([50272, 2048]) (device: cuda:1)
+model.decoder.embed_positions.weight: torch.Size([2050, 2048]) (device: cuda:1)
+model.decoder.final_layer_norm.weight: torch.Size([2048]) (device: cuda:1)
+model.decoder.final_layer_norm.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.0.self_attn.k_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.0.self_attn.k_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.0.self_attn.v_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.0.self_attn.v_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.0.self_attn.q_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.0.self_attn.q_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.0.self_attn.out_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.0.self_attn.out_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.0.self_attn_layer_norm.weight: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.0.self_attn_layer_norm.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.0.fc1.weight: torch.Size([8192, 2048]) (device: cuda:1)
+model.decoder.layers.0.fc1.bias: torch.Size([8192]) (device: cuda:1)
+model.decoder.layers.0.fc2.weight: torch.Size([2048, 8192]) (device: cuda:1)
+model.decoder.layers.0.fc2.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.0.final_layer_norm.weight: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.0.final_layer_norm.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.1.self_attn.k_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.1.self_attn.k_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.1.self_attn.v_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.1.self_attn.v_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.1.self_attn.q_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.1.self_attn.q_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.1.self_attn.out_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.1.self_attn.out_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.1.self_attn_layer_norm.weight: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.1.self_attn_layer_norm.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.1.fc1.weight: torch.Size([8192, 2048]) (device: cuda:1)
+model.decoder.layers.1.fc1.bias: torch.Size([8192]) (device: cuda:1)
+model.decoder.layers.1.fc2.weight: torch.Size([2048, 8192]) (device: cuda:1)
+model.decoder.layers.1.fc2.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.1.final_layer_norm.weight: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.1.final_layer_norm.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.2.self_attn.k_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.2.self_attn.k_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.2.self_attn.v_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.2.self_attn.v_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.2.self_attn.q_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.2.self_attn.q_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.2.self_attn.out_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.2.self_attn.out_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.2.self_attn_layer_norm.weight: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.2.self_attn_layer_norm.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.2.fc1.weight: torch.Size([8192, 2048]) (device: cuda:1)
+model.decoder.layers.2.fc1.bias: torch.Size([8192]) (device: cuda:1)
+model.decoder.layers.2.fc2.weight: torch.Size([2048, 8192]) (device: cuda:1)
+model.decoder.layers.2.fc2.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.2.final_layer_norm.weight: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.2.final_layer_norm.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.3.self_attn.k_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.3.self_attn.k_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.3.self_attn.v_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.3.self_attn.v_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.3.self_attn.q_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.3.self_attn.q_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.3.self_attn.out_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.3.self_attn.out_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.3.self_attn_layer_norm.weight: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.3.self_attn_layer_norm.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.3.fc1.weight: torch.Size([8192, 2048]) (device: cuda:1)
+model.decoder.layers.3.fc1.bias: torch.Size([8192]) (device: cuda:1)
+model.decoder.layers.3.fc2.weight: torch.Size([2048, 8192]) (device: cuda:1)
+model.decoder.layers.3.fc2.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.3.final_layer_norm.weight: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.3.final_layer_norm.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.4.self_attn.k_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.4.self_attn.k_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.4.self_attn.v_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.4.self_attn.v_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.4.self_attn.q_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.4.self_attn.q_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.4.self_attn.out_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.4.self_attn.out_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.4.self_attn_layer_norm.weight: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.4.self_attn_layer_norm.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.4.fc1.weight: torch.Size([8192, 2048]) (device: cuda:1)
+model.decoder.layers.4.fc1.bias: torch.Size([8192]) (device: cuda:1)
+model.decoder.layers.4.fc2.weight: torch.Size([2048, 8192]) (device: cuda:1)
+model.decoder.layers.4.fc2.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.4.final_layer_norm.weight: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.4.final_layer_norm.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.5.self_attn.k_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.5.self_attn.k_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.5.self_attn.v_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.5.self_attn.v_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.5.self_attn.q_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.5.self_attn.q_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.5.self_attn.out_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.5.self_attn.out_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.5.self_attn_layer_norm.weight: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.5.self_attn_layer_norm.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.5.fc1.weight: torch.Size([8192, 2048]) (device: cuda:1)
+model.decoder.layers.5.fc1.bias: torch.Size([8192]) (device: cuda:1)
+model.decoder.layers.5.fc2.weight: torch.Size([2048, 8192]) (device: cuda:1)
+model.decoder.layers.5.fc2.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.5.final_layer_norm.weight: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.5.final_layer_norm.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.6.self_attn.k_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.6.self_attn.k_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.6.self_attn.v_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.6.self_attn.v_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.6.self_attn.q_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.6.self_attn.q_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.6.self_attn.out_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.6.self_attn.out_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.6.self_attn_layer_norm.weight: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.6.self_attn_layer_norm.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.6.fc1.weight: torch.Size([8192, 2048]) (device: cuda:1)
+model.decoder.layers.6.fc1.bias: torch.Size([8192]) (device: cuda:1)
+model.decoder.layers.6.fc2.weight: torch.Size([2048, 8192]) (device: cuda:1)
+model.decoder.layers.6.fc2.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.6.final_layer_norm.weight: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.6.final_layer_norm.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.7.self_attn.k_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.7.self_attn.k_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.7.self_attn.v_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.7.self_attn.v_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.7.self_attn.q_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.7.self_attn.q_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.7.self_attn.out_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.7.self_attn.out_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.7.self_attn_layer_norm.weight: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.7.self_attn_layer_norm.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.7.fc1.weight: torch.Size([8192, 2048]) (device: cuda:1)
+model.decoder.layers.7.fc1.bias: torch.Size([8192]) (device: cuda:1)
+model.decoder.layers.7.fc2.weight: torch.Size([2048, 8192]) (device: cuda:1)
+model.decoder.layers.7.fc2.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.7.final_layer_norm.weight: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.7.final_layer_norm.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.8.self_attn.k_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.8.self_attn.k_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.8.self_attn.v_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.8.self_attn.v_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.8.self_attn.q_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.8.self_attn.q_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.8.self_attn.out_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.8.self_attn.out_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.8.self_attn_layer_norm.weight: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.8.self_attn_layer_norm.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.8.fc1.weight: torch.Size([8192, 2048]) (device: cuda:1)
+model.decoder.layers.8.fc1.bias: torch.Size([8192]) (device: cuda:1)
+model.decoder.layers.8.fc2.weight: torch.Size([2048, 8192]) (device: cuda:1)
+model.decoder.layers.8.fc2.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.8.final_layer_norm.weight: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.8.final_layer_norm.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.9.self_attn.k_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.9.self_attn.k_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.9.self_attn.v_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.9.self_attn.v_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.9.self_attn.q_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.9.self_attn.q_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.9.self_attn.out_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.9.self_attn.out_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.9.self_attn_layer_norm.weight: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.9.self_attn_layer_norm.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.9.fc1.weight: torch.Size([8192, 2048]) (device: cuda:1)
+model.decoder.layers.9.fc1.bias: torch.Size([8192]) (device: cuda:1)
+model.decoder.layers.9.fc2.weight: torch.Size([2048, 8192]) (device: cuda:1)
+model.decoder.layers.9.fc2.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.9.final_layer_norm.weight: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.9.final_layer_norm.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.10.self_attn.k_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.10.self_attn.k_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.10.self_attn.v_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.10.self_attn.v_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.10.self_attn.q_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.10.self_attn.q_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.10.self_attn.out_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.10.self_attn.out_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.10.self_attn_layer_norm.weight: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.10.self_attn_layer_norm.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.10.fc1.weight: torch.Size([8192, 2048]) (device: cuda:1)
+model.decoder.layers.10.fc1.bias: torch.Size([8192]) (device: cuda:1)
+model.decoder.layers.10.fc2.weight: torch.Size([2048, 8192]) (device: cuda:1)
+model.decoder.layers.10.fc2.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.10.final_layer_norm.weight: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.10.final_layer_norm.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.11.self_attn.k_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.11.self_attn.k_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.11.self_attn.v_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.11.self_attn.v_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.11.self_attn.q_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.11.self_attn.q_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.11.self_attn.out_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.11.self_attn.out_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.11.self_attn_layer_norm.weight: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.11.self_attn_layer_norm.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.11.fc1.weight: torch.Size([8192, 2048]) (device: cuda:1)
+model.decoder.layers.11.fc1.bias: torch.Size([8192]) (device: cuda:1)
+model.decoder.layers.11.fc2.weight: torch.Size([2048, 8192]) (device: cuda:1)
+model.decoder.layers.11.fc2.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.11.final_layer_norm.weight: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.11.final_layer_norm.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.12.self_attn.k_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.12.self_attn.k_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.12.self_attn.v_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.12.self_attn.v_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.12.self_attn.q_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.12.self_attn.q_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.12.self_attn.out_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.12.self_attn.out_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.12.self_attn_layer_norm.weight: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.12.self_attn_layer_norm.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.12.fc1.weight: torch.Size([8192, 2048]) (device: cuda:1)
+model.decoder.layers.12.fc1.bias: torch.Size([8192]) (device: cuda:1)
+model.decoder.layers.12.fc2.weight: torch.Size([2048, 8192]) (device: cuda:1)
+model.decoder.layers.12.fc2.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.12.final_layer_norm.weight: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.12.final_layer_norm.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.13.self_attn.k_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.13.self_attn.k_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.13.self_attn.v_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.13.self_attn.v_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.13.self_attn.q_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.13.self_attn.q_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.13.self_attn.out_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.13.self_attn.out_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.13.self_attn_layer_norm.weight: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.13.self_attn_layer_norm.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.13.fc1.weight: torch.Size([8192, 2048]) (device: cuda:1)
+model.decoder.layers.13.fc1.bias: torch.Size([8192]) (device: cuda:1)
+model.decoder.layers.13.fc2.weight: torch.Size([2048, 8192]) (device: cuda:1)
+model.decoder.layers.13.fc2.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.13.final_layer_norm.weight: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.13.final_layer_norm.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.14.self_attn.k_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.14.self_attn.k_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.14.self_attn.v_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.14.self_attn.v_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.14.self_attn.q_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.14.self_attn.q_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.14.self_attn.out_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.14.self_attn.out_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.14.self_attn_layer_norm.weight: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.14.self_attn_layer_norm.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.14.fc1.weight: torch.Size([8192, 2048]) (device: cuda:1)
+model.decoder.layers.14.fc1.bias: torch.Size([8192]) (device: cuda:1)
+model.decoder.layers.14.fc2.weight: torch.Size([2048, 8192]) (device: cuda:1)
+model.decoder.layers.14.fc2.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.14.final_layer_norm.weight: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.14.final_layer_norm.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.15.self_attn.k_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.15.self_attn.k_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.15.self_attn.v_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.15.self_attn.v_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.15.self_attn.q_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.15.self_attn.q_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.15.self_attn.out_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.15.self_attn.out_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.15.self_attn_layer_norm.weight: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.15.self_attn_layer_norm.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.15.fc1.weight: torch.Size([8192, 2048]) (device: cuda:1)
+model.decoder.layers.15.fc1.bias: torch.Size([8192]) (device: cuda:1)
+model.decoder.layers.15.fc2.weight: torch.Size([2048, 8192]) (device: cuda:1)
+model.decoder.layers.15.fc2.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.15.final_layer_norm.weight: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.15.final_layer_norm.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.16.self_attn.k_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.16.self_attn.k_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.16.self_attn.v_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.16.self_attn.v_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.16.self_attn.q_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.16.self_attn.q_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.16.self_attn.out_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.16.self_attn.out_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.16.self_attn_layer_norm.weight: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.16.self_attn_layer_norm.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.16.fc1.weight: torch.Size([8192, 2048]) (device: cuda:1)
+model.decoder.layers.16.fc1.bias: torch.Size([8192]) (device: cuda:1)
+model.decoder.layers.16.fc2.weight: torch.Size([2048, 8192]) (device: cuda:1)
+model.decoder.layers.16.fc2.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.16.final_layer_norm.weight: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.16.final_layer_norm.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.17.self_attn.k_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.17.self_attn.k_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.17.self_attn.v_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.17.self_attn.v_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.17.self_attn.q_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.17.self_attn.q_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.17.self_attn.out_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.17.self_attn.out_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.17.self_attn_layer_norm.weight: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.17.self_attn_layer_norm.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.17.fc1.weight: torch.Size([8192, 2048]) (device: cuda:1)
+model.decoder.layers.17.fc1.bias: torch.Size([8192]) (device: cuda:1)
+model.decoder.layers.17.fc2.weight: torch.Size([2048, 8192]) (device: cuda:1)
+model.decoder.layers.17.fc2.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.17.final_layer_norm.weight: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.17.final_layer_norm.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.18.self_attn.k_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.18.self_attn.k_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.18.self_attn.v_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.18.self_attn.v_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.18.self_attn.q_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.18.self_attn.q_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.18.self_attn.out_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.18.self_attn.out_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.18.self_attn_layer_norm.weight: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.18.self_attn_layer_norm.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.18.fc1.weight: torch.Size([8192, 2048]) (device: cuda:1)
+model.decoder.layers.18.fc1.bias: torch.Size([8192]) (device: cuda:1)
+model.decoder.layers.18.fc2.weight: torch.Size([2048, 8192]) (device: cuda:1)
+model.decoder.layers.18.fc2.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.18.final_layer_norm.weight: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.18.final_layer_norm.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.19.self_attn.k_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.19.self_attn.k_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.19.self_attn.v_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.19.self_attn.v_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.19.self_attn.q_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.19.self_attn.q_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.19.self_attn.out_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.19.self_attn.out_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.19.self_attn_layer_norm.weight: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.19.self_attn_layer_norm.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.19.fc1.weight: torch.Size([8192, 2048]) (device: cuda:1)
+model.decoder.layers.19.fc1.bias: torch.Size([8192]) (device: cuda:1)
+model.decoder.layers.19.fc2.weight: torch.Size([2048, 8192]) (device: cuda:1)
+model.decoder.layers.19.fc2.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.19.final_layer_norm.weight: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.19.final_layer_norm.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.20.self_attn.k_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.20.self_attn.k_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.20.self_attn.v_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.20.self_attn.v_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.20.self_attn.q_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.20.self_attn.q_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.20.self_attn.out_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.20.self_attn.out_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.20.self_attn_layer_norm.weight: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.20.self_attn_layer_norm.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.20.fc1.weight: torch.Size([8192, 2048]) (device: cuda:1)
+model.decoder.layers.20.fc1.bias: torch.Size([8192]) (device: cuda:1)
+model.decoder.layers.20.fc2.weight: torch.Size([2048, 8192]) (device: cuda:1)
+model.decoder.layers.20.fc2.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.20.final_layer_norm.weight: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.20.final_layer_norm.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.21.self_attn.k_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.21.self_attn.k_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.21.self_attn.v_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.21.self_attn.v_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.21.self_attn.q_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.21.self_attn.q_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.21.self_attn.out_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.21.self_attn.out_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.21.self_attn_layer_norm.weight: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.21.self_attn_layer_norm.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.21.fc1.weight: torch.Size([8192, 2048]) (device: cuda:1)
+model.decoder.layers.21.fc1.bias: torch.Size([8192]) (device: cuda:1)
+model.decoder.layers.21.fc2.weight: torch.Size([2048, 8192]) (device: cuda:1)
+model.decoder.layers.21.fc2.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.21.final_layer_norm.weight: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.21.final_layer_norm.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.22.self_attn.k_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.22.self_attn.k_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.22.self_attn.v_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.22.self_attn.v_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.22.self_attn.q_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.22.self_attn.q_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.22.self_attn.out_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.22.self_attn.out_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.22.self_attn_layer_norm.weight: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.22.self_attn_layer_norm.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.22.fc1.weight: torch.Size([8192, 2048]) (device: cuda:1)
+model.decoder.layers.22.fc1.bias: torch.Size([8192]) (device: cuda:1)
+model.decoder.layers.22.fc2.weight: torch.Size([2048, 8192]) (device: cuda:1)
+model.decoder.layers.22.fc2.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.22.final_layer_norm.weight: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.22.final_layer_norm.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.23.self_attn.k_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.23.self_attn.k_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.23.self_attn.v_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.23.self_attn.v_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.23.self_attn.q_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.23.self_attn.q_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.23.self_attn.out_proj.weight: torch.Size([2048, 2048]) (device: cuda:1)
+model.decoder.layers.23.self_attn.out_proj.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.23.self_attn_layer_norm.weight: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.23.self_attn_layer_norm.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.23.fc1.weight: torch.Size([8192, 2048]) (device: cuda:1)
+model.decoder.layers.23.fc1.bias: torch.Size([8192]) (device: cuda:1)
+model.decoder.layers.23.fc2.weight: torch.Size([2048, 8192]) (device: cuda:1)
+model.decoder.layers.23.fc2.bias: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.23.final_layer_norm.weight: torch.Size([2048]) (device: cuda:1)
+model.decoder.layers.23.final_layer_norm.bias: torch.Size([2048]) (device: cuda:1)
+benchmark, prompt_len = 512, execute_gen_len = 32, input_ids.shape = torch.Size([11, 512])
+model.decoder.embed_tokens.weight: torch.Size([50272, 2048]) (device: cuda:0)
+model.decoder.embed_positions.weight: torch.Size([2050, 2048]) (device: cuda:0)
+model.decoder.final_layer_norm.weight: torch.Size([2048]) (device: cuda:0)
+model.decoder.final_layer_norm.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.0.self_attn.k_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.0.self_attn.k_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.0.self_attn.v_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.0.self_attn.v_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.0.self_attn.q_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.0.self_attn.q_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.0.self_attn.out_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.0.self_attn.out_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.0.self_attn_layer_norm.weight: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.0.self_attn_layer_norm.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.0.fc1.weight: torch.Size([8192, 2048]) (device: cuda:0)
+model.decoder.layers.0.fc1.bias: torch.Size([8192]) (device: cuda:0)
+model.decoder.layers.0.fc2.weight: torch.Size([2048, 8192]) (device: cuda:0)
+model.decoder.layers.0.fc2.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.0.final_layer_norm.weight: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.0.final_layer_norm.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.1.self_attn.k_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.1.self_attn.k_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.1.self_attn.v_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.1.self_attn.v_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.1.self_attn.q_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.1.self_attn.q_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.1.self_attn.out_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.1.self_attn.out_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.1.self_attn_layer_norm.weight: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.1.self_attn_layer_norm.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.1.fc1.weight: torch.Size([8192, 2048]) (device: cuda:0)
+model.decoder.layers.1.fc1.bias: torch.Size([8192]) (device: cuda:0)
+model.decoder.layers.1.fc2.weight: torch.Size([2048, 8192]) (device: cuda:0)
+model.decoder.layers.1.fc2.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.1.final_layer_norm.weight: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.1.final_layer_norm.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.2.self_attn.k_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.2.self_attn.k_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.2.self_attn.v_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.2.self_attn.v_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.2.self_attn.q_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.2.self_attn.q_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.2.self_attn.out_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.2.self_attn.out_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.2.self_attn_layer_norm.weight: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.2.self_attn_layer_norm.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.2.fc1.weight: torch.Size([8192, 2048]) (device: cuda:0)
+model.decoder.layers.2.fc1.bias: torch.Size([8192]) (device: cuda:0)
+model.decoder.layers.2.fc2.weight: torch.Size([2048, 8192]) (device: cuda:0)
+model.decoder.layers.2.fc2.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.2.final_layer_norm.weight: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.2.final_layer_norm.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.3.self_attn.k_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.3.self_attn.k_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.3.self_attn.v_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.3.self_attn.v_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.3.self_attn.q_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.3.self_attn.q_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.3.self_attn.out_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.3.self_attn.out_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.3.self_attn_layer_norm.weight: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.3.self_attn_layer_norm.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.3.fc1.weight: torch.Size([8192, 2048]) (device: cuda:0)
+model.decoder.layers.3.fc1.bias: torch.Size([8192]) (device: cuda:0)
+model.decoder.layers.3.fc2.weight: torch.Size([2048, 8192]) (device: cuda:0)
+model.decoder.layers.3.fc2.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.3.final_layer_norm.weight: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.3.final_layer_norm.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.4.self_attn.k_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.4.self_attn.k_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.4.self_attn.v_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.4.self_attn.v_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.4.self_attn.q_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.4.self_attn.q_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.4.self_attn.out_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.4.self_attn.out_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.4.self_attn_layer_norm.weight: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.4.self_attn_layer_norm.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.4.fc1.weight: torch.Size([8192, 2048]) (device: cuda:0)
+model.decoder.layers.4.fc1.bias: torch.Size([8192]) (device: cuda:0)
+model.decoder.layers.4.fc2.weight: torch.Size([2048, 8192]) (device: cuda:0)
+model.decoder.layers.4.fc2.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.4.final_layer_norm.weight: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.4.final_layer_norm.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.5.self_attn.k_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.5.self_attn.k_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.5.self_attn.v_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.5.self_attn.v_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.5.self_attn.q_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.5.self_attn.q_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.5.self_attn.out_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.5.self_attn.out_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.5.self_attn_layer_norm.weight: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.5.self_attn_layer_norm.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.5.fc1.weight: torch.Size([8192, 2048]) (device: cuda:0)
+model.decoder.layers.5.fc1.bias: torch.Size([8192]) (device: cuda:0)
+model.decoder.layers.5.fc2.weight: torch.Size([2048, 8192]) (device: cuda:0)
+model.decoder.layers.5.fc2.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.5.final_layer_norm.weight: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.5.final_layer_norm.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.6.self_attn.k_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.6.self_attn.k_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.6.self_attn.v_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.6.self_attn.v_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.6.self_attn.q_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.6.self_attn.q_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.6.self_attn.out_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.6.self_attn.out_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.6.self_attn_layer_norm.weight: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.6.self_attn_layer_norm.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.6.fc1.weight: torch.Size([8192, 2048]) (device: cuda:0)
+model.decoder.layers.6.fc1.bias: torch.Size([8192]) (device: cuda:0)
+model.decoder.layers.6.fc2.weight: torch.Size([2048, 8192]) (device: cuda:0)
+model.decoder.layers.6.fc2.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.6.final_layer_norm.weight: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.6.final_layer_norm.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.7.self_attn.k_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.7.self_attn.k_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.7.self_attn.v_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.7.self_attn.v_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.7.self_attn.q_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.7.self_attn.q_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.7.self_attn.out_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.7.self_attn.out_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.7.self_attn_layer_norm.weight: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.7.self_attn_layer_norm.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.7.fc1.weight: torch.Size([8192, 2048]) (device: cuda:0)
+model.decoder.layers.7.fc1.bias: torch.Size([8192]) (device: cuda:0)
+model.decoder.layers.7.fc2.weight: torch.Size([2048, 8192]) (device: cuda:0)
+model.decoder.layers.7.fc2.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.7.final_layer_norm.weight: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.7.final_layer_norm.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.8.self_attn.k_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.8.self_attn.k_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.8.self_attn.v_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.8.self_attn.v_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.8.self_attn.q_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.8.self_attn.q_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.8.self_attn.out_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.8.self_attn.out_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.8.self_attn_layer_norm.weight: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.8.self_attn_layer_norm.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.8.fc1.weight: torch.Size([8192, 2048]) (device: cuda:0)
+model.decoder.layers.8.fc1.bias: torch.Size([8192]) (device: cuda:0)
+model.decoder.layers.8.fc2.weight: torch.Size([2048, 8192]) (device: cuda:0)
+model.decoder.layers.8.fc2.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.8.final_layer_norm.weight: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.8.final_layer_norm.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.9.self_attn.k_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.9.self_attn.k_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.9.self_attn.v_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.9.self_attn.v_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.9.self_attn.q_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.9.self_attn.q_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.9.self_attn.out_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.9.self_attn.out_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.9.self_attn_layer_norm.weight: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.9.self_attn_layer_norm.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.9.fc1.weight: torch.Size([8192, 2048]) (device: cuda:0)
+model.decoder.layers.9.fc1.bias: torch.Size([8192]) (device: cuda:0)
+model.decoder.layers.9.fc2.weight: torch.Size([2048, 8192]) (device: cuda:0)
+model.decoder.layers.9.fc2.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.9.final_layer_norm.weight: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.9.final_layer_norm.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.10.self_attn.k_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.10.self_attn.k_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.10.self_attn.v_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.10.self_attn.v_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.10.self_attn.q_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.10.self_attn.q_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.10.self_attn.out_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.10.self_attn.out_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.10.self_attn_layer_norm.weight: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.10.self_attn_layer_norm.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.10.fc1.weight: torch.Size([8192, 2048]) (device: cuda:0)
+model.decoder.layers.10.fc1.bias: torch.Size([8192]) (device: cuda:0)
+model.decoder.layers.10.fc2.weight: torch.Size([2048, 8192]) (device: cuda:0)
+model.decoder.layers.10.fc2.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.10.final_layer_norm.weight: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.10.final_layer_norm.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.11.self_attn.k_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.11.self_attn.k_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.11.self_attn.v_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.11.self_attn.v_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.11.self_attn.q_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.11.self_attn.q_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.11.self_attn.out_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.11.self_attn.out_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.11.self_attn_layer_norm.weight: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.11.self_attn_layer_norm.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.11.fc1.weight: torch.Size([8192, 2048]) (device: cuda:0)
+model.decoder.layers.11.fc1.bias: torch.Size([8192]) (device: cuda:0)
+model.decoder.layers.11.fc2.weight: torch.Size([2048, 8192]) (device: cuda:0)
+model.decoder.layers.11.fc2.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.11.final_layer_norm.weight: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.11.final_layer_norm.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.12.self_attn.k_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.12.self_attn.k_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.12.self_attn.v_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.12.self_attn.v_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.12.self_attn.q_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.12.self_attn.q_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.12.self_attn.out_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.12.self_attn.out_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.12.self_attn_layer_norm.weight: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.12.self_attn_layer_norm.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.12.fc1.weight: torch.Size([8192, 2048]) (device: cuda:0)
+model.decoder.layers.12.fc1.bias: torch.Size([8192]) (device: cuda:0)
+model.decoder.layers.12.fc2.weight: torch.Size([2048, 8192]) (device: cuda:0)
+model.decoder.layers.12.fc2.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.12.final_layer_norm.weight: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.12.final_layer_norm.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.13.self_attn.k_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.13.self_attn.k_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.13.self_attn.v_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.13.self_attn.v_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.13.self_attn.q_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.13.self_attn.q_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.13.self_attn.out_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.13.self_attn.out_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.13.self_attn_layer_norm.weight: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.13.self_attn_layer_norm.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.13.fc1.weight: torch.Size([8192, 2048]) (device: cuda:0)
+model.decoder.layers.13.fc1.bias: torch.Size([8192]) (device: cuda:0)
+model.decoder.layers.13.fc2.weight: torch.Size([2048, 8192]) (device: cuda:0)
+model.decoder.layers.13.fc2.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.13.final_layer_norm.weight: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.13.final_layer_norm.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.14.self_attn.k_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.14.self_attn.k_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.14.self_attn.v_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.14.self_attn.v_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.14.self_attn.q_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.14.self_attn.q_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.14.self_attn.out_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.14.self_attn.out_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.14.self_attn_layer_norm.weight: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.14.self_attn_layer_norm.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.14.fc1.weight: torch.Size([8192, 2048]) (device: cuda:0)
+model.decoder.layers.14.fc1.bias: torch.Size([8192]) (device: cuda:0)
+model.decoder.layers.14.fc2.weight: torch.Size([2048, 8192]) (device: cuda:0)
+model.decoder.layers.14.fc2.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.14.final_layer_norm.weight: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.14.final_layer_norm.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.15.self_attn.k_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.15.self_attn.k_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.15.self_attn.v_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.15.self_attn.v_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.15.self_attn.q_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.15.self_attn.q_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.15.self_attn.out_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.15.self_attn.out_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.15.self_attn_layer_norm.weight: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.15.self_attn_layer_norm.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.15.fc1.weight: torch.Size([8192, 2048]) (device: cuda:0)
+model.decoder.layers.15.fc1.bias: torch.Size([8192]) (device: cuda:0)
+model.decoder.layers.15.fc2.weight: torch.Size([2048, 8192]) (device: cuda:0)
+model.decoder.layers.15.fc2.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.15.final_layer_norm.weight: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.15.final_layer_norm.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.16.self_attn.k_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.16.self_attn.k_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.16.self_attn.v_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.16.self_attn.v_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.16.self_attn.q_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.16.self_attn.q_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.16.self_attn.out_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.16.self_attn.out_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.16.self_attn_layer_norm.weight: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.16.self_attn_layer_norm.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.16.fc1.weight: torch.Size([8192, 2048]) (device: cuda:0)
+model.decoder.layers.16.fc1.bias: torch.Size([8192]) (device: cuda:0)
+model.decoder.layers.16.fc2.weight: torch.Size([2048, 8192]) (device: cuda:0)
+model.decoder.layers.16.fc2.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.16.final_layer_norm.weight: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.16.final_layer_norm.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.17.self_attn.k_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.17.self_attn.k_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.17.self_attn.v_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.17.self_attn.v_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.17.self_attn.q_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.17.self_attn.q_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.17.self_attn.out_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.17.self_attn.out_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.17.self_attn_layer_norm.weight: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.17.self_attn_layer_norm.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.17.fc1.weight: torch.Size([8192, 2048]) (device: cuda:0)
+model.decoder.layers.17.fc1.bias: torch.Size([8192]) (device: cuda:0)
+model.decoder.layers.17.fc2.weight: torch.Size([2048, 8192]) (device: cuda:0)
+model.decoder.layers.17.fc2.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.17.final_layer_norm.weight: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.17.final_layer_norm.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.18.self_attn.k_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.18.self_attn.k_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.18.self_attn.v_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.18.self_attn.v_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.18.self_attn.q_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.18.self_attn.q_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.18.self_attn.out_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.18.self_attn.out_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.18.self_attn_layer_norm.weight: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.18.self_attn_layer_norm.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.18.fc1.weight: torch.Size([8192, 2048]) (device: cuda:0)
+model.decoder.layers.18.fc1.bias: torch.Size([8192]) (device: cuda:0)
+model.decoder.layers.18.fc2.weight: torch.Size([2048, 8192]) (device: cuda:0)
+model.decoder.layers.18.fc2.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.18.final_layer_norm.weight: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.18.final_layer_norm.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.19.self_attn.k_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.19.self_attn.k_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.19.self_attn.v_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.19.self_attn.v_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.19.self_attn.q_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.19.self_attn.q_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.19.self_attn.out_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.19.self_attn.out_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.19.self_attn_layer_norm.weight: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.19.self_attn_layer_norm.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.19.fc1.weight: torch.Size([8192, 2048]) (device: cuda:0)
+model.decoder.layers.19.fc1.bias: torch.Size([8192]) (device: cuda:0)
+model.decoder.layers.19.fc2.weight: torch.Size([2048, 8192]) (device: cuda:0)
+model.decoder.layers.19.fc2.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.19.final_layer_norm.weight: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.19.final_layer_norm.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.20.self_attn.k_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.20.self_attn.k_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.20.self_attn.v_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.20.self_attn.v_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.20.self_attn.q_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.20.self_attn.q_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.20.self_attn.out_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.20.self_attn.out_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.20.self_attn_layer_norm.weight: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.20.self_attn_layer_norm.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.20.fc1.weight: torch.Size([8192, 2048]) (device: cuda:0)
+model.decoder.layers.20.fc1.bias: torch.Size([8192]) (device: cuda:0)
+model.decoder.layers.20.fc2.weight: torch.Size([2048, 8192]) (device: cuda:0)
+model.decoder.layers.20.fc2.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.20.final_layer_norm.weight: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.20.final_layer_norm.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.21.self_attn.k_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.21.self_attn.k_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.21.self_attn.v_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.21.self_attn.v_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.21.self_attn.q_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.21.self_attn.q_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.21.self_attn.out_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.21.self_attn.out_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.21.self_attn_layer_norm.weight: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.21.self_attn_layer_norm.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.21.fc1.weight: torch.Size([8192, 2048]) (device: cuda:0)
+model.decoder.layers.21.fc1.bias: torch.Size([8192]) (device: cuda:0)
+model.decoder.layers.21.fc2.weight: torch.Size([2048, 8192]) (device: cuda:0)
+model.decoder.layers.21.fc2.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.21.final_layer_norm.weight: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.21.final_layer_norm.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.22.self_attn.k_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.22.self_attn.k_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.22.self_attn.v_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.22.self_attn.v_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.22.self_attn.q_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.22.self_attn.q_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.22.self_attn.out_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.22.self_attn.out_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.22.self_attn_layer_norm.weight: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.22.self_attn_layer_norm.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.22.fc1.weight: torch.Size([8192, 2048]) (device: cuda:0)
+model.decoder.layers.22.fc1.bias: torch.Size([8192]) (device: cuda:0)
+model.decoder.layers.22.fc2.weight: torch.Size([2048, 8192]) (device: cuda:0)
+model.decoder.layers.22.fc2.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.22.final_layer_norm.weight: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.22.final_layer_norm.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.23.self_attn.k_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.23.self_attn.k_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.23.self_attn.v_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.23.self_attn.v_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.23.self_attn.q_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.23.self_attn.q_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.23.self_attn.out_proj.weight: torch.Size([2048, 2048]) (device: cuda:0)
+model.decoder.layers.23.self_attn.out_proj.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.23.self_attn_layer_norm.weight: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.23.self_attn_layer_norm.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.23.fc1.weight: torch.Size([8192, 2048]) (device: cuda:0)
+model.decoder.layers.23.fc1.bias: torch.Size([8192]) (device: cuda:0)
+model.decoder.layers.23.fc2.weight: torch.Size([2048, 8192]) (device: cuda:0)
+model.decoder.layers.23.fc2.bias: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.23.final_layer_norm.weight: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.23.final_layer_norm.bias: torch.Size([2048]) (device: cuda:0)
+benchmark, prompt_len = 512, execute_gen_len = 32, input_ids.shape = torch.Size([11, 512])
+[2025-04-12 02:02:27,320] [INFO] [engine.py:477:check_dataloader_inputs_same_across_ranks] :The Dataloader has passed the TP group consistency check.
+[2025-04-12 02:02:27,320] [INFO] [engine.py:477:check_dataloader_inputs_same_across_ranks] :The Dataloader has passed the TP group consistency check.
+token_latency=[4.099597692489624, 0.0853569507598877, 0.06859803199768066, 0.0673072338104248, 0.06494617462158203, 0.0635535717010498, 0.0634922981262207, 0.06331801414489746, 0.06311845779418945, 0.0634317398071289, 0.0633096694946289, 0.06374716758728027, 0.06322526931762695, 0.07119178771972656, 0.07217979431152344, 0.06581735610961914, 0.0637671947479248, 0.06417083740234375, 0.06349706649780273, 0.06378912925720215, 0.0634315013885498, 0.06395220756530762, 0.06371760368347168, 0.06371021270751953, 0.06384754180908203, 0.06403994560241699, 0.06418514251708984, 0.06388688087463379, 0.06398129463195801, 0.06517434120178223, 0.07361745834350586, 0.07212352752685547]
+token_latency=[4.156286239624023, 0.09780669212341309, 0.06659150123596191, 0.0644235610961914, 0.06598830223083496, 0.06325244903564453, 0.06300210952758789, 0.06593179702758789, 0.06409049034118652, 0.06318497657775879, 0.06315088272094727, 0.06732392311096191, 0.06690001487731934, 0.08803749084472656, 0.06406927108764648, 0.06423234939575195, 0.06500101089477539, 0.06356120109558105, 0.06360483169555664, 0.06544804573059082, 0.06518673896789551, 0.06375646591186523, 0.06371521949768066, 0.06376481056213379, 0.06970405578613281, 0.06581497192382812, 0.06466269493103027, 0.06444787979125977, 0.06447052955627441, 0.06780004501342773, 0.06374001502990723, 0.06608939170837402]
+token_latency=[3.8028512001037598, 0.06870627403259277, 0.06365680694580078, 0.06365704536437988, 0.0642549991607666, 0.06525731086730957, 0.06734466552734375, 0.0666813850402832, 0.07142090797424316, 0.06391787528991699, 0.06289267539978027, 0.06343603134155273, 0.06349563598632812, 0.06378698348999023, 0.06331181526184082, 0.06359148025512695, 0.06325745582580566, 0.06350970268249512, 0.06444382667541504, 0.06512260437011719, 0.06403112411499023, 0.06464028358459473, 0.06683015823364258, 0.06539201736450195, 0.06490898132324219, 0.07209968566894531, 0.06425356864929199, 0.06380367279052734, 0.06475472450256348, 0.06675219535827637, 0.06437397003173828, 0.06416153907775879]
+token_latency=[3.8963372707366943, 0.06744980812072754, 0.06741714477539062, 0.06384110450744629, 0.06349492073059082, 0.07713007926940918, 0.06359696388244629, 0.0641787052154541, 0.06309366226196289, 0.06517601013183594, 0.06304597854614258, 0.06387782096862793, 0.06374144554138184, 0.06346487998962402, 0.06347155570983887, 0.06372952461242676, 0.06344151496887207, 0.09197688102722168, 0.0641472339630127, 0.06390142440795898, 0.06390881538391113, 0.07119226455688477, 0.0677790641784668, 0.0637667179107666, 0.0635380744934082, 0.06436467170715332, 0.0644066333770752, 0.06407618522644043, 0.06665205955505371, 0.06798338890075684, 0.06764507293701172, 0.0673983097076416]
+token_latency=[3.809178352355957, 0.06987261772155762, 0.11174917221069336, 0.06988883018493652, 0.06279230117797852, 0.06231117248535156, 0.06434345245361328, 0.0710914134979248, 0.06311225891113281, 0.06386709213256836, 0.06300115585327148, 0.0633540153503418, 0.06663680076599121, 0.07072973251342773, 0.06346440315246582, 0.0664513111114502, 0.06365013122558594, 0.0637354850769043, 0.06679964065551758, 0.07640385627746582, 0.0638129711151123, 0.0635993480682373, 0.06357526779174805, 0.0640568733215332, 0.06377792358398438, 0.0928957462310791, 0.0636758804321289, 0.06402444839477539, 0.06409907341003418, 0.0638425350189209, 0.06380796432495117, 0.06434130668640137]
+token_latency=[3.9028031826019287, 0.07177114486694336, 0.07422590255737305, 0.06733417510986328, 0.06354498863220215, 0.06366562843322754, 0.06599116325378418, 0.06415390968322754, 0.06598734855651855, 0.06417250633239746, 0.07059454917907715, 0.06452727317810059, 0.06321024894714355, 0.0670933723449707, 0.06422972679138184, 0.06755232810974121, 0.0636754035949707, 0.06411433219909668, 0.06380414962768555, 0.06406831741333008, 0.06446337699890137, 0.06447029113769531, 0.06442046165466309, 0.06400442123413086, 0.06408309936523438, 0.06448125839233398, 0.06446552276611328, 0.0651242733001709, 0.06806683540344238, 0.06775283813476562, 0.06960654258728027, 0.07146716117858887]
+[rank1]:[W412 02:02:45.843174554 ProcessGroupNCCL.cpp:1496] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
 Summary:
-costs = [1.0429259319998891, 0.7087088959997345, 0.6999803909993716, 0.6794173200005389, 0.6616444049996062, 0.6738486899994314, 0.6659652709995498, 0.6973878990002049, 0.6868466720006836, 0.7100558049996835], prefill_timings = [0.5737755298614502, 0.3473856449127197, 0.33707261085510254, 0.34561920166015625, 0.3322153091430664, 0.33849334716796875, 0.33307719230651855, 0.3562905788421631, 0.3381528854370117, 0.33396196365356445]
+costs = [6.312870711997675, 5.971820151997235, 5.972314038997865], prefill_timings = [4.032869100570679, 3.895852565765381, 3.9023120403289795]
 Outputs:
 ----------------------------------------------------------------------
 0: is curly maple a hardwood
-It's not.
+It's a hardwood. It's a hardwood that's hard to cut.
 ----------------------------------------------------------------------
 5: propper way to fill butane
-I'm not sure
-----------------------------------------------------------------------
-10: scholarships of art
 
-The Scholars
+I have a propane stove and I have a problem with the butane. I have a propane stove and I have a problem with the butane
+----------------------------------------------------------------------
+10: 
+The first time I saw this, I thought it was a joke. I mean, it's a pretty funny joke, but it's not like it's a
 ----------------------------------------------------------------------
 
-model size: 0.230 GB	cache size: 0.053 GB	hidden size (p): 0.002 GB
-peak gpu mem: 0.616 GB	prefill latency: 0.334 s	prefill throughput: 4599.326 token/s
-decode latency: 0.376 s	decode throughput: 23.930 token/s
-total latency: 0.710 s	total throughput: 16.900 token/s
-[2025-04-09 15:27:46,763] [INFO] [launch.py:351:main] Process 43647 exits successfully.
+model size: 2.443 GB	cache size: 0.398 GB	hidden size (p): 0.008 GB
+peak gpu mem: 5.052 GB	prefill latency: 3.902 s	prefill throughput: 524.817 token/s
+decode latency: 2.070 s	decode throughput: 59.903 token/s
+total latency: 5.972 s	total throughput: 21.432 token/s
+[2025-04-12 02:02:47,162] [INFO] [launch.py:351:main] Process 50037 exits successfully.
+[2025-04-12 02:02:47,162] [INFO] [launch.py:351:main] Process 50036 exits successfully.

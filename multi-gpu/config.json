@@ -1,0 +1,14 @@
+{
+    "fp16": {
+        "enabled": false
+    },
+    "bp16": {
+        "enabled": false
+    },
+    "steps_per_print": 2000,
+    "train_batch_size": 4,
+    "wall_clock_breakdown": false,
+    "tensor_parallel": {
+        "autotp_size": 2
+    }
+}

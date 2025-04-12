@@ -190,7 +190,7 @@ def remove_model_hooks(module):
         
         
 
-def get_promts(filename: str | None = None) -> list[str]:
+def get_prompts(filename: str | None = None) -> list[str]:
     
     if filename is None:
         return ["Paris is the capital city of"] * 4

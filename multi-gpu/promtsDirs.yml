@@ -1,2 +1,3 @@
 full: "/home/victor/NIR/benchmark_full.txt"
-mini: "/home/victor/NIR/benchmark_min.txt"
+mean: "/home/victor/NIR/benchmark_mean.txt"
+mini: "/home/victor/NIR/benchmark_mini.txt"

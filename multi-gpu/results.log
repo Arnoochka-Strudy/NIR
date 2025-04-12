@@ -1,0 +1,22 @@
+
+2 GPU TP
+model size: 2.443 GB	cache size: 0.398 GB	hidden size (p): 0.008 GB
+peak gpu mem: 5.052 GB	prefill latency: 3.896 s	prefill throughput: 525.650 token/s
+decode latency: 2.295 s	decode throughput: 54.035 token/s
+total latency: 6.191 s	total throughput: 20.675 token/s
+
+model size: 2.443 GB	cache size: 0.398 GB	hidden size (p): 0.008 GB
+peak gpu mem: 5.052 GB	prefill latency: 3.911 s	prefill throughput: 523.615 token/s
+decode latency: 2.367 s	decode throughput: 52.388 token/s
+total latency: 6.278 s	total throughput: 20.388 token/s
+
+1 GPU
+model size: 2.443 GB	cache size: 0.398 GB	hidden size (p): 0.008 GB
+peak gpu mem: 5.052 GB	prefill latency: 3.902 s	prefill throughput: 524.849 token/s
+decode latency: 1.994 s	decode throughput: 62.188 token/s
+total latency: 5.896 s	total throughput: 21.709 token/s
+
+model size: 2.443 GB	cache size: 0.398 GB	hidden size (p): 0.008 GB
+peak gpu mem: 5.052 GB	prefill latency: 3.911 s	prefill throughput: 523.609 token/s
+decode latency: 1.988 s	decode throughput: 62.363 token/s
+total latency: 5.900 s	total throughput: 21.696 token/s
