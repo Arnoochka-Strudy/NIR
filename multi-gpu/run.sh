@@ -1,22 +1,22 @@
 #!/bin/sh
 
-MODEL_NAME=facebook/opt-1.3b
+MODEL_NAME=facebook/opt-125m
 BATCHSIZE=4
 PROMPT_LEN=512
 GEN_LEN=32
 
 NUM_GPUS=1
 
-USE_CPU_OFFLOAD=0
-USE_KV_OFFLOAD=0
+USE_CPU_OFFLOAD=1
+USE_KV_OFFLOAD=1
 USE_HF_MODEL=0
 USE_QUANT=0
-USE_DISK_OFFLOAD=0
-USE_GDS=0 # not supported on laptop
+USE_DISK_OFFLOAD=1
+USE_GDS=1 # not supported on laptop
 
 OFFLOAD_DIR="offload"
 LOG_FILE="logger.log"
-FILE="run_opt_experiment_initialize.py"
+FILE="run_opt_experiment.py"
 
 if [ $USE_CPU_OFFLOAD -eq 1 ]; then
     CPU_OFFLOAD="--cpu-offload"

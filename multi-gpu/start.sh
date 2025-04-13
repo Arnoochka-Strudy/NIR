@@ -3,7 +3,7 @@
 LOG_FILE="logger.log"
 FILE="run_opt_experiment.py"
 
-MODEL_NAME=facebook/opt-1.3b
+MODEL_NAME=facebook/opt-125m
 BATCH_SIZE=4
 PROMPT_LEN=512
 GEN_LEN=32
@@ -11,15 +11,15 @@ LOOPS=3
 
 NUM_GPUS=2
 
-USE_ZERO=0
-USE_CPU_OFFLOAD=0
-PIN_MEMORY=0
-USE_DISK_OFFLOAD=0
-USE_AIO=0
+USE_ZERO=1
+USE_CPU_OFFLOAD=1
+PIN_MEMORY=1
+USE_DISK_OFFLOAD=1
+USE_AIO=1
 BUFFER_COUNT=2
 BUFFER_SIZE=0.5
 OFFLOAD_DIR="offload"
-USE_GDS=0 # not supported on my platform
+USE_GDS=1 # not supported on my platform
 
 USE_TP_PARALLEL=1
 
