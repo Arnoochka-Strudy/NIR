@@ -33,33 +33,33 @@ class Configurator:
         parser.add_argument("--prompt-len", type=int, default=512,  help="prompt length")
         parser.add_argument("--gen-len", type=int, default=32,  help="number of tokens to generate")
 
-        parser.add_argument("--use_zero", action="store_true", help="use ZeRO-inference")
-        parser.add_argument("--use_aio", action="store_true", help="use AIO")
-        parser.add_argument("--use_tp_parallel", action="store_true", help="use tensor parallelism")
-        parser.add_argument("--zero_config", type=str, default="not", help="zero configuration")
-        parser.add_argument("--aio_config", type=str, default="not", help="aio configuration")
-        parser.add_argument("--tp_config", type=str, default="not", help="tensor parallel configuration")
+        parser.add_argument("--use-zero", action="store_true", help="use ZeRO-inference")
+        parser.add_argument("--use-aio", action="store_true", help="use AIO")
+        parser.add_argument("--use-tp-parallel", action="store_true", help="use tensor parallelism")
+        parser.add_argument("--zero-config", type=str, default="not", help="zero configuration")
+        parser.add_argument("--aio-config", type=str, default="not", help="aio configuration")
+        parser.add_argument("--tp-config", type=str, default="not", help="tensor parallel configuration")
         
         parser.add_argument("--pin-memory", action="store_true", help="whether to pinned CPU memory for ZeRO offloading")
         parser.add_argument("--cpu-offload", action="store_true", help="Use cpu offload.")
         parser.add_argument("--disk-offload", action="store_true", help="Use disk offload.")
-        parser.add_argument("--kv-offload", action="store_true", help="Use kv cache cpu offloading.")
-        parser.add_argument("--buffer_count", type=int, default=2, help="count buffer for disk offload")
-        parser.add_argument("--buffer_size", type=float, default=0.5, help="buffer size in GB for disk offload")
+        parser.add_argument("--kv-offload", action="store_true",  help="Use kv cache cpu offloading.")
+        parser.add_argument("--buffer-count", type=int, default=2, help="count buffer for disk offload")
+        parser.add_argument("--buffer-size", type=float, default=0.5, help="buffer size in GB for disk offload")
 
         parser.add_argument("--offload-dir", type=str, default="~/offload_dir", help="Directory to store offloaded cache.")
-        parser.add_argument("--pin_kv_cache", action="store_true", help="Allocate kv cache in pinned memory for offloading.")
-        parser.add_argument("--async_kv_offload", action="store_true", help="Using non_blocking copy for kv cache offloading.")
-        parser.add_argument("--use_gds", action="store_true", help="Use NVIDIA GPU DirectStorage to transfer between NVMe and GPU.")
+        parser.add_argument("--pin-kv-cache", action="store_true", help="Allocate kv cache in pinned memory for offloading.")
+        parser.add_argument("--async-kv-offload", action="store_true", help="Using non_blocking copy for kv cache offloading.")
+        parser.add_argument("--use-gds", action="store_true", help="Use NVIDIA GPU DirectStorage to transfer between NVMe and GPU.")
 
-        parser.add_argument("--log-file", type=str, default="auto", help="log file name")
-        parser.add_argument("--verbose", type=int, default=2, help="verbose level")
         
-        parser.add_argument("--quant_bits", type=int, default=16, help="model weight quantization bits; either 4 or 8")
-        parser.add_argument("--quant_group_size", type=int, default=64, help="model weight quantization group size")
+        parser.add_argument("--use-quant", action="store_true", help="Using model weight quantization bits")
+        parser.add_argument("--quant-bits", type=int, default=16, help="model weight quantization bits; either 4 or 8")
+        parser.add_argument("--quant-group-size", type=int, default=64, help="model weight quantization group size")
         
         parser.add_argument("--half-precision", type=str, default="not", help="use fp16 of bf16 to acclelerate calculations")
         
+        parser.add_argument("--verbose", type=int, default=2, help="verbose level")
         parser.add_argument("--output-file", type=str, default="auto", help="write results inference")
         
         args = parser.parse_args()
@@ -163,9 +163,11 @@ class Configurator:
         
             
     @staticmethod      
-    def write_config(filedir, config):
+    def write_config(filedir, config: dict):
+        write_config = config.copy()
+        write_config.pop('dtype')
         with open(filedir, 'w', encoding='utf-8') as file:
-            json.dump(config, file, ensure_ascii=False, indent=4)
+            json.dump(write_config, file, ensure_ascii=False, indent=4)
     
     @staticmethod        
     def get_model_config(model_name): # only opt
@@ -180,13 +182,13 @@ class ModelGetter:
     def get_model(configurator: Configurator) -> nn.Module:
         args = configurator.args
         ds_config = configurator.config
-        # Configurator.write_config("config.json", ds_config)
+        Configurator.write_config("config.json", ds_config)
         get_accelerator().empty_cache()
         gc.collect()
 
         model = ModelGetter.get_pretrained_model(args.model, torch.float16)
         model = model.eval()
-        ds_engine = deepspeed.init_inference(model=model, config=ds_config)
+        ds_engine = deepspeed.init_inference(model=model, config=ds_config, replace_with_kernel_inject=True)
     
         ds_engine.module.eval()
         model = ds_engine.module

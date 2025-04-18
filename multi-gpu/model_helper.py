@@ -154,7 +154,8 @@ class Configurator:
             return config
         world_size = deepspeed.comm.get_world_size()
         config["tensor_parallel"] = {
-            "autotp_size": 2
+            "autotp_size": 2,
+            "replace_with_kernel_inject": True
         }
         
         return config
@@ -179,6 +180,7 @@ class ModelGetter:
     def get_model(configurator: Configurator) -> nn.Module:
         args = configurator.args
         ds_config = configurator.config
+        
         Configurator.write_config("config.json", ds_config)
         dschf = HfDeepSpeedConfig(
             ds_config

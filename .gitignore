@@ -1,3 +1,6 @@
 ./multigpu/offload
 ./Examples-inference/zero_inference/offload
-DeepSpeedExamples
+./DeepSpeedExamples
+./apex
+./ckeckpoints
+./Megatron-DeepSpeed
