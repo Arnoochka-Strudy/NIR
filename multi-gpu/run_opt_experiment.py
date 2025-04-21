@@ -6,7 +6,7 @@ from utils import (GB, add_model_hooks, remove_model_hooks, cache_bytes,
                    get_filename, get_quant_config, hidden_bytes,
                    model_bytes, write_benchmark_log, get_prompts)
 from packaging import version
-from model_helper import Configurator, ModelGetter
+from model_helper_inference import Configurator, ModelGetter
 
 assert version.parse(deepspeed.__version__) >= version.parse("0.10.3"), "ZeRO-Inference with weight quantization and kv cache offloading is available only in DeepSpeed 0.10.3+, please upgrade DeepSpeed"
 
@@ -26,7 +26,7 @@ def run_generation(
         print(f"{name}: {param.shape} (device: {param.device})")
 
     execute_gen_len = args.gen_len
-    prompts = get_prompts("/home/victor/NIR/benchmark_mini.txt")
+    prompts = get_prompts("/home/victor/NIR/benchmark_mean.txt")
 
     def _batch_encode(prompts):
         input_tokens = tokenizer.batch_encode_plus(prompts, return_tensors="pt", padding="max_length", max_length=args.prompt_len)
