@@ -4,3 +4,4 @@
 ./apex
 ./ckeckpoints
 ./Megatron-DeepSpeed
+./multi-gpu/deepspeed/megatron-deepspeed/megatron
