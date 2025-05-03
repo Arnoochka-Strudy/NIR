@@ -5,6 +5,7 @@ frameworks:
     inference-single-gpu: https://github.com/FMInference
 
 articles overwiev: https://arxiv.org/pdf/2405.03360
+XLA: https://github.com/openxla/xla
 
 Tensor parallelism:
     https://arxiv.org/pdf/2105.14500
@@ -16,3 +17,7 @@ Nvidia:
     https://arxiv.org/pdf/2312.11918 (CUTLASS)
     https://developer.nvidia.com/blog/cuda-graphs/ (CUDA Graphs)
     https://developer.nvidia.com/blog/accelerated-inference-for-large-transformer-models-using-nvidia-fastertransformer-and-nvidia-triton-inference-server/
+    
+alpa: https://github.com/alpa-projects/alpa
+maskLLM: https://github.com/NVlabs/MaskLLM/blob/main/tools/checkpoint/util.py
+cupy: https://github.com/cupy/cupys
