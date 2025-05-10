@@ -1,51 +1,42 @@
-[2025-04-19 13:20:16,886] [INFO] [real_accelerator.py:239:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2025-05-09 17:24:22,358] [INFO] [real_accelerator.py:239:get_accelerator] Setting ds_accelerator to cuda (auto detect)
 /home/victor/anaconda3/envs/megatron-deepspeed/lib/python3.11/site-packages/transformers/utils/generic.py:260: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
   torch.utils._pytree._register_pytree_node(
 /home/victor/anaconda3/envs/megatron-deepspeed/lib/python3.11/site-packages/transformers/utils/generic.py:260: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
   torch.utils._pytree._register_pytree_node(
-[2025-04-19 13:20:19,831] [WARNING] [runner.py:215:fetch_hostfile] Unable to find hostfile, will proceed with training with local resources only.
-[2025-04-19 13:20:19,832] [INFO] [runner.py:605:main] cmd = /home/victor/anaconda3/envs/megatron-deepspeed/bin/python -u -m deepspeed.launcher.launch --world_info=eyJsb2NhbGhvc3QiOiBbMCwgMV19 --master_addr=127.0.0.1 --master_port=29500 --enable_each_rank_log=None run_opt_experiment.py --loops 3 --model facebook/opt-350m --batch-size 4 --prompt-len 512 --gen-len 32 --use-tp-parallel --output-file results.log --verbose 2
-[2025-04-19 13:20:21,914] [INFO] [real_accelerator.py:239:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2025-05-09 17:24:25,448] [WARNING] [runner.py:215:fetch_hostfile] Unable to find hostfile, will proceed with training with local resources only.
+[2025-05-09 17:24:25,449] [INFO] [runner.py:605:main] cmd = /home/victor/anaconda3/envs/megatron-deepspeed/bin/python -u -m deepspeed.launcher.launch --world_info=eyJsb2NhbGhvc3QiOiBbMCwgMV19 --master_addr=127.0.0.1 --master_port=29500 --enable_each_rank_log=None run_opt_experiment.py --loops 3 --model facebook/opt-350m --batch-size 4 --prompt-len 512 --gen-len 32 --use-tp-parallel --output-file results.log --verbose 2
+[2025-05-09 17:24:27,572] [INFO] [real_accelerator.py:239:get_accelerator] Setting ds_accelerator to cuda (auto detect)
 /home/victor/anaconda3/envs/megatron-deepspeed/lib/python3.11/site-packages/transformers/utils/generic.py:260: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
   torch.utils._pytree._register_pytree_node(
 /home/victor/anaconda3/envs/megatron-deepspeed/lib/python3.11/site-packages/transformers/utils/generic.py:260: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
   torch.utils._pytree._register_pytree_node(
-[2025-04-19 13:20:24,859] [INFO] [launch.py:146:main] WORLD INFO DICT: {'localhost': [0, 1]}
-[2025-04-19 13:20:24,859] [INFO] [launch.py:152:main] nnodes=1, num_local_procs=2, node_rank=0
-[2025-04-19 13:20:24,859] [INFO] [launch.py:163:main] global_rank_mapping=defaultdict(<class 'list'>, {'localhost': [0, 1]})
-[2025-04-19 13:20:24,859] [INFO] [launch.py:164:main] dist_world_size=2
-[2025-04-19 13:20:24,859] [INFO] [launch.py:168:main] Setting CUDA_VISIBLE_DEVICES=0,1
-[2025-04-19 13:20:24,861] [INFO] [launch.py:256:main] process 10392 spawned with command: ['/home/victor/anaconda3/envs/megatron-deepspeed/bin/python', '-u', 'run_opt_experiment.py', '--local_rank=0', '--loops', '3', '--model', 'facebook/opt-350m', '--batch-size', '4', '--prompt-len', '512', '--gen-len', '32', '--use-tp-parallel', '--output-file', 'results.log', '--verbose', '2']
-[2025-04-19 13:20:24,863] [INFO] [launch.py:256:main] process 10393 spawned with command: ['/home/victor/anaconda3/envs/megatron-deepspeed/bin/python', '-u', 'run_opt_experiment.py', '--local_rank=1', '--loops', '3', '--model', 'facebook/opt-350m', '--batch-size', '4', '--prompt-len', '512', '--gen-len', '32', '--use-tp-parallel', '--output-file', 'results.log', '--verbose', '2']
-[2025-04-19 13:20:27,765] [INFO] [real_accelerator.py:239:get_accelerator] Setting ds_accelerator to cuda (auto detect)
-[2025-04-19 13:20:27,990] [INFO] [real_accelerator.py:239:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2025-05-09 17:24:30,580] [INFO] [launch.py:146:main] WORLD INFO DICT: {'localhost': [0, 1]}
+[2025-05-09 17:24:30,580] [INFO] [launch.py:152:main] nnodes=1, num_local_procs=2, node_rank=0
+[2025-05-09 17:24:30,580] [INFO] [launch.py:163:main] global_rank_mapping=defaultdict(<class 'list'>, {'localhost': [0, 1]})
+[2025-05-09 17:24:30,580] [INFO] [launch.py:164:main] dist_world_size=2
+[2025-05-09 17:24:30,580] [INFO] [launch.py:168:main] Setting CUDA_VISIBLE_DEVICES=0,1
+[2025-05-09 17:24:30,583] [INFO] [launch.py:256:main] process 18108 spawned with command: ['/home/victor/anaconda3/envs/megatron-deepspeed/bin/python', '-u', 'run_opt_experiment.py', '--local_rank=0', '--loops', '3', '--model', 'facebook/opt-350m', '--batch-size', '4', '--prompt-len', '512', '--gen-len', '32', '--use-tp-parallel', '--output-file', 'results.log', '--verbose', '2']
+[2025-05-09 17:24:30,584] [INFO] [launch.py:256:main] process 18109 spawned with command: ['/home/victor/anaconda3/envs/megatron-deepspeed/bin/python', '-u', 'run_opt_experiment.py', '--local_rank=1', '--loops', '3', '--model', 'facebook/opt-350m', '--batch-size', '4', '--prompt-len', '512', '--gen-len', '32', '--use-tp-parallel', '--output-file', 'results.log', '--verbose', '2']
+[2025-05-09 17:24:33,606] [INFO] [real_accelerator.py:239:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2025-05-09 17:24:33,675] [INFO] [real_accelerator.py:239:get_accelerator] Setting ds_accelerator to cuda (auto detect)
 /home/victor/anaconda3/envs/megatron-deepspeed/lib/python3.11/site-packages/transformers/utils/generic.py:260: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
   torch.utils._pytree._register_pytree_node(
 /home/victor/anaconda3/envs/megatron-deepspeed/lib/python3.11/site-packages/transformers/utils/generic.py:260: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
   torch.utils._pytree._register_pytree_node(
-[2025-04-19 13:20:32,783] [INFO] [comm.py:669:init_distributed] cdb=None
-[2025-04-19 13:20:32,784] [INFO] [comm.py:700:init_distributed] Initializing TorchBackend in DeepSpeed with backend nccl
+[2025-05-09 17:24:38,585] [INFO] [comm.py:669:init_distributed] cdb=None
 /home/victor/anaconda3/envs/megatron-deepspeed/lib/python3.11/site-packages/transformers/utils/generic.py:260: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
   torch.utils._pytree._register_pytree_node(
 /home/victor/anaconda3/envs/megatron-deepspeed/lib/python3.11/site-packages/transformers/utils/generic.py:260: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
   torch.utils._pytree._register_pytree_node(
-[2025-04-19 13:20:33,220] [INFO] [comm.py:669:init_distributed] cdb=None
+[2025-05-09 17:24:39,094] [INFO] [comm.py:669:init_distributed] cdb=None
+[2025-05-09 17:24:39,098] [INFO] [comm.py:700:init_distributed] Initializing TorchBackend in DeepSpeed with backend nccl
 /home/victor/anaconda3/envs/megatron-deepspeed/lib/python3.11/site-packages/huggingface_hub/file_download.py:896: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
   warnings.warn(
 /home/victor/anaconda3/envs/megatron-deepspeed/lib/python3.11/site-packages/huggingface_hub/file_download.py:896: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
   warnings.warn(
-[2025-04-19 13:20:52,484] [INFO] [logging.py:107:log_dist] [Rank 0] DeepSpeed info: version=0.16.6, git-hash=unknown, git-branch=unknown
-[2025-04-19 13:20:52,485] [INFO] [logging.py:107:log_dist] [Rank 0] quantize_bits = 8 mlp_extra_grouping = False, quantize_groups = 1
-/home/victor/NIR/Megatron-DeepSpeed/megatron/core/tensor_parallel/layers.py:249: FutureWarning: `torch.cuda.amp.custom_fwd(args...)` is deprecated. Please use `torch.amp.custom_fwd(args..., device_type='cuda')` instead.
-  @custom_fwd
-/home/victor/NIR/Megatron-DeepSpeed/megatron/core/tensor_parallel/layers.py:287: FutureWarning: `torch.cuda.amp.custom_bwd(args...)` is deprecated. Please use `torch.amp.custom_bwd(args..., device_type='cuda')` instead.
-  @custom_bwd
-/home/victor/NIR/Megatron-DeepSpeed/megatron/core/tensor_parallel/layers.py:249: FutureWarning: `torch.cuda.amp.custom_fwd(args...)` is deprecated. Please use `torch.amp.custom_fwd(args..., device_type='cuda')` instead.
-  @custom_fwd
-/home/victor/NIR/Megatron-DeepSpeed/megatron/core/tensor_parallel/layers.py:287: FutureWarning: `torch.cuda.amp.custom_bwd(args...)` is deprecated. Please use `torch.amp.custom_bwd(args..., device_type='cuda')` instead.
-  @custom_bwd
-[2025-04-19 13:20:54,426] [INFO] [logging.py:107:log_dist] [Rank 0] DeepSpeed-Inference config: {'layer_id': 0, 'hidden_size': 1024, 'intermediate_size': 4096, 'heads': 16, 'num_hidden_layers': -1, 'dtype': torch.float32, 'pre_layer_norm': False, 'norm_type': <NormType.LayerNorm: 1>, 'local_rank': -1, 'stochastic_mode': False, 'epsilon': 1e-05, 'mp_size': 2, 'scale_attention': True, 'triangular_masking': True, 'local_attention': False, 'window_size': 1, 'rotary_dim': -1, 'rotate_half': False, 'rotate_every_two': True, 'return_tuple': True, 'mlp_after_attn': True, 'mlp_act_func_type': <ActivationFuncType.ReLU: 2>, 'training_mp_size': 1, 'bigscience_bloom': False, 'max_out_tokens': 1024, 'min_out_tokens': 1, 'scale_attn_by_inverse_layer_idx': False, 'enable_qkv_quantization': False, 'use_mup': False, 'return_single_tuple': False, 'set_empty_params': False, 'transposed_mode': False, 'use_triton': False, 'triton_autotune': False, 'num_kv': -1, 'rope_theta': 10000, 'invert_mask': True}
-Using /home/victor/.cache/torch_extensions/py311_cu124 as PyTorch extensions root...
+[2025-05-09 17:24:58,247] [INFO] [logging.py:107:log_dist] [Rank 0] DeepSpeed info: version=0.16.7, git-hash=unknown, git-branch=unknown
+[2025-05-09 17:24:58,248] [INFO] [logging.py:107:log_dist] [Rank 0] quantize_bits = 8 mlp_extra_grouping = False, quantize_groups = 1
+[2025-05-09 17:25:00,269] [INFO] [logging.py:107:log_dist] [Rank 0] DeepSpeed-Inference config: {'layer_id': 0, 'hidden_size': 1024, 'intermediate_size': 4096, 'heads': 16, 'num_hidden_layers': -1, 'dtype': torch.float32, 'pre_layer_norm': False, 'norm_type': <NormType.LayerNorm: 1>, 'local_rank': -1, 'stochastic_mode': False, 'epsilon': 1e-05, 'mp_size': 2, 'scale_attention': True, 'triangular_masking': True, 'local_attention': False, 'window_size': 1, 'rotary_dim': -1, 'rotate_half': False, 'rotate_every_two': True, 'return_tuple': True, 'mlp_after_attn': True, 'mlp_act_func_type': <ActivationFuncType.ReLU: 2>, 'training_mp_size': 1, 'bigscience_bloom': False, 'max_out_tokens': 1024, 'min_out_tokens': 1, 'scale_attn_by_inverse_layer_idx': False, 'enable_qkv_quantization': False, 'use_mup': False, 'return_single_tuple': False, 'set_empty_params': False, 'transposed_mode': False, 'use_triton': False, 'triton_autotune': False, 'num_kv': -1, 'rope_theta': 10000, 'invert_mask': True}
 Using /home/victor/.cache/torch_extensions/py311_cu124 as PyTorch extensions root...
 Detected CUDA files, patching ldflags
 Emitting ninja build file /home/victor/.cache/torch_extensions/py311_cu124/transformer_inference/build.ninja...
@@ -56,9 +47,20 @@ Building extension module transformer_inference...
 Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
 ninja: no work to do.
 Loading extension module transformer_inference...
-Time to load transformer_inference op: 0.05151677131652832 seconds
+Time to load transformer_inference op: 0.015627622604370117 seconds
+Using /home/victor/.cache/torch_extensions/py311_cu124 as PyTorch extensions root...
+Detected CUDA files, patching ldflags
+Emitting ninja build file /home/victor/.cache/torch_extensions/py311_cu124/transformer_inference/build.ninja...
+/home/victor/anaconda3/envs/megatron-deepspeed/lib/python3.11/site-packages/torch/utils/cpp_extension.py:2059: UserWarning: TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation. 
+If this is not desired, please set os.environ['TORCH_CUDA_ARCH_LIST'].
+  warnings.warn(
+Building extension module transformer_inference...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+ninja: no work to do.
 Loading extension module transformer_inference...
-Time to load transformer_inference op: 0.10587549209594727 seconds
+Time to load transformer_inference op: 0.027478933334350586 seconds
+/home/victor/anaconda3/envs/megatron-deepspeed/lib/python3.11/site-packages/huggingface_hub/file_download.py:896: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
 /home/victor/anaconda3/envs/megatron-deepspeed/lib/python3.11/site-packages/huggingface_hub/file_download.py:896: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
   warnings.warn(
 model.decoder.embed_tokens.weight: torch.Size([50272, 512]) (device: cuda:0)
@@ -344,6 +346,15 @@ model.decoder.layers.22.mlp.output_b: torch.Size([1024]) (device: cuda:0)
 model.decoder.layers.23.norm_w: torch.Size([1024]) (device: cuda:0)
 model.decoder.layers.23.norm_b: torch.Size([1024]) (device: cuda:0)
 model.decoder.layers.23.attention.attn_qkvw: torch.Size([1024, 1536]) (device: cuda:0)
+model.decoder.layers.23.attention.attn_qkvb: torch.Size([1536]) (device: cuda:0)
+model.decoder.layers.23.attention.attn_ow: torch.Size([512, 1024]) (device: cuda:0)
+model.decoder.layers.23.attention.attn_ob: torch.Size([1024]) (device: cuda:0)
+model.decoder.layers.23.mlp.attn_nw: torch.Size([1024]) (device: cuda:0)
+model.decoder.layers.23.mlp.attn_nb: torch.Size([1024]) (device: cuda:0)
+model.decoder.layers.23.mlp.inter_w: torch.Size([1024, 2048]) (device: cuda:0)
+model.decoder.layers.23.mlp.inter_b: torch.Size([2048]) (device: cuda:0)
+model.decoder.layers.23.mlp.output_w: torch.Size([2048, 1024]) (device: cuda:0)
+model.decoder.layers.23.mlp.output_b: torch.Size([1024]) (device: cuda:0)
 model.decoder.embed_tokens.weight: torch.Size([50272, 512]) (device: cuda:1)
 model.decoder.embed_positions.weight: torch.Size([2050, 1024]) (device: cuda:1)
 model.decoder.project_out.weight: torch.Size([512, 1024]) (device: cuda:1)
@@ -497,15 +508,6 @@ model.decoder.layers.12.norm_b: torch.Size([1024]) (device: cuda:1)
 model.decoder.layers.12.attention.attn_qkvw: torch.Size([1024, 1536]) (device: cuda:1)
 model.decoder.layers.12.attention.attn_qkvb: torch.Size([1536]) (device: cuda:1)
 model.decoder.layers.12.attention.attn_ow: torch.Size([512, 1024]) (device: cuda:1)
-model.decoder.layers.23.attention.attn_qkvb: torch.Size([1536]) (device: cuda:0)
-model.decoder.layers.23.attention.attn_ow: torch.Size([512, 1024]) (device: cuda:0)
-model.decoder.layers.23.attention.attn_ob: torch.Size([1024]) (device: cuda:0)
-model.decoder.layers.23.mlp.attn_nw: torch.Size([1024]) (device: cuda:0)
-model.decoder.layers.23.mlp.attn_nb: torch.Size([1024]) (device: cuda:0)
-model.decoder.layers.23.mlp.inter_w: torch.Size([1024, 2048]) (device: cuda:0)
-model.decoder.layers.23.mlp.inter_b: torch.Size([2048]) (device: cuda:0)
-model.decoder.layers.23.mlp.output_w: torch.Size([2048, 1024]) (device: cuda:0)
-model.decoder.layers.23.mlp.output_b: torch.Size([1024]) (device: cuda:0)
 model.decoder.layers.12.attention.attn_ob: torch.Size([1024]) (device: cuda:1)
 model.decoder.layers.12.mlp.attn_nw: torch.Size([1024]) (device: cuda:1)
 model.decoder.layers.12.mlp.attn_nb: torch.Size([1024]) (device: cuda:1)
@@ -645,54 +647,90 @@ model.decoder.layers.23.mlp.inter_w: torch.Size([1024, 2048]) (device: cuda:1)
 model.decoder.layers.23.mlp.inter_b: torch.Size([2048]) (device: cuda:1)
 model.decoder.layers.23.mlp.output_w: torch.Size([2048, 1024]) (device: cuda:1)
 model.decoder.layers.23.mlp.output_b: torch.Size([1024]) (device: cuda:1)
-benchmark, prompt_len = 512, execute_gen_len = 32, input_ids.shape = torch.Size([11, 512])benchmark, prompt_len = 512, execute_gen_len = 32, input_ids.shape = torch.Size([11, 512])
-
+benchmark, prompt_len = 512, execute_gen_len = 32, input_ids.shape = torch.Size([53, 512])
+benchmark, prompt_len = 512, execute_gen_len = 32, input_ids.shape = torch.Size([53, 512])
 ------------------------------------------------------
-Free memory : 6.744690 (GigaBytes)  
+Free memory : 6.322815 (GigaBytes)  
 Total memory: 7.919250 (GigaBytes)  
-Requested memory: 1.804688 (GigaBytes) 
-Setting maximum total tokens (input + output) to 1024 
-WorkSpace: 0x7d4132000000 
+Requested memory: 5.833672 (GigaBytes) 
+Setting maximum total tokens (input + output) to 687 
+WorkSpace: 0x757248000000 
 ------------------------------------------------------
-token_latency=[3.111806631088257, 0.0645134449005127, 0.02547454833984375, 0.02347278594970703, 0.02145695686340332, 0.020706653594970703, 0.027216672897338867, 0.02039933204650879, 0.020092010498046875, 0.020735740661621094, 0.020929574966430664, 0.02119588851928711, 0.01937580108642578, 0.019567012786865234, 0.02076411247253418, 0.02085423469543457, 0.021365642547607422, 0.020252466201782227, 0.01998424530029297, 0.019989967346191406, 0.019431591033935547, 0.020268917083740234, 0.020490646362304688, 0.01962137222290039, 0.02033686637878418, 0.021023035049438477, 0.019380569458007812, 0.02023005485534668, 0.01940321922302246, 0.020578384399414062, 0.020776987075805664, 0.02339768409729004]token_latency=[3.109745740890503, 0.06394338607788086, 0.025810956954956055, 0.02323746681213379, 0.021488189697265625, 0.020821571350097656, 0.02720165252685547, 0.020502567291259766, 0.020184040069580078, 0.02083754539489746, 0.021008729934692383, 0.021087646484375, 0.019396066665649414, 0.019890546798706055, 0.02065300941467285, 0.02074885368347168, 0.02138972282409668, 0.02036118507385254, 0.019817829132080078, 0.019926786422729492, 0.019430160522460938, 0.02017498016357422, 0.02059197425842285, 0.019606351852416992, 0.020227432250976562, 0.020937442779541016, 0.019380807876586914, 0.02033853530883789, 0.019376754760742188, 0.020679473876953125, 0.02068328857421875, 0.023403167724609375]
-
-token_latency=[2.8966472148895264, 0.026005029678344727, 0.024518728256225586, 0.0316004753112793, 0.02391195297241211, 0.02431178092956543, 0.020900726318359375, 0.024182558059692383, 0.019336700439453125, 0.020142078399658203, 0.02332782745361328, 0.019484758377075195, 0.020271778106689453, 0.019370079040527344, 0.020431041717529297, 0.019711732864379883, 0.02051258087158203, 0.021070480346679688, 0.024179458618164062, 0.02017521858215332, 0.026365041732788086, 0.020514726638793945, 0.01940751075744629, 0.020321130752563477, 0.019505739212036133, 0.01953911781311035, 0.020594358444213867, 0.019535303115844727, 0.020061731338500977, 0.020401477813720703, 0.019423484802246094, 0.020565032958984375]token_latency=[2.8903369903564453, 0.03238630294799805, 0.024517536163330078, 0.03159594535827637, 0.02391195297241211, 0.0243070125579834, 0.022304773330688477, 0.02419114112854004, 0.019335031509399414, 0.02024221420288086, 0.023321866989135742, 0.01981639862060547, 0.020279884338378906, 0.019367456436157227, 0.020578622817993164, 0.01952052116394043, 0.020648479461669922, 0.020945072174072266, 0.024176359176635742, 0.020269155502319336, 0.026357650756835938, 0.020404577255249023, 0.019421100616455078, 0.020441293716430664, 0.019463062286376953, 0.019841909408569336, 0.020496606826782227, 0.019533634185791016, 0.020156383514404297, 0.020298242568969727, 0.01942133903503418, 0.020486831665039062]
-
-token_latency=[2.891490936279297, 0.0336918830871582, 0.024931907653808594, 0.024869680404663086, 0.028985261917114258, 0.024741411209106445, 0.02065873146057129, 0.03926253318786621, 0.02040719985961914, 0.027991533279418945, 0.04012894630432129, 0.026526212692260742, 0.01973724365234375, 0.021330595016479492, 0.019700288772583008, 0.02033519744873047, 0.021495342254638672, 0.01957869529724121, 0.020669221878051758, 0.023437976837158203, 0.0199587345123291, 0.02028179168701172, 0.026117801666259766, 0.021541833877563477, 0.019933223724365234, 0.0201871395111084, 0.019513607025146484, 0.02053356170654297, 0.01983809471130371, 0.019373416900634766, 0.02777695655822754, 0.02956986427307129]
-token_latency=[2.8967599868774414, 0.02843761444091797, 0.026708602905273438, 0.02304697036743164, 0.028963804244995117, 0.024732589721679688, 0.020526409149169922, 0.03932070732116699, 0.020517826080322266, 0.027849435806274414, 0.04029345512390137, 0.026743650436401367, 0.019547224044799805, 0.02133035659790039, 0.019809246063232422, 0.020427703857421875, 0.021390914916992188, 0.019579172134399414, 0.020567655563354492, 0.023580074310302734, 0.020061254501342773, 0.02036452293395996, 0.026114940643310547, 0.020840883255004883, 0.01993393898010254, 0.02038431167602539, 0.019646167755126953, 0.020116090774536133, 0.019964933395385742, 0.019376277923583984, 0.027597427368164062, 0.02820897102355957]
-Summary:
-costs = [3.9300670869997703, 3.5897791329998654, 3.65681669300011], prefill_timings = [3.111656665802002, 2.8965227603912354, 2.8966164588928223]
-Outputs:
-----------------------------------------------------------------------
-0: is curly maple a hardwood
-
-is curly maple a hardwood
-
-is curly maple a hardwood
-
-is curly maple a hardwood
-
-is curly maple a hardwood
-
-----------------------------------------------------------------------
-5: propper way to fill butane
-
-Propper way to fill butane
-
-Propper way to fill butane
-
-Propper way to fill butane
-
-Propper way to
-----------------------------------------------------------------------
-10: 
-
-The first of the first of the first of the first of the first of the first of the first of the first of the first of the first of the
-----------------------------------------------------------------------
-
-model size: 0.659 GB	cache size: 0.199 GB	hidden size (p): 0.004 GB
-peak gpu mem: 1.759 GB	prefill latency: 2.897 s	prefill throughput: 707.032 token/s
-decode latency: 0.760 s	decode throughput: 163.115 token/s
-total latency: 3.657 s	total throughput: 35.003 token/s
-[2025-04-19 13:21:12,876] [INFO] [launch.py:351:main] Process 10392 exits successfully.
-[2025-04-19 13:21:13,877] [INFO] [launch.py:351:main] Process 10393 exits successfully.
+[rank1]: Traceback (most recent call last):
+[rank1]:   File "/home/victor/NIR/multi-gpu/deepspeed-tp/run_opt_experiment.py", line 134, in <module>
+[rank1]:     run_generation(
+[rank1]:   File "/home/victor/NIR/multi-gpu/deepspeed-tp/run_opt_experiment.py", line 55, in run_generation
+[rank1]:     output_ids = model.generate(**input_tokens, **generate_kwargs)
+[rank1]:                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/home/victor/anaconda3/envs/megatron-deepspeed/lib/python3.11/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+[rank1]:     return func(*args, **kwargs)
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/home/victor/anaconda3/envs/megatron-deepspeed/lib/python3.11/site-packages/transformers/generation/utils.py", line 1602, in generate
+[rank1]:     return self.greedy_search(
+[rank1]:            ^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/home/victor/anaconda3/envs/megatron-deepspeed/lib/python3.11/site-packages/transformers/generation/utils.py", line 2454, in greedy_search
+[rank1]:     outputs = self(
+[rank1]:               ^^^^^
+[rank1]:   File "/home/victor/anaconda3/envs/megatron-deepspeed/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+[rank1]:     return self._call_impl(*args, **kwargs)
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/home/victor/anaconda3/envs/megatron-deepspeed/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1845, in _call_impl
+[rank1]:     return inner()
+[rank1]:            ^^^^^^^
+[rank1]:   File "/home/victor/anaconda3/envs/megatron-deepspeed/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1793, in inner
+[rank1]:     result = forward_call(*args, **kwargs)
+[rank1]:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/home/victor/anaconda3/envs/megatron-deepspeed/lib/python3.11/site-packages/transformers/models/opt/modeling_opt.py", line 1028, in forward
+[rank1]:     logits = self.lm_head(outputs[0]).contiguous()
+[rank1]:              ^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/home/victor/anaconda3/envs/megatron-deepspeed/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+[rank1]:     return self._call_impl(*args, **kwargs)
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/home/victor/anaconda3/envs/megatron-deepspeed/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+[rank1]:     return forward_call(*args, **kwargs)
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/home/victor/anaconda3/envs/megatron-deepspeed/lib/python3.11/site-packages/torch/nn/modules/linear.py", line 125, in forward
+[rank1]:     return F.linear(input, self.weight, self.bias)
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]: torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 5.08 GiB. GPU 1 has a total capacity of 7.92 GiB of which 976.56 MiB is free. Including non-PyTorch memory, this process has 6.96 GiB memory in use. Of the allocated memory 763.64 MiB is allocated by PyTorch, and 112.36 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/victor/NIR/multi-gpu/deepspeed-tp/run_opt_experiment.py", line 134, in <module>
+[rank0]:     run_generation(
+[rank0]:   File "/home/victor/NIR/multi-gpu/deepspeed-tp/run_opt_experiment.py", line 55, in run_generation
+[rank0]:     output_ids = model.generate(**input_tokens, **generate_kwargs)
+[rank0]:                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/victor/anaconda3/envs/megatron-deepspeed/lib/python3.11/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+[rank0]:     return func(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/victor/anaconda3/envs/megatron-deepspeed/lib/python3.11/site-packages/transformers/generation/utils.py", line 1602, in generate
+[rank0]:     return self.greedy_search(
+[rank0]:            ^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/victor/anaconda3/envs/megatron-deepspeed/lib/python3.11/site-packages/transformers/generation/utils.py", line 2454, in greedy_search
+[rank0]:     outputs = self(
+[rank0]:               ^^^^^
+[rank0]:   File "/home/victor/anaconda3/envs/megatron-deepspeed/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/victor/anaconda3/envs/megatron-deepspeed/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1845, in _call_impl
+[rank0]:     return inner()
+[rank0]:            ^^^^^^^
+[rank0]:   File "/home/victor/anaconda3/envs/megatron-deepspeed/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1793, in inner
+[rank0]:     result = forward_call(*args, **kwargs)
+[rank0]:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/victor/anaconda3/envs/megatron-deepspeed/lib/python3.11/site-packages/transformers/models/opt/modeling_opt.py", line 1028, in forward
+[rank0]:     logits = self.lm_head(outputs[0]).contiguous()
+[rank0]:              ^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/victor/anaconda3/envs/megatron-deepspeed/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/victor/anaconda3/envs/megatron-deepspeed/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/victor/anaconda3/envs/megatron-deepspeed/lib/python3.11/site-packages/torch/nn/modules/linear.py", line 125, in forward
+[rank0]:     return F.linear(input, self.weight, self.bias)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]: torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 5.08 GiB. GPU 0 has a total capacity of 7.92 GiB of which 978.56 MiB is free. Process 18109 has 104.00 MiB memory in use. Including non-PyTorch memory, this process has 6.86 GiB memory in use. Of the allocated memory 763.64 MiB is allocated by PyTorch, and 112.36 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+[rank0]:[W509 17:25:20.325829694 ProcessGroupNCCL.cpp:1496] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+[2025-05-09 17:25:22,595] [INFO] [launch.py:319:sigkill_handler] Killing subprocess 18108
+[2025-05-09 17:25:22,595] [INFO] [launch.py:319:sigkill_handler] Killing subprocess 18109
+[2025-05-09 17:25:22,607] [ERROR] [launch.py:325:sigkill_handler] ['/home/victor/anaconda3/envs/megatron-deepspeed/bin/python', '-u', 'run_opt_experiment.py', '--local_rank=1', '--loops', '3', '--model', 'facebook/opt-350m', '--batch-size', '4', '--prompt-len', '512', '--gen-len', '32', '--use-tp-parallel', '--output-file', 'results.log', '--verbose', '2'] exits with return code = 1

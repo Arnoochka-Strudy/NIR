@@ -1,0 +1,6 @@
+{
+    "tensor_parallel": {
+        "enabled": true,
+        "tp_size": 2
+    }
+}

@@ -1,5 +1,13 @@
 {
+    "fp16": {
+        "enabled": false
+    },
+    "bp16": {
+        "enabled": false
+    },
+    "steps_per_print": 2000,
     "train_batch_size": 4,
+    "wall_clock_breakdown": false,
     "zero_optimization": {
         "stage": 3,
         "stage3_prefetch_bucket_size": 2097152,
@@ -13,7 +21,13 @@
             "buffer_size": 536870912
         }
     },
-    "pipeline": {
-      "pipe_parallel_size": 2
+    "aio": {
+        "enabled": true,
+        "block_size": 16777216,
+        "queue_depth": 64,
+        "thread_count": 8,
+        "use_gds": false,
+        "single_submit": false,
+        "overlap_events": true
     }
-  }
+}
