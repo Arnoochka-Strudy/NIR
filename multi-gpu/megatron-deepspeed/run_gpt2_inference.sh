@@ -5,7 +5,7 @@ BASE_PATH=/home/victor/NIR/multi-gpu/megatron-deepspeed/gpt2
 DS_CONFIG=ds_config.json
 
 # Type Parallelism
-TP=2
+TP=1
 PP=1
 
 # Model Architecture
@@ -17,7 +17,7 @@ FFN_HIDDEN_SIZE=4096
 MAX_POSITION_EMBEDDINGS=2048
 
 # Batch
-GLOBAL_BATCH=2
+GLOBAL_BATCH=4
 MICRO_BATCH=2
 
 # DeepSpeed
@@ -32,6 +32,8 @@ LOGGER=logger.log
 
 
 deepspeed --num_gpus 2 inference_gpt2.py \
+    --moe-expert-parallel-size 2 \
+    --num-experts 2 \
     --data-dir "/home/victor/NIR/benchmark_full.txt" \
     --loops 3 \
     --gen-len 32 \
@@ -50,7 +52,6 @@ deepspeed --num_gpus 2 inference_gpt2.py \
     --vocab-file $BASE_PATH/vocab.json \
     --merge-file $BASE_PATH/merges.txt \
     --inference \
-    --use-zero \
     $ds_args &> $LOGGER
 
 
