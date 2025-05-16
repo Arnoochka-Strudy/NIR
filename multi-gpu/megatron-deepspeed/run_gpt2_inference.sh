@@ -32,8 +32,6 @@ LOGGER=logger.log
 
 
 deepspeed --num_gpus 2 inference_gpt2.py \
-    --moe-expert-parallel-size 2 \
-    --num-experts 2 \
     --data-dir "/home/victor/NIR/benchmark_full.txt" \
     --loops 3 \
     --gen-len 32 \
