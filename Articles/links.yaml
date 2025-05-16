@@ -21,3 +21,5 @@ Nvidia:
 alpa: https://github.com/alpa-projects/alpa
 maskLLM: https://github.com/NVlabs/MaskLLM/blob/main/tools/checkpoint/util.py
 cupy: https://github.com/cupy/cupys
+
+DeepSpeed-optimization: https://www.microsoft.com/en-us/research/blog/deepspeed-accelerating-large-scale-model-inference-and-training-via-system-optimizations-and-compression/
