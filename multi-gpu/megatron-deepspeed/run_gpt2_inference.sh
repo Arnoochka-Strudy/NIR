@@ -5,7 +5,7 @@ BASE_PATH=/home/victor/NIR/multi-gpu/megatron-deepspeed/gpt2
 DS_CONFIG=ds_config.json
 
 # Type Parallelism
-TP=1
+TP=2
 PP=1
 
 # Model Architecture
@@ -31,11 +31,10 @@ ds_args=" --zero-stage=3 ${ds_args}"
 LOGGER=logger.log
 
 
-deepspeed --num_gpus 2 inference_gpt2.py \
-    --moe-expert-parallel-size 2 \
-    --num-experts 2 \
+deepspeed --num_gpus $TP inference_gpt2.py \
     --data-dir "/home/victor/NIR/benchmark_full.txt" \
     --loops 3 \
+    --use-zero \
     --gen-len 32 \
     --output-file results.log \
     --tensor-model-parallel-size $TP \
