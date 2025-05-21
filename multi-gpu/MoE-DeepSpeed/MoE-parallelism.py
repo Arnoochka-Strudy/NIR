@@ -1,6 +1,6 @@
 import torch
 import torch.nn as nn
-from transformers import BertConfig, BertLayer
+from transformers import BertConfig
 from transformers.models.bert.modeling_bert import BertAttention, BertConfig
 from deepspeed.moe.layer import MoE
 import deepspeed
@@ -35,11 +35,8 @@ class MoETransformerBlock(nn.Module):
         self.ln2 = nn.LayerNorm(hidden_size)
 
     def forward(self, x):
-        # Self Attention + Residual + LN
         attn_out = self.attn(x)[0]
         x = self.ln1(x + attn_out)
-
-        # MoE FFN + Residual + LN
         moe_out, _, _ = self.moe(x)
         x = self.ln2(x + moe_out)
 
@@ -68,18 +65,11 @@ class MoETransformerForLM(nn.Module):
         logits = self.unembed(x)
         return logits
 
-# === Инициализация распределённого окружения ===
-def setup_dist():
-    deepspeed.init_distributed(dist_backend="nccl")
-
-# === Основной скрипт ===
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--local_rank", type=int, default=-1, help="Local rank passed by DeepSpeed")
     args = parser.parse_args()
-
-    # Инициализация процесса и модели
-    setup_dist()
+    deepspeed.init_distributed(dist_backend="nccl")
     device = torch.device("cuda", args.local_rank)
     torch.cuda.set_device(device)
 
@@ -90,7 +80,7 @@ def main():
         "moe": {
             "enabled": True,
             "num_experts": [NUM_EXPERTS],
-            "ep_size": EP_SIZE,  # число GPU для эксперт параллелизма
+            "ep_size": EP_SIZE,
         },
         "dtype": torch.float
     }
@@ -102,21 +92,19 @@ def main():
 
     engine.eval()
 
-    # === Проверяем, где какие эксперты ===
     print(f"\n[Rank {args.local_rank}] Model device: {next(model.parameters()).device}")
     for name, param in model.named_parameters():
         print(f"{name} is on {param.device}")
 
-    # === Тестовый инпут ===
     input_ids = torch.randint(
         low=0,
         high=VOCAB_SIZE,
         size=(1, SEQ_LEN),
-        dtype=torch.long  # ← Очень важно!
+        dtype=torch.long 
     ).to(device)
 
     with torch.no_grad():
-        output = engine(input_ids)  # не input_tensor!
+        output = engine(input_ids)
         print(f"[Rank {args.local_rank}] Output shape: {output.shape}")
 
 if __name__ == "__main__":
