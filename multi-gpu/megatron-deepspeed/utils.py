@@ -36,6 +36,7 @@ def write_benchmark_log(args, filename, model_size, cache_size, hidden_size,
                f" ffn hidden size: {args.ffn_hidden_size}\n"
                f" max position embeddings: {args.max_position_embeddings}\n"
                f" use zero: {args.use_zero}\n"
+               f" num experts: {args.num_experts}\n"
                f"Used Sizes:\n"
                f"model size: {model_size/GB:.3f} GB\t"
                f"cache size: {cache_size/GB:.3f} GB\t"

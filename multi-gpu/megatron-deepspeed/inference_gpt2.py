@@ -54,7 +54,7 @@ def model_provider(pre_process=True, post_process=True):
                 parallel_output=True,
                 pre_process=pre_process,
                 post_process=post_process,
-                return_moe_loss=False
+                return_moe_loss=True
             )
     see_memory_usage(f"After Building Model", force=True)
     return model
@@ -90,7 +90,7 @@ def generate(data_iterator, model):
 
     for step in range(args.gen_len):
         # Forward pass
-        print_rank_0(f"f: {tokens.dtype}, {attention_mask.dtype}, {position_ids.dtype}")
+        print_rank_0(f"tokens: {tokens.shape}")
         logits = model(tokens, position_ids, attention_mask)[0]
         full_logits = tensor_parallel.gather_from_tensor_model_parallel_region(logits)
         next_token_logits = full_logits[:, -1, :]
@@ -100,21 +100,8 @@ def generate(data_iterator, model):
         generated_tokens.append(next_token_id)
 
         # Update input tensors
-        tokens = torch.cat([tokens, next_token_id], dim=1)
-
-        # Update position_ids
-        next_position_id = torch.tensor(seq_len + step, device=tokens.device).expand(batch_size, 1)
-        position_ids = torch.cat([position_ids, next_position_id], dim=1)
-
-        # Update attention_mask
-        new_attention_mask = torch.zeros(
-            (1, 1, attention_mask.size(-2) + 1, attention_mask.size(-1) + 1),
-            dtype=attention_mask.dtype,
-            device=attention_mask.device
-        )
-        new_attention_mask[..., :-1, :-1] = attention_mask
-        new_attention_mask[..., -1, :seq_len + step + 1] = False  # Allow attending to all previous tokens
-        attention_mask = new_attention_mask
+        tokens = torch.roll(tokens, shifts=-1, dims=1)
+        tokens[:, -1] = next_token_id.squeeze(1)
 
     # Stack all generated tokens into a tensor of shape [batch_size, num_tokens_to_generate]
     generated_tokens = torch.cat(generated_tokens, dim=1)
