@@ -9,7 +9,9 @@ T = 1e12
 
 def model_bytes(config):
     h = config.hidden_size
-    return 	4 * (config.num_layers * (
+    v = config.vocab_size
+    n = config.num_layers
+    return 	2 * (n * (
     # config-attention
     h * (3 * h + 1) + h * (h + 1) +
     # mlp
@@ -17,10 +19,11 @@ def model_bytes(config):
     # layer norm
     h * 4) +
     # embedding
-    config.vocab_size * (h + 1))
+    v * (h + 1))
+        
 
 def cache_bytes(config, batch_size, seq_len):
-    return 4 * batch_size * seq_len * config.num_layers * config.hidden_size * 2
+    return 2 * batch_size * seq_len * config.num_layers * config.hidden_size * 2
 
 def hidden_bytes(config, batch_size, seq_len):
     return batch_size * seq_len * config.hidden_size * 4
@@ -36,7 +39,7 @@ def write_benchmark_log(args, filename, model_size, cache_size, hidden_size,
                f" ffn hidden size: {args.ffn_hidden_size}\n"
                f" max position embeddings: {args.max_position_embeddings}\n"
                f" use zero: {args.use_zero}\n"
-               f" num experts: {args.num_experts}\n"
+               f" num experts: {args.num_experts[0]}\n"
                f"Used Sizes:\n"
                f"model size: {model_size/GB:.3f} GB\t"
                f"cache size: {cache_size/GB:.3f} GB\t"

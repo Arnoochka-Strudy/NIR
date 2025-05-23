@@ -1,12 +1,12 @@
 {
     "fp16": {
-        "enabled": false
+        "enabled": true
     },
     "bp16": {
         "enabled": false
     },
     "steps_per_print": 2000,
-    "train_batch_size": 1,
-    "train_micro_batch_size_per_gpu": 1,
+    "train_batch_size": 8,
+    "train_micro_batch_size_per_gpu": 4,
     "wall_clock_breakdown": false
 }

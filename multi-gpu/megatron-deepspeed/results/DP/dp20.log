@@ -1,0 +1,14 @@
+GPT model:
+ num layers: 20
+ hidden size: 4096
+ seq length: 1024
+ ffn hidden size: 4096
+ max position embeddings: 2048
+ use zero: False
+ num experts: 1
+Used Sizes:
+model size: 7.885 GB	cache size: 2.507 GB	hidden size (p): 0.125 GB
+peak gpu mem: 5.921 GB	prefill latency: 0.493 s	prefill throughput: 16601.081 token/s
+decode latency: 2.482 s	decode throughput: 6.447 token/s
+total latency: 2.975 s	total throughput: 8.066 token/s
+

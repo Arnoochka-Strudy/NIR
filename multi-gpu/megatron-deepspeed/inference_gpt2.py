@@ -134,7 +134,7 @@ def inference(model_provider,
         args.deepspeed_config_dict = _create_ds_config_dict()
 
     model = setup_model_and_optimizer(model_provider, model_type)[0][0]
-    promts = get_prompts(filename="/home/victor/NIR/benchmark_mean.txt")
+    promts = get_prompts(filename="/home/ubuntu/NIR/benchmark_mean.txt")
     batch_size = args.micro_batch_size
     tokenizer = get_tokenizer()
     
@@ -181,7 +181,7 @@ def inference(model_provider,
 
     filename = args.output_file
     
-    args.vocab_size = 50304
+    args.vocab_size = 50257
     cache_size = cache_bytes(args, args.global_batch_size, args.seq_length + args.gen_len)
     hidden_size = hidden_bytes(args, args.global_batch_size, args.seq_length + args.gen_len)
     log_str = write_benchmark_log(
