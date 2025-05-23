@@ -150,7 +150,6 @@ def inference(model_provider,
     promts = get_prompts(filename="/home/victor/NIR/benchmark_mean.txt")
     batch_size = args.micro_batch_size
     tokenizer = get_tokenizer()
-    
     add_model_hooks(model)
     def set_model_stage(model, stage):
         model.stage = stage
