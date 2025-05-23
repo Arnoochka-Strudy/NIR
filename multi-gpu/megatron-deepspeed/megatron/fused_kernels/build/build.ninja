@@ -1,13 +1,14 @@
 ninja_required_version = 1.3
 cxx = c++
-nvcc = /usr/local/cuda-12.4/bin/nvcc
+nvcc = /usr/bin/nvcc
 
-cflags = -DTORCH_EXTENSION_NAME=scaled_softmax_cuda -DTORCH_API_INCLUDE_EXTENSION_H -DPYBIND11_COMPILER_TYPE=\"_gcc\" -DPYBIND11_STDLIB=\"_libstdcpp\" -DPYBIND11_BUILD_ABI=\"_cxxabi1011\" -isystem /home/victor/anaconda3/envs/megatron-deepspeed/lib/python3.11/site-packages/torch/include -isystem /home/victor/anaconda3/envs/megatron-deepspeed/lib/python3.11/site-packages/torch/include/torch/csrc/api/include -isystem /home/victor/anaconda3/envs/megatron-deepspeed/lib/python3.11/site-packages/torch/include/TH -isystem /home/victor/anaconda3/envs/megatron-deepspeed/lib/python3.11/site-packages/torch/include/THC -isystem /usr/local/cuda-12.4/include -isystem /home/victor/anaconda3/envs/megatron-deepspeed/include/python3.11 -D_GLIBCXX_USE_CXX11_ABI=0 -fPIC -std=c++17 -O3
+cflags = -DTORCH_EXTENSION_NAME=scaled_softmax_cuda -DTORCH_API_INCLUDE_EXTENSION_H -DPYBIND11_COMPILER_TYPE=\"_gcc\" -DPYBIND11_STDLIB=\"_libstdcpp\" -DPYBIND11_BUILD_ABI=\"_cxxabi1016\" -isystem /home/ubuntu/miniconda3/lib/python3.13/site-packages/torch/include -isystem /home/ubuntu/miniconda3/lib/python3.13/site-packages/torch/include/torch/csrc/api/include -isystem /home/ubuntu/miniconda3/include/python3.13 -D_GLIBCXX_USE_CXX11_ABI=1 -fPIC -std=c++17 -O3
 post_cflags = 
-cuda_cflags = -DTORCH_EXTENSION_NAME=scaled_softmax_cuda -DTORCH_API_INCLUDE_EXTENSION_H -DPYBIND11_COMPILER_TYPE=\"_gcc\" -DPYBIND11_STDLIB=\"_libstdcpp\" -DPYBIND11_BUILD_ABI=\"_cxxabi1011\" -isystem /home/victor/anaconda3/envs/megatron-deepspeed/lib/python3.11/site-packages/torch/include -isystem /home/victor/anaconda3/envs/megatron-deepspeed/lib/python3.11/site-packages/torch/include/torch/csrc/api/include -isystem /home/victor/anaconda3/envs/megatron-deepspeed/lib/python3.11/site-packages/torch/include/TH -isystem /home/victor/anaconda3/envs/megatron-deepspeed/lib/python3.11/site-packages/torch/include/THC -isystem /usr/local/cuda-12.4/include -isystem /home/victor/anaconda3/envs/megatron-deepspeed/include/python3.11 -D_GLIBCXX_USE_CXX11_ABI=0 -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_BFLOAT16_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr -gencode=arch=compute_61,code=compute_61 -gencode=arch=compute_61,code=sm_61 --compiler-options '-fPIC' -O3 -gencode arch=compute_70,code=sm_70 --use_fast_math -U__CUDA_NO_HALF_OPERATORS__ -U__CUDA_NO_HALF_CONVERSIONS__ --expt-relaxed-constexpr --expt-extended-lambda -gencode arch=compute_80,code=sm_80 -gencode arch=compute_86,code=sm_86 -gencode arch=compute_87,code=sm_87 -gencode arch=compute_90,code=sm_90 -std=c++17
+cuda_cflags = -DTORCH_EXTENSION_NAME=scaled_softmax_cuda -DTORCH_API_INCLUDE_EXTENSION_H -DPYBIND11_COMPILER_TYPE=\"_gcc\" -DPYBIND11_STDLIB=\"_libstdcpp\" -DPYBIND11_BUILD_ABI=\"_cxxabi1016\" -isystem /home/ubuntu/miniconda3/lib/python3.13/site-packages/torch/include -isystem /home/ubuntu/miniconda3/lib/python3.13/site-packages/torch/include/torch/csrc/api/include -isystem /home/ubuntu/miniconda3/include/python3.13 -D_GLIBCXX_USE_CXX11_ABI=1 -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_BFLOAT16_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr -gencode=arch=compute_75,code=compute_75 -gencode=arch=compute_75,code=sm_75 --compiler-options '-fPIC' -O3 -gencode arch=compute_70,code=sm_70 --use_fast_math -U__CUDA_NO_HALF_OPERATORS__ -U__CUDA_NO_HALF_CONVERSIONS__ --expt-relaxed-constexpr --expt-extended-lambda -gencode arch=compute_80,code=sm_80 -gencode arch=compute_90,code=sm_90 -std=c++17
 cuda_post_cflags = 
 cuda_dlink_post_cflags = 
-ldflags = -shared -L/home/victor/anaconda3/envs/megatron-deepspeed/lib/python3.11/site-packages/torch/lib -lc10 -lc10_cuda -ltorch_cpu -ltorch_cuda -ltorch -ltorch_python -L/usr/local/cuda-12.4/lib64 -lcudart
+sycl_dlink_post_cflags = 
+ldflags = -shared -L/home/ubuntu/miniconda3/lib/python3.13/site-packages/torch/lib -lc10 -lc10_cuda -ltorch_cpu -ltorch_cuda -ltorch -ltorch_python -L/usr/lib64 -lcudart
 
 rule compile
   command = $cxx -MMD -MF $out.d $cflags -c $in -o $out $post_cflags
@@ -21,11 +22,15 @@ rule cuda_compile
 
 
 
+
+
 rule link
   command = $cxx $in $ldflags -o $out
 
-build scaled_softmax.o: compile /home/victor/NIR/multi-gpu/megatron-deepspeed/megatron/fused_kernels/scaled_softmax.cpp
-build scaled_softmax_cuda.cuda.o: cuda_compile /home/victor/NIR/multi-gpu/megatron-deepspeed/megatron/fused_kernels/scaled_softmax_cuda.cu
+build scaled_softmax.o: compile /home/ubuntu/NIR/multi-gpu/megatron-deepspeed/megatron/fused_kernels/scaled_softmax.cpp
+build scaled_softmax_cuda.cuda.o: cuda_compile /home/ubuntu/NIR/multi-gpu/megatron-deepspeed/megatron/fused_kernels/scaled_softmax_cuda.cu
+
+
 
 
 

@@ -11,7 +11,7 @@ HIDDEN_SIZE = 1024
 NUM_HEADS = 16
 NUM_LAYERS = 24
 VOCAB_SIZE = 50272
-SEQ_LEN = 512
+SEQ_LEN = 512 + 256
 NUM_EXPERTS = 16
 USE_TUTEL = False
 EP_SIZE=2
@@ -99,7 +99,7 @@ def main():
     input_ids = torch.randint(
         low=0,
         high=VOCAB_SIZE,
-        size=(1, SEQ_LEN),
+        size=(20, 769),
         dtype=torch.long 
     ).to(device)
 

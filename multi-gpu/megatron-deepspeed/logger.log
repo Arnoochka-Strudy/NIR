@@ -1,42 +1,26 @@
-[2025-05-10 12:19:55,227] [INFO] [real_accelerator.py:239:get_accelerator] Setting ds_accelerator to cuda (auto detect)
-/home/victor/anaconda3/envs/megatron-deepspeed/lib/python3.11/site-packages/transformers/utils/generic.py:260: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
-  torch.utils._pytree._register_pytree_node(
-/home/victor/anaconda3/envs/megatron-deepspeed/lib/python3.11/site-packages/transformers/utils/generic.py:260: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
-  torch.utils._pytree._register_pytree_node(
-[2025-05-10 12:19:58,160] [WARNING] [runner.py:215:fetch_hostfile] Unable to find hostfile, will proceed with training with local resources only.
-[2025-05-10 12:19:58,160] [INFO] [runner.py:605:main] cmd = /home/victor/anaconda3/envs/megatron-deepspeed/bin/python -u -m deepspeed.launcher.launch --world_info=eyJsb2NhbGhvc3QiOiBbMCwgMV19 --master_addr=127.0.0.1 --master_port=29500 --enable_each_rank_log=None inference_gpt2.py --moe-expert-parallel-size 2 --num-experts 2 --data-dir /home/victor/NIR/benchmark_full.txt --loops 3 --gen-len 32 --output-file results.log --tensor-model-parallel-size 1 --pipeline-model-parallel-size 1 --num-layers 24 --hidden-size 1024 --num-attention-heads 16 --seq-length 512 --ffn-hidden-size 4096 --max-position-embeddings 2048 --micro-batch-size 2 --global-batch-size 4 --log-interval 1 --vocab-file /home/victor/NIR/multi-gpu/megatron-deepspeed/gpt2/vocab.json --merge-file /home/victor/NIR/multi-gpu/megatron-deepspeed/gpt2/merges.txt --inference --zero-stage=3 --deepspeed_config=ds_config.json --no-pipeline-parallel --deepspeed
-[2025-05-10 12:20:00,239] [INFO] [real_accelerator.py:239:get_accelerator] Setting ds_accelerator to cuda (auto detect)
-/home/victor/anaconda3/envs/megatron-deepspeed/lib/python3.11/site-packages/transformers/utils/generic.py:260: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
-  torch.utils._pytree._register_pytree_node(
-/home/victor/anaconda3/envs/megatron-deepspeed/lib/python3.11/site-packages/transformers/utils/generic.py:260: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
-  torch.utils._pytree._register_pytree_node(
-[2025-05-10 12:20:03,246] [INFO] [launch.py:146:main] WORLD INFO DICT: {'localhost': [0, 1]}
-[2025-05-10 12:20:03,246] [INFO] [launch.py:152:main] nnodes=1, num_local_procs=2, node_rank=0
-[2025-05-10 12:20:03,246] [INFO] [launch.py:163:main] global_rank_mapping=defaultdict(<class 'list'>, {'localhost': [0, 1]})
-[2025-05-10 12:20:03,246] [INFO] [launch.py:164:main] dist_world_size=2
-[2025-05-10 12:20:03,246] [INFO] [launch.py:168:main] Setting CUDA_VISIBLE_DEVICES=0,1
-[2025-05-10 12:20:03,248] [INFO] [launch.py:256:main] process 4135 spawned with command: ['/home/victor/anaconda3/envs/megatron-deepspeed/bin/python', '-u', 'inference_gpt2.py', '--local_rank=0', '--moe-expert-parallel-size', '2', '--num-experts', '2', '--data-dir', '/home/victor/NIR/benchmark_full.txt', '--loops', '3', '--gen-len', '32', '--output-file', 'results.log', '--tensor-model-parallel-size', '1', '--pipeline-model-parallel-size', '1', '--num-layers', '24', '--hidden-size', '1024', '--num-attention-heads', '16', '--seq-length', '512', '--ffn-hidden-size', '4096', '--max-position-embeddings', '2048', '--micro-batch-size', '2', '--global-batch-size', '4', '--log-interval', '1', '--vocab-file', '/home/victor/NIR/multi-gpu/megatron-deepspeed/gpt2/vocab.json', '--merge-file', '/home/victor/NIR/multi-gpu/megatron-deepspeed/gpt2/merges.txt', '--inference', '--zero-stage=3', '--deepspeed_config=ds_config.json', '--no-pipeline-parallel', '--deepspeed']
-[2025-05-10 12:20:03,251] [INFO] [launch.py:256:main] process 4136 spawned with command: ['/home/victor/anaconda3/envs/megatron-deepspeed/bin/python', '-u', 'inference_gpt2.py', '--local_rank=1', '--moe-expert-parallel-size', '2', '--num-experts', '2', '--data-dir', '/home/victor/NIR/benchmark_full.txt', '--loops', '3', '--gen-len', '32', '--output-file', 'results.log', '--tensor-model-parallel-size', '1', '--pipeline-model-parallel-size', '1', '--num-layers', '24', '--hidden-size', '1024', '--num-attention-heads', '16', '--seq-length', '512', '--ffn-hidden-size', '4096', '--max-position-embeddings', '2048', '--micro-batch-size', '2', '--global-batch-size', '4', '--log-interval', '1', '--vocab-file', '/home/victor/NIR/multi-gpu/megatron-deepspeed/gpt2/vocab.json', '--merge-file', '/home/victor/NIR/multi-gpu/megatron-deepspeed/gpt2/merges.txt', '--inference', '--zero-stage=3', '--deepspeed_config=ds_config.json', '--no-pipeline-parallel', '--deepspeed']
-[2025-05-10 12:20:06,668] [INFO] [real_accelerator.py:239:get_accelerator] Setting ds_accelerator to cuda (auto detect)
-[2025-05-10 12:20:07,045] [INFO] [real_accelerator.py:239:get_accelerator] Setting ds_accelerator to cuda (auto detect)
-/home/victor/anaconda3/envs/megatron-deepspeed/lib/python3.11/site-packages/transformers/utils/generic.py:260: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
-  torch.utils._pytree._register_pytree_node(
-/home/victor/anaconda3/envs/megatron-deepspeed/lib/python3.11/site-packages/transformers/utils/generic.py:260: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
-  torch.utils._pytree._register_pytree_node(
-/home/victor/NIR/multi-gpu/megatron-deepspeed/megatron/core/tensor_parallel/layers.py:249: FutureWarning: `torch.cuda.amp.custom_fwd(args...)` is deprecated. Please use `torch.amp.custom_fwd(args..., device_type='cuda')` instead.
+[2025-05-23 18:15:09,760] [INFO] [real_accelerator.py:239:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2025-05-23 18:15:13,873] [WARNING] [runner.py:215:fetch_hostfile] Unable to find hostfile, will proceed with training with local resources only.
+[2025-05-23 18:15:13,873] [INFO] [runner.py:605:main] cmd = /home/ubuntu/miniconda3/bin/python -u -m deepspeed.launcher.launch --world_info=eyJsb2NhbGhvc3QiOiBbMCwgMV19 --master_addr=127.0.0.1 --master_port=29500 --enable_each_rank_log=None inference_gpt2.py --data-dir ~/NIR/benchmark_full.txt --loops 3 --gen-len 3 --output-file results/DP/dp10.log --tensor-model-parallel-size 1 --pipeline-model-parallel-size 1 --num-layers 10 --hidden-size 4096 --num-attention-heads 32 --seq-length 1024 --ffn-hidden-size 4096 --max-position-embeddings 2048 --micro-batch-size 4 --global-batch-size 8 --log-interval 1 --vocab-file /home/ubuntu/NIR/multi-gpu/megatron-deepspeed/gpt2/vocab.json --merge-file /home/ubuntu/NIR/multi-gpu/megatron-deepspeed/gpt2/merges.txt --inference --fp16 --deepspeed_config=ds_config.json --no-pipeline-parallel --deepspeed
+[2025-05-23 18:15:15,908] [INFO] [real_accelerator.py:239:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2025-05-23 18:15:20,274] [INFO] [launch.py:146:main] WORLD INFO DICT: {'localhost': [0, 1]}
+[2025-05-23 18:15:20,274] [INFO] [launch.py:152:main] nnodes=1, num_local_procs=2, node_rank=0
+[2025-05-23 18:15:20,274] [INFO] [launch.py:163:main] global_rank_mapping=defaultdict(<class 'list'>, {'localhost': [0, 1]})
+[2025-05-23 18:15:20,274] [INFO] [launch.py:164:main] dist_world_size=2
+[2025-05-23 18:15:20,274] [INFO] [launch.py:168:main] Setting CUDA_VISIBLE_DEVICES=0,1
+[2025-05-23 18:15:20,275] [INFO] [launch.py:256:main] process 69981 spawned with command: ['/home/ubuntu/miniconda3/bin/python', '-u', 'inference_gpt2.py', '--local_rank=0', '--data-dir', '~/NIR/benchmark_full.txt', '--loops', '3', '--gen-len', '3', '--output-file', 'results/DP/dp10.log', '--tensor-model-parallel-size', '1', '--pipeline-model-parallel-size', '1', '--num-layers', '10', '--hidden-size', '4096', '--num-attention-heads', '32', '--seq-length', '1024', '--ffn-hidden-size', '4096', '--max-position-embeddings', '2048', '--micro-batch-size', '4', '--global-batch-size', '8', '--log-interval', '1', '--vocab-file', '/home/ubuntu/NIR/multi-gpu/megatron-deepspeed/gpt2/vocab.json', '--merge-file', '/home/ubuntu/NIR/multi-gpu/megatron-deepspeed/gpt2/merges.txt', '--inference', '--fp16', '--deepspeed_config=ds_config.json', '--no-pipeline-parallel', '--deepspeed']
+[2025-05-23 18:15:20,276] [INFO] [launch.py:256:main] process 69982 spawned with command: ['/home/ubuntu/miniconda3/bin/python', '-u', 'inference_gpt2.py', '--local_rank=1', '--data-dir', '~/NIR/benchmark_full.txt', '--loops', '3', '--gen-len', '3', '--output-file', 'results/DP/dp10.log', '--tensor-model-parallel-size', '1', '--pipeline-model-parallel-size', '1', '--num-layers', '10', '--hidden-size', '4096', '--num-attention-heads', '32', '--seq-length', '1024', '--ffn-hidden-size', '4096', '--max-position-embeddings', '2048', '--micro-batch-size', '4', '--global-batch-size', '8', '--log-interval', '1', '--vocab-file', '/home/ubuntu/NIR/multi-gpu/megatron-deepspeed/gpt2/vocab.json', '--merge-file', '/home/ubuntu/NIR/multi-gpu/megatron-deepspeed/gpt2/merges.txt', '--inference', '--fp16', '--deepspeed_config=ds_config.json', '--no-pipeline-parallel', '--deepspeed']
+[2025-05-23 18:15:23,637] [INFO] [real_accelerator.py:239:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2025-05-23 18:15:23,663] [INFO] [real_accelerator.py:239:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+/home/ubuntu/NIR/multi-gpu/megatron-deepspeed/megatron/core/tensor_parallel/layers.py:249: FutureWarning: `torch.cuda.amp.custom_fwd(args...)` is deprecated. Please use `torch.amp.custom_fwd(args..., device_type='cuda')` instead.
   @custom_fwd
-/home/victor/NIR/multi-gpu/megatron-deepspeed/megatron/core/tensor_parallel/layers.py:287: FutureWarning: `torch.cuda.amp.custom_bwd(args...)` is deprecated. Please use `torch.amp.custom_bwd(args..., device_type='cuda')` instead.
+/home/ubuntu/NIR/multi-gpu/megatron-deepspeed/megatron/core/tensor_parallel/layers.py:287: FutureWarning: `torch.cuda.amp.custom_bwd(args...)` is deprecated. Please use `torch.amp.custom_bwd(args..., device_type='cuda')` instead.
   @custom_bwd
-/home/victor/anaconda3/envs/megatron-deepspeed/lib/python3.11/site-packages/transformers/utils/generic.py:260: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
-  torch.utils._pytree._register_pytree_node(
-/home/victor/anaconda3/envs/megatron-deepspeed/lib/python3.11/site-packages/transformers/utils/generic.py:260: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
-  torch.utils._pytree._register_pytree_node(
-/home/victor/NIR/multi-gpu/megatron-deepspeed/megatron/core/tensor_parallel/layers.py:249: FutureWarning: `torch.cuda.amp.custom_fwd(args...)` is deprecated. Please use `torch.amp.custom_fwd(args..., device_type='cuda')` instead.
+/home/ubuntu/NIR/multi-gpu/megatron-deepspeed/megatron/core/tensor_parallel/layers.py:249: FutureWarning: `torch.cuda.amp.custom_fwd(args...)` is deprecated. Please use `torch.amp.custom_fwd(args..., device_type='cuda')` instead.
   @custom_fwd
-/home/victor/NIR/multi-gpu/megatron-deepspeed/megatron/core/tensor_parallel/layers.py:287: FutureWarning: `torch.cuda.amp.custom_bwd(args...)` is deprecated. Please use `torch.amp.custom_bwd(args..., device_type='cuda')` instead.
+/home/ubuntu/NIR/multi-gpu/megatron-deepspeed/megatron/core/tensor_parallel/layers.py:287: FutureWarning: `torch.cuda.amp.custom_bwd(args...)` is deprecated. Please use `torch.amp.custom_bwd(args..., device_type='cuda')` instead.
   @custom_bwd
 using world size: 2, data-parallel-size: 2, sequence-parallel size: 1, tensor-model-parallel size: 1, pipeline-model-parallel size: 1 
-using torch.float32 for parameters ...
+using torch.float16 for parameters ...
 ------------------------ arguments ------------------------
   accumulate_allreduce_grads_in_fp32 .............. False
   adam_beta1 ...................................... 0.9
@@ -78,7 +62,7 @@ using torch.float32 for parameters ...
   create_moe_param_group .......................... False
   curriculum_learning_legacy ...................... False
   data_cache_path ................................. None
-  data_dir ........................................ /home/victor/NIR/benchmark_full.txt
+  data_dir ........................................ ~/NIR/benchmark_full.txt
   data_efficiency_curriculum_learning ............. False
   data_impl ....................................... infer
   data_parallel_random_init ....................... False
@@ -121,8 +105,8 @@ using torch.float32 for parameters ...
   enable_expert_tensor_parallelism ................ False
   enable_zbh1_exact_semantics ..................... False
   enable_zbh1_pipeline ............................ False
-  encoder_num_layers .............................. 24
-  encoder_seq_length .............................. 512
+  encoder_num_layers .............................. 10
+  encoder_seq_length .............................. 1024
   end_weight_decay ................................ 0.01
   eod_mask_loss ................................... False
   eval_interval ................................... 1000
@@ -136,7 +120,7 @@ using torch.float32 for parameters ...
   ffn_hidden_size ................................. 4096
   finetune ........................................ False
   force_ds_sequence_parallel ...................... False
-  fp16 ............................................ False
+  fp16 ............................................ True
   fp16_lm_cross_entropy ........................... False
   fp32_residual_connection ........................ False
   fp8_amax_compute_algo ........................... most_recent
@@ -146,12 +130,12 @@ using torch.float32 for parameters ...
   fp8_interval .................................... 1
   fp8_margin ...................................... 0
   fp8_wgrad ....................................... True
-  gen_len ......................................... 32
-  global_batch_size ............................... 4
+  gen_len ......................................... 3
+  global_batch_size ............................... 8
   gradient_accumulation_fusion .................... True
   head_lr_mult .................................... 1.0
   hidden_dropout .................................. 0.1
-  hidden_size ..................................... 1024
+  hidden_size ..................................... 4096
   hidden_size_teacher ............................. None
   hysteresis ...................................... 2
   ict_head_size ................................... None
@@ -171,7 +155,7 @@ using torch.float32 for parameters ...
   kd_beta_ce ...................................... 1
   kd_temp ......................................... 1.0
   kill_switch_file ................................ None
-  kv_channels ..................................... 64
+  kv_channels ..................................... 128
   layernorm_epsilon ............................... 1e-05
   lazy_mpu_init ................................... None
   load ............................................ None
@@ -210,14 +194,14 @@ using torch.float32 for parameters ...
   max_tokens_to_oom ............................... 12000
   mem_efficient_ln ................................ True
   memory_centric_tiled_linear ..................... False
-  merge_file ...................................... /home/victor/NIR/multi-gpu/megatron-deepspeed/gpt2/merges.txt
-  micro_batch_size ................................ 2
+  merge_file ...................................... /home/ubuntu/NIR/multi-gpu/megatron-deepspeed/gpt2/merges.txt
+  micro_batch_size ................................ 4
   min_loss_scale .................................. 1.0
   min_lr .......................................... 0.0
   mlp_type ........................................ standard
   mmap_warmup ..................................... False
   moe_eval_capacity_factor ........................ 1.0
-  moe_expert_parallel_size ........................ 2
+  moe_expert_parallel_size ........................ 1
   moe_loss_coeff .................................. 0.1
   moe_min_capacity ................................ 4
   moe_token_dropping .............................. True
@@ -232,15 +216,15 @@ using torch.float32 for parameters ...
   no_save_optim ................................... None
   no_save_rng ..................................... None
   normalization ................................... layernorm
-  num_attention_heads ............................. 16
+  num_attention_heads ............................. 32
   num_attention_heads_teacher ..................... None
   num_channels .................................... 3
   num_classes ..................................... 1000
-  num_experts ..................................... [2]
+  num_experts ..................................... [1]
   num_experts_switch .............................. None
   num_experts_teacher ............................. [1]
-  num_key_value_heads ............................. 16
-  num_layers ...................................... 24
+  num_key_value_heads ............................. 32
+  num_layers ...................................... 10
   num_layers_per_virtual_pipeline_stage ........... None
   num_layers_teacher .............................. None
   num_workers ..................................... 2
@@ -248,10 +232,10 @@ using torch.float32 for parameters ...
   openai_gelu ..................................... False
   optimizer ....................................... adam
   output_bert_embeddings .......................... False
-  output_file ..................................... results.log
+  output_file ..................................... results/DP/dp10.log
   overlap_p2p_comm ................................ False
   override_opt_param_scheduler .................... False
-  params_dtype .................................... torch.float32
+  params_dtype .................................... torch.float16
   partition_activations ........................... False
   patch_dim ....................................... 16
   perform_initialization .......................... True
@@ -294,7 +278,7 @@ using torch.float32 for parameters ...
   scatter_gather_tensors_in_pipeline .............. True
   scattered_embeddings ............................ False
   seed ............................................ 1234
-  seq_length ...................................... 512
+  seq_length ...................................... 1024
   sequence_parallel ............................... False
   sgd_momentum .................................... 0.9
   short_seq_prob .................................. 0.1
@@ -359,7 +343,7 @@ using torch.float32 for parameters ...
   vision_pretraining .............................. False
   vision_pretraining_type ......................... classify
   vocab_extra_ids ................................. 0
-  vocab_file ...................................... /home/victor/NIR/multi-gpu/megatron-deepspeed/gpt2/vocab.json
+  vocab_file ...................................... /home/ubuntu/NIR/multi-gpu/megatron-deepspeed/gpt2/vocab.json
   vocab_size ...................................... None
   wandb_exp_name .................................. 
   wandb_project ................................... 
@@ -371,31 +355,30 @@ using torch.float32 for parameters ...
   zero_contigious_gradients ....................... False
   zero_reduce_bucket_size ......................... 0.0
   zero_reduce_scatter ............................. False
-  zero_stage ...................................... 3
+  zero_stage ...................................... 1.0
 -------------------- end of arguments ---------------------
 setting number of micro-batches to constant 1
 > building GPT2BPETokenizer tokenizer ...
  > padded vocab (size: 50257) with 47 dummy tokens (new size: 50304)
 > initializing torch distributed ...
-[2025-05-10 12:20:12,620] [INFO] [comm.py:669:init_distributed] cdb=None
-[2025-05-10 12:20:12,620] [INFO] [comm.py:700:init_distributed] Initializing TorchBackend in DeepSpeed with backend nccl
+[2025-05-23 18:15:27,293] [INFO] [comm.py:669:init_distributed] cdb=None
+[2025-05-23 18:15:27,293] [INFO] [comm.py:700:init_distributed] Initializing TorchBackend in DeepSpeed with backend nccl
 WARNING: WANDB writing requested but no legit wandb project or experiment name provided, therefore no WANDB logs will be written according to random generated project or experiment name.
-[2025-05-10 12:20:13,272] [INFO] [comm.py:669:init_distributed] cdb=None
-[rank1]:[W510 12:20:13.692677833 ProcessGroupNCCL.cpp:4561] [PG ID 0 PG GUID 0 Rank 1]  using GPU 1 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. Specify device_ids in barrier() to force use of a particular device, or call init_process_group() with a device_id.
+[2025-05-23 18:15:27,519] [INFO] [comm.py:669:init_distributed] cdb=None
+[rank1]:[W523 18:15:27.751810275 ProcessGroupNCCL.cpp:4715] [PG ID 0 PG GUID 0 Rank 1]  using GPU 1 as device used by this process is currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. You can pecify device_id in init_process_group() to force use of a particular device.
 > initialized tensor model parallel with size 1
 > initialized pipeline model parallel with size 1
 > setting random seeds to 1234 ...
 > initializing model parallel cuda seeds on global rank 0, model parallel rank 0, and data parallel rank 0 with model parallel seed: 3952 and data parallel seed: 1234
 > compiling dataset index builder ...
-make: вход в каталог «/home/victor/NIR/multi-gpu/megatron-deepspeed/megatron/data»
-make: Цель «default» не требует выполнения команд.
-make: выход из каталога «/home/victor/NIR/multi-gpu/megatron-deepspeed/megatron/data»
->>> done with dataset index builder. Compilation time: 0.042 seconds
-WARNING: constraints for invoking optimized fused softmax kernel are not met. We default back to unfused kernel invocations.
+make: Entering directory '/home/ubuntu/NIR/multi-gpu/megatron-deepspeed/megatron/data'
+make: Nothing to be done for 'default'.
+make: Leaving directory '/home/ubuntu/NIR/multi-gpu/megatron-deepspeed/megatron/data'
+>>> done with dataset index builder. Compilation time: 0.061 seconds
 > compiling and loading fused kernels ...
 Detected CUDA files, patching ldflags
-Emitting ninja build file /home/victor/NIR/multi-gpu/megatron-deepspeed/megatron/fused_kernels/build/build.ninja...
-/home/victor/anaconda3/envs/megatron-deepspeed/lib/python3.11/site-packages/torch/utils/cpp_extension.py:2059: UserWarning: TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation. 
+Emitting ninja build file /home/ubuntu/NIR/multi-gpu/megatron-deepspeed/megatron/fused_kernels/build/build.ninja...
+/home/ubuntu/miniconda3/lib/python3.13/site-packages/torch/utils/cpp_extension.py:2356: UserWarning: TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation. 
 If this is not desired, please set os.environ['TORCH_CUDA_ARCH_LIST'].
   warnings.warn(
 Building extension module scaled_upper_triang_masked_softmax_cuda...
@@ -403,8 +386,8 @@ Allowing ninja to set a default number of workers... (overridable by setting the
 ninja: no work to do.
 Loading extension module scaled_upper_triang_masked_softmax_cuda...
 Detected CUDA files, patching ldflags
-Emitting ninja build file /home/victor/NIR/multi-gpu/megatron-deepspeed/megatron/fused_kernels/build/build.ninja...
-/home/victor/anaconda3/envs/megatron-deepspeed/lib/python3.11/site-packages/torch/utils/cpp_extension.py:2059: UserWarning: TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation. 
+Emitting ninja build file /home/ubuntu/NIR/multi-gpu/megatron-deepspeed/megatron/fused_kernels/build/build.ninja...
+/home/ubuntu/miniconda3/lib/python3.13/site-packages/torch/utils/cpp_extension.py:2356: UserWarning: TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation. 
 If this is not desired, please set os.environ['TORCH_CUDA_ARCH_LIST'].
   warnings.warn(
 Building extension module scaled_masked_softmax_cuda...
@@ -412,87 +395,212 @@ Allowing ninja to set a default number of workers... (overridable by setting the
 ninja: no work to do.
 Loading extension module scaled_masked_softmax_cuda...
 Detected CUDA files, patching ldflags
-Emitting ninja build file /home/victor/NIR/multi-gpu/megatron-deepspeed/megatron/fused_kernels/build/build.ninja...
-/home/victor/anaconda3/envs/megatron-deepspeed/lib/python3.11/site-packages/torch/utils/cpp_extension.py:2059: UserWarning: TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation. 
+Emitting ninja build file /home/ubuntu/NIR/multi-gpu/megatron-deepspeed/megatron/fused_kernels/build/build.ninja...
+/home/ubuntu/miniconda3/lib/python3.13/site-packages/torch/utils/cpp_extension.py:2356: UserWarning: TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation. 
 If this is not desired, please set os.environ['TORCH_CUDA_ARCH_LIST'].
   warnings.warn(
 Building extension module scaled_softmax_cuda...
 Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
 ninja: no work to do.
 Loading extension module scaled_softmax_cuda...
-[rank0]:[W510 12:20:13.995108195 ProcessGroupNCCL.cpp:4561] [PG ID 0 PG GUID 0 Rank 0]  using GPU 0 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. Specify device_ids in barrier() to force use of a particular device, or call init_process_group() with a device_id.
-/home/victor/anaconda3/envs/megatron-deepspeed/lib/python3.11/site-packages/torch/utils/cpp_extension.py:2059: UserWarning: TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation. 
+[rank0]:[W523 18:15:27.197448482 ProcessGroupNCCL.cpp:4715] [PG ID 0 PG GUID 0 Rank 0]  using GPU 0 as device used by this process is currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. You can pecify device_id in init_process_group() to force use of a particular device.
+/home/ubuntu/miniconda3/lib/python3.13/site-packages/torch/utils/cpp_extension.py:2356: UserWarning: TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation. 
 If this is not desired, please set os.environ['TORCH_CUDA_ARCH_LIST'].
   warnings.warn(
-/home/victor/anaconda3/envs/megatron-deepspeed/lib/python3.11/site-packages/torch/utils/cpp_extension.py:2059: UserWarning: TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation. 
+/home/ubuntu/miniconda3/lib/python3.13/site-packages/torch/utils/cpp_extension.py:2356: UserWarning: TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation. 
 If this is not desired, please set os.environ['TORCH_CUDA_ARCH_LIST'].
   warnings.warn(
-/home/victor/anaconda3/envs/megatron-deepspeed/lib/python3.11/site-packages/torch/utils/cpp_extension.py:2059: UserWarning: TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation. 
+/home/ubuntu/miniconda3/lib/python3.13/site-packages/torch/utils/cpp_extension.py:2356: UserWarning: TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation. 
 If this is not desired, please set os.environ['TORCH_CUDA_ARCH_LIST'].
   warnings.warn(
-[rank1]:[W510 12:20:14.713321293 init.cpp:767] Warning: nvfuser is no longer supported in torch script, use _jit_set_nvfuser_enabled is deprecated and a no-op (function operator())
->>> done with compiling and loading fused kernels. Compilation time: 0.973 seconds
-[rank0]:[W510 12:20:14.714185170 init.cpp:767] Warning: nvfuser is no longer supported in torch script, use _jit_set_nvfuser_enabled is deprecated and a no-op (function operator())
-[2025-05-10 12:20:14,531] [INFO] [config.py:735:__init__] Config mesh_device None world_size = 2
-[rank1]: Traceback (most recent call last):
-[rank1]:   File "/home/victor/NIR/multi-gpu/megatron-deepspeed/inference_gpt2.py", line 222, in <module>
-[rank1]:     inference(model_provider=model_provider,
-[rank1]:   File "/home/victor/NIR/multi-gpu/megatron-deepspeed/inference_gpt2.py", line 149, in inference
-[rank1]:     model = setup_model_and_optimizer(model_provider, model_type)[0][0]
-[rank1]:             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[rank1]:   File "/home/victor/NIR/multi-gpu/megatron-deepspeed/megatron/training.py", line 491, in setup_model_and_optimizer
-[rank1]:     model = get_model(model_provider_func, model_type)
-[rank1]:             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[rank1]:   File "/home/victor/NIR/multi-gpu/megatron-deepspeed/megatron/training.py", line 330, in get_model
-[rank1]:     model = model_provider_func(
-[rank1]:             ^^^^^^^^^^^^^^^^^^^^
-[rank1]:   File "/home/victor/NIR/multi-gpu/megatron-deepspeed/inference_gpt2.py", line 47, in model_provider
-[rank1]:     with deepspeed.zero.Init(data_parallel_group=mpu.get_sequence_data_parallel_group(),
-[rank1]:          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[rank1]:   File "/home/victor/anaconda3/envs/megatron-deepspeed/lib/python3.11/site-packages/deepspeed/runtime/zero/partition_parameters.py", line 949, in __init__
-[rank1]:     _ds_config = deepspeed.runtime.config.DeepSpeedConfig(config_dict_or_path,
-[rank1]:                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[rank1]:   File "/home/victor/anaconda3/envs/megatron-deepspeed/lib/python3.11/site-packages/deepspeed/runtime/config.py", line 800, in __init__
-[rank1]:     self._configure_train_batch_size()
-[rank1]:   File "/home/victor/anaconda3/envs/megatron-deepspeed/lib/python3.11/site-packages/deepspeed/runtime/config.py", line 985, in _configure_train_batch_size
-[rank1]:     self._batch_assertion()
-[rank1]:   File "/home/victor/anaconda3/envs/megatron-deepspeed/lib/python3.11/site-packages/deepspeed/runtime/config.py", line 931, in _batch_assertion
-[rank1]:     assert (grad_acc > 0), f"Gradient accumulation steps: {grad_acc} has to be greater than 0"
-[rank1]:             ^^^^^^^^^^^^
-[rank1]: AssertionError: Gradient accumulation steps: 0 has to be greater than 0
+>>> done with compiling and loading fused kernels. Compilation time: 0.899 seconds
+[rank1]:[W523 18:15:28.719513048 init.cpp:767] Warning: nvfuser is no longer supported in torch script, use _jit_set_nvfuser_enabled is deprecated and a no-op (function operator())
+[rank0]:[W523 18:15:28.719594495 init.cpp:767] Warning: nvfuser is no longer supported in torch script, use _jit_set_nvfuser_enabled is deprecated and a no-op (function operator())
 building GPT model ...
-[2025-05-10 12:20:14,896] [INFO] [utils.py:781:see_memory_usage] Before Building Model
-[2025-05-10 12:20:14,898] [INFO] [utils.py:782:see_memory_usage] MA 0.0 GB         Max_MA 0.27 GB         CA 0.0 GB         Max_CA 0 GB 
-[2025-05-10 12:20:14,898] [INFO] [utils.py:789:see_memory_usage] CPU Virtual Memory:  used = 6.09 GB, percent = 22.3%
-[2025-05-10 12:20:14,901] [INFO] [config.py:735:__init__] Config mesh_device None world_size = 2
-[rank0]: Traceback (most recent call last):
-[rank0]:   File "/home/victor/NIR/multi-gpu/megatron-deepspeed/inference_gpt2.py", line 222, in <module>
-[rank0]:     inference(model_provider=model_provider,
-[rank0]:   File "/home/victor/NIR/multi-gpu/megatron-deepspeed/inference_gpt2.py", line 149, in inference
-[rank0]:     model = setup_model_and_optimizer(model_provider, model_type)[0][0]
-[rank0]:             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[rank0]:   File "/home/victor/NIR/multi-gpu/megatron-deepspeed/megatron/training.py", line 491, in setup_model_and_optimizer
-[rank0]:     model = get_model(model_provider_func, model_type)
-[rank0]:             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[rank0]:   File "/home/victor/NIR/multi-gpu/megatron-deepspeed/megatron/training.py", line 330, in get_model
-[rank0]:     model = model_provider_func(
-[rank0]:             ^^^^^^^^^^^^^^^^^^^^
-[rank0]:   File "/home/victor/NIR/multi-gpu/megatron-deepspeed/inference_gpt2.py", line 47, in model_provider
-[rank0]:     with deepspeed.zero.Init(data_parallel_group=mpu.get_sequence_data_parallel_group(),
-[rank0]:          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[rank0]:   File "/home/victor/anaconda3/envs/megatron-deepspeed/lib/python3.11/site-packages/deepspeed/runtime/zero/partition_parameters.py", line 949, in __init__
-[rank0]:     _ds_config = deepspeed.runtime.config.DeepSpeedConfig(config_dict_or_path,
-[rank0]:                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[rank0]:   File "/home/victor/anaconda3/envs/megatron-deepspeed/lib/python3.11/site-packages/deepspeed/runtime/config.py", line 800, in __init__
-[rank0]:     self._configure_train_batch_size()
-[rank0]:   File "/home/victor/anaconda3/envs/megatron-deepspeed/lib/python3.11/site-packages/deepspeed/runtime/config.py", line 985, in _configure_train_batch_size
-[rank0]:     self._batch_assertion()
-[rank0]:   File "/home/victor/anaconda3/envs/megatron-deepspeed/lib/python3.11/site-packages/deepspeed/runtime/config.py", line 931, in _batch_assertion
-[rank0]:     assert (grad_acc > 0), f"Gradient accumulation steps: {grad_acc} has to be greater than 0"
-[rank0]:             ^^^^^^^^^^^^
-[rank0]: AssertionError: Gradient accumulation steps: 0 has to be greater than 0
-[rank1]:[W510 12:20:15.654775161 ProcessGroupNCCL.cpp:1496] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
-[rank0]:[W510 12:20:15.839966959 ProcessGroupNCCL.cpp:1496] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
-[2025-05-10 12:20:17,258] [INFO] [launch.py:319:sigkill_handler] Killing subprocess 4135
-[2025-05-10 12:20:17,267] [INFO] [launch.py:319:sigkill_handler] Killing subprocess 4136
-[2025-05-10 12:20:17,267] [ERROR] [launch.py:325:sigkill_handler] ['/home/victor/anaconda3/envs/megatron-deepspeed/bin/python', '-u', 'inference_gpt2.py', '--local_rank=1', '--moe-expert-parallel-size', '2', '--num-experts', '2', '--data-dir', '/home/victor/NIR/benchmark_full.txt', '--loops', '3', '--gen-len', '32', '--output-file', 'results.log', '--tensor-model-parallel-size', '1', '--pipeline-model-parallel-size', '1', '--num-layers', '24', '--hidden-size', '1024', '--num-attention-heads', '16', '--seq-length', '512', '--ffn-hidden-size', '4096', '--max-position-embeddings', '2048', '--micro-batch-size', '2', '--global-batch-size', '4', '--log-interval', '1', '--vocab-file', '/home/victor/NIR/multi-gpu/megatron-deepspeed/gpt2/vocab.json', '--merge-file', '/home/victor/NIR/multi-gpu/megatron-deepspeed/gpt2/merges.txt', '--inference', '--zero-stage=3', '--deepspeed_config=ds_config.json', '--no-pipeline-parallel', '--deepspeed'] exits with return code = 1
+[2025-05-23 18:15:28,677] [INFO] [config.py:735:__init__] Config mesh_device None world_size = 2
+[2025-05-23 18:15:28,883] [INFO] [config.py:735:__init__] Config mesh_device None world_size = 2
+[2025-05-23 18:15:28,988] [INFO] [utils.py:781:see_memory_usage] Before Building Model
+[2025-05-23 18:15:28,989] [INFO] [utils.py:782:see_memory_usage] MA 0.0 GB         Max_MA 0.53 GB         CA 0.0 GB         Max_CA 1 GB 
+[2025-05-23 18:15:28,989] [INFO] [utils.py:789:see_memory_usage] CPU Virtual Memory:  used = 5.04 GB, percent = 16.1%
+[2025-05-23 18:15:28,989] [INFO] [config.py:735:__init__] Config mesh_device None world_size = 2
+[2025-05-23 18:15:29,478] [INFO] [utils.py:781:see_memory_usage] After Building Model
+[2025-05-23 18:15:29,478] [INFO] [utils.py:782:see_memory_usage] MA 2.26 GB         Max_MA 2.26 GB         CA 2.26 GB         Max_CA 2 GB 
+[2025-05-23 18:15:29,479] [INFO] [utils.py:789:see_memory_usage] CPU Virtual Memory:  used = 5.15 GB, percent = 16.4%
+ > number of parameters on (tensor, pipeline) model parallel rank (0, 0): 1221484544
+DeepSpeed is enabled.
+[2025-05-23 18:15:29,480] [INFO] [logging.py:107:log_dist] [Rank 0] DeepSpeed info: version=0.16.7, git-hash=unknown, git-branch=unknown
+[2025-05-23 18:15:29,480] [INFO] [config.py:735:__init__] Config mesh_device None world_size = 2
+[2025-05-23 18:15:29,588] [INFO] [logging.py:107:log_dist] [Rank 0] DeepSpeed Flops Profiler Enabled: False
+[2025-05-23 18:15:29,589] [INFO] [config.py:1003:print] DeepSpeedEngine configuration:
+[2025-05-23 18:15:29,589] [INFO] [config.py:1007:print]   activation_checkpointing_config  {
+    "partition_activations": false, 
+    "contiguous_memory_optimization": false, 
+    "cpu_checkpointing": false, 
+    "number_checkpoints": null, 
+    "synchronize_checkpoint_boundary": false, 
+    "profile": false
+}
+[2025-05-23 18:15:29,589] [INFO] [config.py:1007:print]   aio_config ................... {'block_size': 1048576, 'queue_depth': 8, 'intra_op_parallelism': 1, 'single_submit': False, 'overlap_events': True, 'use_gds': False}
+[2025-05-23 18:15:29,589] [INFO] [config.py:1007:print]   amp_enabled .................. False
+[2025-05-23 18:15:29,589] [INFO] [config.py:1007:print]   amp_params ................... False
+[2025-05-23 18:15:29,590] [INFO] [config.py:1007:print]   autotuning_config ............ {
+    "enabled": false, 
+    "start_step": null, 
+    "end_step": null, 
+    "metric_path": null, 
+    "arg_mappings": null, 
+    "metric": "throughput", 
+    "model_info": null, 
+    "results_dir": "autotuning_results", 
+    "exps_dir": "autotuning_exps", 
+    "overwrite": true, 
+    "fast": true, 
+    "start_profile_step": 3, 
+    "end_profile_step": 5, 
+    "tuner_type": "gridsearch", 
+    "tuner_early_stopping": 5, 
+    "tuner_num_trials": 50, 
+    "model_info_path": null, 
+    "mp_size": 1, 
+    "max_train_batch_size": null, 
+    "min_train_batch_size": 1, 
+    "max_train_micro_batch_size_per_gpu": 1.024000e+03, 
+    "min_train_micro_batch_size_per_gpu": 1, 
+    "num_tuning_micro_batch_sizes": 3
+}
+[2025-05-23 18:15:29,590] [INFO] [config.py:1007:print]   bfloat16_enabled ............. False
+[2025-05-23 18:15:29,590] [INFO] [config.py:1007:print]   bfloat16_immediate_grad_update  False
+[2025-05-23 18:15:29,590] [INFO] [config.py:1007:print]   checkpoint_parallel_write_pipeline  False
+[2025-05-23 18:15:29,590] [INFO] [config.py:1007:print]   checkpoint_tag_validation_enabled  True
+[2025-05-23 18:15:29,590] [INFO] [config.py:1007:print]   checkpoint_tag_validation_fail  False
+[2025-05-23 18:15:29,590] [INFO] [config.py:1007:print]   comms_config ................. <deepspeed.comm.config.DeepSpeedCommsConfig object at 0x71ef44f10410>
+[2025-05-23 18:15:29,590] [INFO] [config.py:1007:print]   communication_data_type ...... None
+[2025-05-23 18:15:29,590] [INFO] [config.py:1007:print]   compile_config ............... deepcompile=False free_activation=False offload_activation=False offload_opt_states=False double_buffer=True symmetric_memory=False debug_log=False offload_parameters=False sync_before_reduce=False sync_after_reduce=False sync_before_allgather=False sync_after_allgather=False
+[2025-05-23 18:15:29,590] [INFO] [config.py:1007:print]   compression_config ........... {'weight_quantization': {'shared_parameters': {'enabled': False, 'quantizer_kernel': False, 'schedule_offset': 0, 'quantize_groups': 1, 'quantize_verbose': False, 'quantization_type': 'symmetric', 'quantize_weight_in_forward': False, 'rounding': 'nearest', 'fp16_mixed_quantize': False, 'quantize_change_ratio': 0.001}, 'different_groups': {}}, 'activation_quantization': {'shared_parameters': {'enabled': False, 'quantization_type': 'symmetric', 'range_calibration': 'dynamic', 'schedule_offset': 1000}, 'different_groups': {}}, 'sparse_pruning': {'shared_parameters': {'enabled': False, 'method': 'l1', 'schedule_offset': 1000}, 'different_groups': {}}, 'row_pruning': {'shared_parameters': {'enabled': False, 'method': 'l1', 'schedule_offset': 1000}, 'different_groups': {}}, 'head_pruning': {'shared_parameters': {'enabled': False, 'method': 'topk', 'schedule_offset': 1000}, 'different_groups': {}}, 'channel_pruning': {'shared_parameters': {'enabled': False, 'method': 'l1', 'schedule_offset': 1000}, 'different_groups': {}}, 'layer_reduction': {'enabled': False}}
+[2025-05-23 18:15:29,590] [INFO] [config.py:1007:print]   curriculum_enabled_legacy .... False
+[2025-05-23 18:15:29,590] [INFO] [config.py:1007:print]   curriculum_params_legacy ..... False
+[2025-05-23 18:15:29,590] [INFO] [config.py:1007:print]   data_efficiency_config ....... {'enabled': False, 'seed': 1234, 'data_sampling': {'enabled': False, 'num_epochs': 1000, 'num_workers': 0, 'pin_memory': False, 'curriculum_learning': {'enabled': False}, 'dynamic_batching': {'enabled': False, 'lr_scaling_method': 'linear', 'min_batch_size': 1, 'max_batch_size': None, 'sequence_picking_order': 'dataloader', 'verbose': False}}, 'data_routing': {'enabled': False, 'random_ltd': {'enabled': False, 'layer_token_lr_schedule': {'enabled': False}}}}
+[2025-05-23 18:15:29,590] [INFO] [config.py:1007:print]   data_efficiency_enabled ...... False
+[2025-05-23 18:15:29,590] [INFO] [config.py:1007:print]   dataloader_drop_last ......... False
+[2025-05-23 18:15:29,590] [INFO] [config.py:1007:print]   disable_allgather ............ False
+[2025-05-23 18:15:29,590] [INFO] [config.py:1007:print]   dump_state ................... False
+[2025-05-23 18:15:29,590] [INFO] [config.py:1007:print]   dynamic_loss_scale_args ...... None
+[2025-05-23 18:15:29,591] [INFO] [config.py:1007:print]   eigenvalue_enabled ........... False
+[2025-05-23 18:15:29,591] [INFO] [config.py:1007:print]   eigenvalue_gas_boundary_resolution  1
+[2025-05-23 18:15:29,591] [INFO] [config.py:1007:print]   eigenvalue_layer_name ........ bert.encoder.layer
+[2025-05-23 18:15:29,591] [INFO] [config.py:1007:print]   eigenvalue_layer_num ......... 0
+[2025-05-23 18:15:29,591] [INFO] [config.py:1007:print]   eigenvalue_max_iter .......... 100
+[2025-05-23 18:15:29,591] [INFO] [config.py:1007:print]   eigenvalue_stability ......... 1e-06
+[2025-05-23 18:15:29,591] [INFO] [config.py:1007:print]   eigenvalue_tol ............... 0.01
+[2025-05-23 18:15:29,591] [INFO] [config.py:1007:print]   eigenvalue_verbose ........... False
+[2025-05-23 18:15:29,591] [INFO] [config.py:1007:print]   elasticity_enabled ........... False
+[2025-05-23 18:15:29,591] [INFO] [config.py:1007:print]   flops_profiler_config ........ {
+    "enabled": false, 
+    "recompute_fwd_factor": 0.0, 
+    "profile_step": 1, 
+    "module_depth": -1, 
+    "top_modules": 1, 
+    "detailed": true, 
+    "output_file": null
+}
+[2025-05-23 18:15:29,591] [INFO] [config.py:1007:print]   fp16_auto_cast ............... False
+[2025-05-23 18:15:29,591] [INFO] [config.py:1007:print]   fp16_enabled ................. True
+[2025-05-23 18:15:29,591] [INFO] [config.py:1007:print]   fp16_master_weights_and_gradients  False
+[2025-05-23 18:15:29,591] [INFO] [config.py:1007:print]   global_rank .................. 0
+[2025-05-23 18:15:29,591] [INFO] [config.py:1007:print]   grad_accum_dtype ............. None
+[2025-05-23 18:15:29,591] [INFO] [config.py:1007:print]   gradient_accumulation_steps .. 1
+[2025-05-23 18:15:29,591] [INFO] [config.py:1007:print]   gradient_clipping ............ 0.0
+[2025-05-23 18:15:29,591] [INFO] [config.py:1007:print]   gradient_predivide_factor .... 1.0
+[2025-05-23 18:15:29,591] [INFO] [config.py:1007:print]   graph_harvesting ............. False
+[2025-05-23 18:15:29,591] [INFO] [config.py:1007:print]   hybrid_engine ................ enabled=False max_out_tokens=512 inference_tp_size=1 release_inference_cache=False pin_parameters=True tp_gather_partition_size=8
+[2025-05-23 18:15:29,591] [INFO] [config.py:1007:print]   initial_dynamic_scale ........ 65536
+[2025-05-23 18:15:29,591] [INFO] [config.py:1007:print]   load_universal_checkpoint .... False
+[2025-05-23 18:15:29,591] [INFO] [config.py:1007:print]   loss_scale ................... 0
+[2025-05-23 18:15:29,591] [INFO] [config.py:1007:print]   memory_breakdown ............. False
+[2025-05-23 18:15:29,591] [INFO] [config.py:1007:print]   mics_hierarchial_params_gather  False
+[2025-05-23 18:15:29,591] [INFO] [config.py:1007:print]   mics_shard_size .............. -1
+[2025-05-23 18:15:29,591] [INFO] [config.py:1007:print]   monitor_config ............... tensorboard=TensorBoardConfig(enabled=False, output_path='', job_name='DeepSpeedJobName') comet=CometConfig(enabled=False, samples_log_interval=100, project=None, workspace=None, api_key=None, experiment_name=None, experiment_key=None, online=None, mode=None) wandb=WandbConfig(enabled=False, group=None, team=None, project='deepspeed') csv_monitor=CSVConfig(enabled=False, output_path='', job_name='DeepSpeedJobName')
+[2025-05-23 18:15:29,592] [INFO] [config.py:1007:print]   nebula_config ................ {
+    "enabled": false, 
+    "persistent_storage_path": null, 
+    "persistent_time_interval": 100, 
+    "num_of_version_in_retention": 2, 
+    "enable_nebula_load": true, 
+    "load_path": null
+}
+[2025-05-23 18:15:29,592] [INFO] [config.py:1007:print]   optimizer_legacy_fusion ...... False
+[2025-05-23 18:15:29,592] [INFO] [config.py:1007:print]   optimizer_name ............... None
+[2025-05-23 18:15:29,592] [INFO] [config.py:1007:print]   optimizer_params ............. None
+[2025-05-23 18:15:29,592] [INFO] [config.py:1007:print]   pipeline ..................... {'stages': 'auto', 'partition': 'best', 'seed_layers': False, 'activation_checkpoint_interval': 0, 'pipe_partitioned': True, 'grad_partitioned': True}
+[2025-05-23 18:15:29,592] [INFO] [config.py:1007:print]   pld_enabled .................. False
+[2025-05-23 18:15:29,592] [INFO] [config.py:1007:print]   pld_params ................... False
+[2025-05-23 18:15:29,592] [INFO] [config.py:1007:print]   prescale_gradients ........... False
+[2025-05-23 18:15:29,592] [INFO] [config.py:1007:print]   scheduler_name ............... None
+[2025-05-23 18:15:29,592] [INFO] [config.py:1007:print]   scheduler_params ............. None
+[2025-05-23 18:15:29,592] [INFO] [config.py:1007:print]   seq_parallel_communication_data_type  torch.float32
+[2025-05-23 18:15:29,592] [INFO] [config.py:1007:print]   sparse_attention ............. None
+[2025-05-23 18:15:29,592] [INFO] [config.py:1007:print]   sparse_gradients_enabled ..... False
+[2025-05-23 18:15:29,592] [INFO] [config.py:1007:print]   steps_per_print .............. 2000
+[2025-05-23 18:15:29,592] [INFO] [config.py:1007:print]   tensor_parallel_config ....... dtype=torch.float16 autotp_size=0 tp_overlap_comm=False tensor_parallel=TPConfig(tp_size=1, tp_grain_size=1, mpu=None, tp_group=None) injection_policy_tuple=None keep_module_on_host=False replace_with_kernel_inject=False
+[2025-05-23 18:15:29,592] [INFO] [config.py:1007:print]   timers_config ................ enabled=True synchronized=True
+[2025-05-23 18:15:29,592] [INFO] [config.py:1007:print]   train_batch_size ............. 8
+[2025-05-23 18:15:29,592] [INFO] [config.py:1007:print]   train_micro_batch_size_per_gpu  4
+[2025-05-23 18:15:29,592] [INFO] [config.py:1007:print]   use_data_before_expert_parallel_  False
+[2025-05-23 18:15:29,592] [INFO] [config.py:1007:print]   use_node_local_storage ....... False
+[2025-05-23 18:15:29,592] [INFO] [config.py:1007:print]   wall_clock_breakdown ......... False
+[2025-05-23 18:15:29,592] [INFO] [config.py:1007:print]   weight_quantization_config ... None
+[2025-05-23 18:15:29,592] [INFO] [config.py:1007:print]   world_size ................... 2
+[2025-05-23 18:15:29,592] [INFO] [config.py:1007:print]   zero_allow_untested_optimizer  False
+[2025-05-23 18:15:29,592] [INFO] [config.py:1007:print]   zero_config .................. stage=0 contiguous_gradients=True reduce_scatter=True reduce_bucket_size=500000000 use_multi_rank_bucket_allreduce=True allgather_partitions=True allgather_bucket_size=500000000 overlap_comm=False load_from_fp32_weights=True elastic_checkpoint=False offload_param=None offload_optimizer=None sub_group_size=1000000000 cpu_offload_param=None cpu_offload_use_pin_memory=None cpu_offload=None prefetch_bucket_size=50000000 param_persistence_threshold=100000 model_persistence_threshold=9223372036854775807 max_live_parameters=1000000000 max_reuse_distance=1000000000 gather_16bit_weights_on_model_save=False module_granularity_threshold=0 use_all_reduce_for_fetch_params=False stage3_gather_fp16_weights_on_model_save=False ignore_unused_parameters=True legacy_stage1=False round_robin_gradients=False zero_hpz_partition_size=1 zero_quantized_weights=False zero_quantized_nontrainable_weights=False zero_quantized_gradients=False zeropp_loco_param=None mics_shard_size=-1 mics_hierarchical_params_gather=False memory_efficient_linear=True pipeline_loading_checkpoint=False override_module_apply=True log_trace_cache_warnings=False
+[2025-05-23 18:15:29,592] [INFO] [config.py:1007:print]   zero_enabled ................. False
+[2025-05-23 18:15:29,592] [INFO] [config.py:1007:print]   zero_force_ds_cpu_optimizer .. True
+[2025-05-23 18:15:29,592] [INFO] [config.py:1007:print]   zero_optimization_stage ...... 0
+[2025-05-23 18:15:29,593] [INFO] [config.py:993:print_user_config]   json = {
+    "fp16": {
+        "enabled": true
+    }, 
+    "bp16": {
+        "enabled": false
+    }, 
+    "steps_per_print": 2.000000e+03, 
+    "train_batch_size": 8, 
+    "train_micro_batch_size_per_gpu": 4, 
+    "wall_clock_breakdown": false
+}
+tokens: torch.Size([4, 1024])
+tokens: torch.Size([4, 1024])
+tokens: torch.Size([4, 1024])
+tokens: torch.Size([4, 1024])
+tokens: torch.Size([4, 1024])
+tokens: torch.Size([4, 1024])
+tokens: torch.Size([4, 1024])
+tokens: torch.Size([4, 1024])
+tokens: torch.Size([4, 1024])
+tokens: torch.Size([4, 1024])
+tokens: torch.Size([4, 1024])
+tokens: torch.Size([4, 1024])
+tokens: torch.Size([4, 1024])
+tokens: torch.Size([4, 1024])
+tokens: torch.Size([4, 1024])
+tokens: torch.Size([4, 1024])
+tokens: torch.Size([4, 1024])
+tokens: torch.Size([4, 1024])
+Summary:
+costs = [1.98319376499785, 1.594425515999319, 1.5947414210022544] prefill_timings = [0.5792391300201416, 0.2633671760559082, 0.2634735107421875]
+GPT model:
+ num layers: 10
+ hidden size: 4096
+ seq length: 1024
+ ffn hidden size: 4096
+ max position embeddings: 2048
+ use zero: False
+ num experts: 1
+Used Sizes:
+model size: 4.134 GB	cache size: 1.254 GB	hidden size (p): 0.125 GB
+peak gpu mem: 4.045 GB	prefill latency: 0.263 s	prefill throughput: 31092.310 token/s
+decode latency: 1.331 s	decode throughput: 12.019 token/s
+total latency: 1.595 s	total throughput: 15.049 token/s
+
+[rank1]:[W523 18:15:36.358268425 ProcessGroupNCCL.cpp:1476] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+[2025-05-23 18:15:39,284] [INFO] [launch.py:351:main] Process 69982 exits successfully.
+[2025-05-23 18:15:40,284] [INFO] [launch.py:351:main] Process 69981 exits successfully.
