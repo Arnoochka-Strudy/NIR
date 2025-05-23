@@ -3,6 +3,8 @@ frameworks:
     nntile (optionally): https://github.com/nntile/nntile
     Megatron-LM: https://github.com/NVIDIA/Megatron-LM
     inference-single-gpu: https://github.com/FMInference
+    Sglang: https://github.com/sgl-project/sglang
+    vLLM: https://github.com/vllm-project/vllm
 
 articles overwiev: https://arxiv.org/pdf/2405.03360
 XLA: https://github.com/openxla/xla
@@ -23,3 +25,4 @@ maskLLM: https://github.com/NVlabs/MaskLLM/blob/main/tools/checkpoint/util.py
 cupy: https://github.com/cupy/cupys
 
 DeepSpeed-optimization: https://www.microsoft.com/en-us/research/blog/deepspeed-accelerating-large-scale-model-inference-and-training-via-system-optimizations-and-compression/
+
