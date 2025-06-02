@@ -1,0 +1,19 @@
+[WARNING] DISTRIBUTED(124024,79749f3e6740,python):2024-11-06-19:34:59.106.983 [mindspore/ccsrc/distributed/rpc/tcp/socket_operation.cc:421] Listen] Failed to call bind, url: 127.0.0.1:8118 Address already in use
+[WARNING] DISTRIBUTED(124024,79749f3e6740,python):2024-11-06-19:34:59.107.048 [mindspore/ccsrc/distributed/rpc/tcp/tcp_comm.cc:195] StartServerSocket] Failed to call socket listen, url: 127.0.0.1:8118
+[ERROR] DISTRIBUTED(124024,79749f3e6740,python):2024-11-06-19:34:59.107.060 [mindspore/ccsrc/distributed/cluster/topology/meta_server_node.cc:114] InitTCPServer] Failed to init the tcp server.
+[ERROR] DISTRIBUTED(124024,79749f3e6740,python):2024-11-06-19:34:59.107.068 [mindspore/ccsrc/distributed/cluster/topology/meta_server_node.cc:58] Initialize] Failed to create the TCP server.
+[ERROR] DISTRIBUTED(124024,79749f3e6740,python):2024-11-06-19:34:59.107.075 [mindspore/ccsrc/distributed/cluster/cluster_context.cc:193] BuildCluster] Failed to initialize the node.
+[ERROR] DISTRIBUTED(124024,79749f3e6740,python):2024-11-06-19:34:59.107.087 [mindspore/ccsrc/distributed/cluster/cluster_context.cc:86] Initialize] Building networking for MS_SCHED failed.
+[ERROR] DISTRIBUTED(124024,79749f3e6740,python):2024-11-06-19:34:59.107.095 [mindspore/ccsrc/distributed/init.cc:79] InitializeCluster] Failed to initialize cluster.
+Traceback (most recent call last):
+  File "/home/victor/NIR/startup_method/./net.py", line 26, in <module>
+    init()
+  File "/home/victor/anaconda3/envs/mindspore/lib/python3.9/site-packages/mindspore/communication/management.py", line 180, in init
+    init_cluster()
+RuntimeError: Failed to initialize distributed training because some nodes in the cluster are not successfully launched. Please check log of each node to find out which is the first one to throw exception. You can search 'is timed out' in Scheduler's log to see which node is offline.
+
+----------------------------------------------------
+- C++ Call Stack: (For framework developers)
+----------------------------------------------------
+mindspore/ccsrc/distributed/init.cc:33 Initialize
+

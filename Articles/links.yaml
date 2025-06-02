@@ -1,0 +1,35 @@
+frameworks:
+    DeepSpeed: https://www.deepspeed.ai/
+    nntile (optionally): https://github.com/nntile/nntile
+    Megatron-LM: https://github.com/NVIDIA/Megatron-LM
+
+articles overwiev: https://arxiv.org/pdf/2405.03360
+
+Tensor parallelism:
+    https://arxiv.org/pdf/2105.14500
+    https://arxiv.org/pdf/2411.07942
+    https://arxiv.org/pdf/2311.01635
+    https://arxiv.org/pdf/2205.05198 (Sequence parallelism)
+
+Pipeline parallelism for inference:
+    https://arxiv.org/html/2405.14430v2
+    https://arxiv.org/pdf/2311.03703
+    https://arxiv.org/html/2409.17264v1
+
+
+ZeRO:
+    https://www.deepspeed.ai/2022/09/09/zero-inference.html#:~:text=ZeRO%2DInference%20leverages%20the%20four,to%20a%20single%20GPU%203%20.
+    https://arxiv.org/pdf/2104.07857
+    https://arxiv.org/abs/1910.02054 (Readed)
+    https://arxiv.org/pdf/2206.01861 (ZeroQuant)
+    https://pytorch.org/blog/introducing-nvfuser-a-deep-learning-compiler-for-pytorch/ (nFuser)
+
+
+DeepSpeed:
+    https://www.microsoft.com/en-us/research/blog/deepspeed-accelerating-large-scale-model-inference-and-training-via-system-optimizations-and-compression/
+    # нет особбо крутых штук, но очень много про inference
+
+Nvidia:
+    https://arxiv.org/pdf/2312.11918 (CUTLASS)
+    https://developer.nvidia.com/blog/cuda-graphs/ (CUDA Graphs)
+    https://developer.nvidia.com/blog/accelerated-inference-for-large-transformer-models-using-nvidia-fastertransformer-and-nvidia-triton-inference-server/

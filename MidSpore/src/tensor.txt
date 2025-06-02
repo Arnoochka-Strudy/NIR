@@ -1,0 +1,22 @@
+epoch: 1, step: 1875, loss is 0.6569134
+epoch: 1, step: 1875, loss is 0.6569134
+epoch: 2, step: 1875, loss is 0.5517884
+epoch: 2, step: 1875, loss is 0.5517884
+epoch: 3, step: 1875, loss is 0.4766217
+epoch: 3, step: 1875, loss is 0.4766217
+epoch: 4, step: 1875, loss is 0.40023875
+epoch: 4, step: 1875, loss is 0.40023875
+epoch: 5, step: 1875, loss is 0.3285036
+epoch: 5, step: 1875, loss is 0.3285036
+epoch: 6, step: 1875, loss is 0.26688576
+epoch: 6, step: 1875, loss is 0.26688576
+epoch: 7, step: 1875, loss is 0.21789077
+epoch: 7, step: 1875, loss is 0.21789077
+epoch: 8, step: 1875, loss is 0.17974383
+epoch: 8, step: 1875, loss is 0.17974383
+epoch: 9, step: 1875, loss is 0.14324614
+epoch: 9, step: 1875, loss is 0.14324614
+epoch: 10, step: 1875, loss is 0.11077607
+epoch: 10, step: 1875, loss is 0.11077607
+154.02047681808472
+154.0214307308197

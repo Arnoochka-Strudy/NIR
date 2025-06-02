@@ -1,0 +1,22 @@
+epoch: 1 step: 1875, loss is 0.0
+epoch: 1 step: 1875, loss is 3.828000068664551
+epoch: 2 step: 1875, loss is 0.0
+epoch: 2 step: 1875, loss is 0.43289709091186523
+epoch: 3 step: 1875, loss is 0.0
+epoch: 3 step: 1875, loss is 0.04428815841674805
+epoch: 4 step: 1875, loss is 1.9290982484817505
+epoch: 4 step: 1875, loss is 0.0
+epoch: 5 step: 1875, loss is 0.07924187183380127
+epoch: 5 step: 1875, loss is 0.0
+epoch: 6 step: 1875, loss is 0.051729679107666016
+epoch: 6 step: 1875, loss is 0.0
+epoch: 7 step: 1875, loss is 0.0
+epoch: 7 step: 1875, loss is 0.0014314651489257812
+epoch: 8 step: 1875, loss is 0.0
+epoch: 8 step: 1875, loss is 0.2639816999435425
+epoch: 9 step: 1875, loss is 0.0
+epoch: 9 step: 1875, loss is 0.010102033615112305
+epoch: 10 step: 1875, loss is 0.0
+epoch: 10 step: 1875, loss is 0.0040051937103271484
+168.65176272392273
+168.69345688819885

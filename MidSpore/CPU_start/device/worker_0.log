@@ -1,0 +1,28 @@
+[WARNING] DISTRIBUTED(124020,73b145a8c740,python):2024-11-06-19:34:59.107.248 [mindspore/ccsrc/distributed/rpc/tcp/tcp_comm.cc:464] Connect] Waiting for the state of the connection to 127.0.0.1:8118 to be connected...Retry number: 1
+[WARNING] DISTRIBUTED(124020,73b145a8c740,python):2024-11-06-19:35:00.107.751 [mindspore/ccsrc/distributed/rpc/tcp/tcp_comm.cc:464] Connect] Waiting for the state of the connection to 127.0.0.1:8118 to be connected...Retry number: 2
+[WARNING] DISTRIBUTED(124020,73b145a8c740,python):2024-11-06-19:35:01.109.849 [mindspore/ccsrc/distributed/cluster/cluster_context.cc:201] BuildCluster] Topology build timed out., retry(1/610).
+[WARNING] DISTRIBUTED(124020,73b145a8c740,python):2024-11-06-19:35:04.110.026 [mindspore/ccsrc/distributed/cluster/cluster_context.cc:203] BuildCluster] Cluster is successfully initialized.
+[WARNING] DISTRIBUTED(124020,73b145a8c740,python):2024-11-06-19:35:04.110.520 [mindspore/ccsrc/distributed/cluster/cluster_context.cc:273] PostProcess] This node 0 rank id: 0
+ ** On entry to cusparseCreate(): CUDA context cannot be initialized
+
+Traceback (most recent call last):
+  File "/home/victor/NIR/startup_method/./net.py", line 26, in <module>
+    init()
+  File "/home/victor/anaconda3/envs/mindspore/lib/python3.9/site-packages/mindspore/communication/management.py", line 180, in init
+    init_cluster()
+RuntimeError: 
+----------------------------------------------------
+- cusparse Error:
+----------------------------------------------------
+Failed to create sparse handle. | Error Code: 1
+
+----------------------------------------------------
+- C++ Call Stack: (For framework developers)
+----------------------------------------------------
+mindspore/ccsrc/plugin/device/gpu/hal/device/gpu_device_manager.cc:50 InitDevice
+
+[WARNING] DISTRIBUTED(124020,73b145a8c740,python):2024-11-06-19:35:07.111.426 [mindspore/ccsrc/distributed/cluster/topology/compute_graph_node.cc:325] ReconnectIfNeeded] Failed to unregister and try to reconnect to the meta server.
+[WARNING] DISTRIBUTED(124020,73b145a8c740,python):2024-11-06-19:35:10.111.899 [mindspore/ccsrc/distributed/rpc/tcp/tcp_comm.cc:464] Connect] Waiting for the state of the connection to 127.0.0.1:8118 to be connected...Retry number: 3
+[WARNING] DISTRIBUTED(124020,73b145a8c740,python):2024-11-06-19:35:11.112.233 [mindspore/ccsrc/distributed/rpc/tcp/tcp_comm.cc:464] Connect] Waiting for the state of the connection to 127.0.0.1:8118 to be connected...Retry number: 4
+[ERROR] DISTRIBUTED(124020,73b145a8c740,python):2024-11-06-19:35:12.112.527 [mindspore/ccsrc/distributed/cluster/topology/compute_graph_node.cc:124] Finalize] Failed to unregister from the meta server node.
+[ERROR] ME(124020,73b145a8c740,python):2024-11-06-19:35:12.114.064 [mindspore/ccsrc/runtime/hardware/device_context_manager.cc:540] WaitTaskFinishOnDevice] SyncStream failed
